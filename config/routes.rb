@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root to: "pages#home" # landing page
+  resources :pages, only: %i[index] # welcome CRM page
+
+  resources :accounts, only: %i[index show]
+
+  resources :templates, only: %i[index create update delete]
+
+  resources :triggers, only: %i[index create update delete]
+
+  resources :drafts, only: %i[index update delete]
 end
