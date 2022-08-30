@@ -6,9 +6,5 @@ Rails.application.routes.draw do
 
   resources :accounts, only: %i[index show]
 
-  resources :templates, only: %i[index create update delete]
-
-  resources :triggers, only: %i[index create update delete]
-
-  resources :drafts, only: %i[index update delete]
+  resources :triggers, only: %i[index create update destroy]
 end
