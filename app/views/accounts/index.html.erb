@@ -1,10 +1,12 @@
-<div class ="navbar mx-5 my-1">
-  <div></div>
-  <div>Search bar</div>
-</div>
 <div class="wrapperbody">
   <%= render "shared/sidebar" %>
   <div class="main-content ms-3">
+
+    <div class ="navbar mx-5 my-1">
+      <div><h1>Accounts</h1></div>
+      <div>Search bar</div>
+    </div>
+
     <!-- grid for cards -->
     <div class="row">
       <% @accounts.each do |account| %>

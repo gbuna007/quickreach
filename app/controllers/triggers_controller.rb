@@ -1,6 +1,8 @@
 class TriggersController < ApplicationController
   def index
+    @triggers = policy_scope(Trigger)
     @triggers = Trigger.all
+    # raise
   end
 
   def create
