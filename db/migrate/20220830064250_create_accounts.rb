@@ -5,7 +5,7 @@ class CreateAccounts < ActiveRecord::Migration[7.0]
       t.string :category
       t.string :status
       t.float :potential_rev
-      t.references :user, null: false, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
