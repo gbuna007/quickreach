@@ -1,11 +1,13 @@
 .sidebar {
   width: 15%;
-  height: 50vh;
+  min-height: 100%;
   position: sticky;
   top: 15%;
   text-align: center;
 }
 .list-for-items{
+  margin-left: 0;
+  padding-left: 0;
   li{
     list-style: none;
   }
