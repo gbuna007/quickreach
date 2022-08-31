@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-#users
+# users
 user1 = User.create(first_name: "Ann", last_name: "Lim", email: "ann@gmail.com", password: "ann123") # have accounts, contacts, HAVE triggers
 user2 = User.create(first_name: "Bob", last_name: "Lee", email: "bob@gmail.com", password: "bob123") # have accounts, contacts, NO triggers
 user3 = User.create(first_name: "Chan", last_name: "Chan", email: "chan@gmail.com", password: "chan123") # no accounts
 
-#accounts
+# accounts
 grab = Account.new(name: "Grab", category: "transportation", status: "Lead", potential_rev:1000000)
 grab.user = user1
 grab.save!
@@ -28,7 +28,7 @@ samsung = Account.new(name: "Samsung", category: "consumer electronics", status:
 samsung.user = user2
 samsung.save!
 
-#contacts
+# contacts
 grab_manager = Contact.new(email: "bteo@grab.com", title: "Digital Manager", first_name: "Bryan", last_name: "Teo")
 grab_manager.account = grab
 grab_manager.save!
@@ -77,7 +77,7 @@ keyword5 = Keyword.new(name: "cuts")
 keyword5.trigger = trigger_grab1
 keyword5.save!
 
-#keywords for trigger grab2
+# keywords for trigger grab2
 keyword6 = Keyword.new(name: "grab")
 keyword6.trigger = trigger_grab2
 keyword6.save!
