@@ -1,7 +1,6 @@
 class AccountsController < ApplicationController
   def index
-    @accounts = Account.all
-    authorize @accounts
+    @accounts = policy_scope(Account)
   end
 
   def show
