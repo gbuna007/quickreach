@@ -1,1 +1,73 @@
-<h1>ACCOUNTS#SHOW</h1>
+<div class="wrapperbody">
+  <%= render "shared/sidebar" %>
+
+  <div class="container-color main-content rounded-3 p-3">
+    <h1 class="ps-3"><%= @account.name %></h1>
+
+    <div class="ps-3 row d-flex-inline">
+      <!-- COLUMN 1 -->
+      <div class="col-5">
+        <!-- statistics -->
+        <div class="card-color p-3 pb-1 mb-3 rounded-3">
+          <div class="d-flex justify-content-around align-items-center">
+            <div>
+              <div class="d-flex align-items-center">
+                <p class="circle me-2"><%= @account.triggers.count %></p>
+                <p>Active Triggers</p>
+              </div>
+              <div class="d-flex align-items-center">
+                <p class="circle me-2"><%= @account.triggers.count %></p>
+                <p>Active Drafts</p>
+              </div>
+            </div>
+            <div>
+              <div class="d-flex align-items-center">
+                <p class="circle me-2"><%= @account.triggers.count %></p>
+                <p>Active Templates</p>
+              </div>
+              <div class="d-flex align-items-center">
+                <p class="circle me-2"><%= @account.triggers.count %></p>
+                <p>QuickReaches</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- details -->
+        <div class="card-color p-3 pb-1 mb-3 rounded-3">
+          <div class="header-border mb-2">
+            <h5><strong>Account Details</strong></h5>
+          </div>
+          <p><strong>Category:</strong> <%= @account.category.capitalize %></p>
+          <p><strong>Account Status:</strong> <%= @account.status %></p>
+          <p><strong>Potential Revenue:</strong> SGD $<%= @account.potential_rev %></p>
+          <p><strong>Amount Spent:</strong> SGD $<%= @account.amount_spent %></p>
+        </div>
+
+        <!-- contacts -->
+        <div class="card-color p-3 rounded-3">
+          <div class="header-border mb-2">
+            <h5><strong>Contacts</strong></h5>
+          </div>
+          <% @account.contacts.each do |contact| %>
+            <p class="m-0"><%= contact.first_name %> <%= contact.last_name %> - <em><%= contact.title %></em></p>
+          <% end %>
+        </div>
+      </div>
+
+      <!-- COLUMN 2-->
+      <div class="col-6 ms-3">
+        <!-- most recent news article -->
+        <div class="card-color p-3 mb-3 rounded-3">
+          <p>Show most recent news article?</p>
+        </div>
+
+        <!-- history of QuickReaches -->
+        <div class="card-color p-3 rounded-3">
+          <p>History of QuickReaches</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -12,19 +12,19 @@ user2 = User.create(first_name: "Bob", last_name: "Lee", email: "bob@gmail.com",
 user3 = User.create(first_name: "Chan", last_name: "Chan", email: "chan@gmail.com", password: "chan123") # no accounts
 
 # accounts
-grab = Account.new(name: "Grab", category: "transportation", status: "Lead", potential_rev:1000000)
+grab = Account.new(name: "Grab", category: "transportation", status: "Lead", potential_rev: 1000000, amount_spent: 1000)
 grab.user = user1
 grab.save!
 
-gojek = Account.new(name: "Gojek", category: "transportation", status: "Prospect", potential_rev:500000)
+gojek = Account.new(name: "Gojek", category: "transportation", status: "Prospect", potential_rev: 500000, amount_spent: 5000)
 gojek.user = user1
 gojek.save!
 
-apple = Account.new(name: "Apple", category: "consumer electronics", status: "Live", potential_rev:1500000)
+apple = Account.new(name: "Apple", category: "consumer electronics", status: "Live", potential_rev: 1500000, amount_spent: 15000)
 apple.user = user2
 apple.save!
 
-samsung = Account.new(name: "Samsung", category: "consumer electronics", status: "Churned", potential_rev:1250000)
+samsung = Account.new(name: "Samsung", category: "consumer electronics", status: "Churned", potential_rev: 1250000, amount_spent: 1250)
 samsung.user = user2
 samsung.save!
 
