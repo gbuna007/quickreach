@@ -1,0 +1,2 @@
+class OldNews < ApplicationRecord
+end
