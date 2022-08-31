@@ -1,1 +1,42 @@
-<h1>DASHBOARD (ALL ACCOUNTS)</h1>
+<div class ="navbar mx-5 my-1">
+  <div></div>
+  <div>Search bar</div>
+</div>
+<div class="wrapperbody">
+  <%= render "shared/sidebar" %>
+  <div class="main-content ms-3">
+    <!-- grid for cards -->
+    <div class="row">
+      <% @accounts.each do |account| %>
+        <%= link_to account_path(account.id), class:"col-3 p-0 m-0 theme-text" do %>
+          <!-- card container -->
+          <div class="card p-0 m-2">
+            <!-- card status -->
+            <div class="stripe">
+            </div>
+
+            <div class="card-main-content">
+              <!-- top section -->
+              <div class="d-flex justify-content-center">
+                <!-- company name -->
+                <div class="m-2"><h4><strong><%= account.name %></strong></h4></div>
+              </div>
+
+              <div class="card-body">
+                <!-- textfield -->
+                <div class = "card-text">
+                  <p><strong>Account Status:</strong></p>
+                  <p><%= account.status %></p>
+                  <p><strong>Potential Revenue:</strong></p>
+                  <p>$<%= account.potential_rev %> </p>
+                  <!-- end of text field -->
+                </div>
+              </div>
+            </div>
+            <!-- end of card -->
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

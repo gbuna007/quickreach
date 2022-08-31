@@ -1,13 +1,15 @@
 .sidebar {
   width: 15%;
-  height: 50vh;
+  min-height: 100%;
   position: sticky;
   top: 15%;
   text-align: center;
 }
 
 .list-for-items {
-  li {
+  margin-left: 0;
+  padding-left: 0;
+  li{
     list-style: none;
   }
 }
@@ -21,5 +23,5 @@
     background-color: #231955;
     color: #FFE5B4;
     border-color: #231955;
-}
+  }
 }
