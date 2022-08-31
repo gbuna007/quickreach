@@ -7,6 +7,6 @@ class AccountPolicy < ApplicationPolicy
   end
 
   def index?
-    user.present? && record.user == current_user
+    user.present? && record.user == user
   end
 end
