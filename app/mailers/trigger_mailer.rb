@@ -1,0 +1,2 @@
+class TriggerMailer < ApplicationMailer
+end
