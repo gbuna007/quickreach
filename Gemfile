@@ -48,6 +48,8 @@ gem "sassc-rails"
 gem "sidekiq"
 gem "sidekiq-failures", "~> 1.0"
 
+gem "pry-byebug"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 gem "pundit"
