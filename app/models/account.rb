@@ -1,4 +1,5 @@
 class Account < ApplicationRecord
   belongs_to :user
-  has_many :triggers, through: :contacts
+  has_many :contacts
+  has_many :triggers
 end
