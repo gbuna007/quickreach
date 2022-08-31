@@ -89,3 +89,7 @@ keyword7.save!
 keyword8 = Keyword.new(name: "delivery")
 keyword8.trigger = trigger_grab2
 keyword8.save!
+
+
+#news
+news1 = News.create(title: "this is a placeholder title", link: "straitstimes.com", keywords: ["grab", "gojek", "drivers", "earnings", "acquisition"], creator: "Bunardi", pubDate: Date.today - 1.day, content: "this is a placeholder content grab ride-hailing  drivers angry valuation drop overvalued")

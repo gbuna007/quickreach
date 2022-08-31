@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :api do
-    namespace :v1 do
-      get '/news/:client', to: 'news#fetch'
+    namespace :v1, defaults: { format: 'json' } do
+      get '/news', to: 'news#index'
     end
   end
 
