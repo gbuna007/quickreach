@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: "pages#home" # landing page
-  resources :pages, only: %i[index] # welcome CRM page
+  # root to: "pages#home" # landing page
+  # resources :pages, only: %i[index] # welcome CRM page
+  root to: "pages#index"
 
   resources :accounts, only: %i[index show]
 

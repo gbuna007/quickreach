@@ -10,3 +10,14 @@
     list-style: none;
   }
 }
+.side-nav-btn{
+  min-width: 80%;
+  margin: 5%;
+  color: #1F4690;
+  border-color: #1F4690;
+  &:hover {
+    background-color: #231955;
+    color: #FFE5B4;
+    border-color: #231955;
+}
+}

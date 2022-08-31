@@ -5,4 +5,8 @@ class AccountPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+
+  def index?
+    user.present? && record.user == user
+  end
 end
