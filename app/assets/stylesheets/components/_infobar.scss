@@ -1,0 +1,42 @@
+.info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+}
+
+.info .info-content {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.info p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.info small {
+  color: #999999;
+  font-weight: bold;
+}
+.info .info-actions {
+  opacity: 0;
+  display: flex;
+  transition: ease .3s;
+}
+
+.info:hover .info-actions {
+  opacity: 1;
+}
+
+.info .info-actions a {
+  color: #999999;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.info .info-actions a:hover {
+  color: #555555;
+}
