@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_01_043603) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_01_061659) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,9 +37,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_043603) do
     t.index ["account_id"], name: "index_contacts_on_account_id"
   end
 
+  create_table "drafts", force: :cascade do |t|
+    t.bigint "trigger_id", null: false
+    t.bigint "template_id", null: false
+    t.boolean "sent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["template_id"], name: "index_drafts_on_template_id"
+    t.index ["trigger_id"], name: "index_drafts_on_trigger_id"
+  end
+
   create_table "keywords", force: :cascade do |t|
     t.string "name"
-    t.bigint "trigger_id", null: false
+    t.bigint "trigger_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["trigger_id"], name: "index_keywords_on_trigger_id"
@@ -106,6 +116,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_043603) do
 
   add_foreign_key "accounts", "users"
   add_foreign_key "contacts", "accounts"
+  add_foreign_key "drafts", "templates"
+  add_foreign_key "drafts", "triggers"
   add_foreign_key "keywords", "triggers"
   add_foreign_key "templates", "users"
   add_foreign_key "triggers", "accounts"

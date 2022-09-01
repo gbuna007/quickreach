@@ -49,12 +49,10 @@ apple_marketing.save!
 trigger_grab1 = Trigger.new
 trigger_grab1.account = grab
 trigger_grab1.contact = grab_director
-trigger_grab1.save!
 
 trigger_grab2 = Trigger.new
 trigger_grab2.account = grab
 trigger_grab2.contact = grab_manager
-trigger_grab2.save!
 
 # keywords for trigger grab1
 keyword1 = Keyword.new(name: "grab")
@@ -111,3 +109,6 @@ template_grab.save!
 
 trigger_grab1.template = template_grab
 trigger_grab1.save!
+
+trigger_grab2.template = template_grab
+trigger_grab2.save!
