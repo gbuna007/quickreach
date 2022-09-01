@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_31_141003) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_01_040216) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,6 +67,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_141003) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "templates", force: :cascade do |t|
+    t.string "name"
+    t.string "subject"
+    t.text "body"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_templates_on_user_id"
+  end
+
   create_table "triggers", force: :cascade do |t|
     t.date "date_added"
     t.string "name"
@@ -95,6 +105,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_141003) do
   add_foreign_key "accounts", "users"
   add_foreign_key "contacts", "accounts"
   add_foreign_key "keywords", "triggers"
+  add_foreign_key "templates", "users"
   add_foreign_key "triggers", "accounts"
   add_foreign_key "triggers", "contacts"
 end
