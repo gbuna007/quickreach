@@ -57,17 +57,20 @@
 
       <!-- COLUMN 2-->
       <div class="col-6 ms-3">
-        <!-- most recent news article -->
-        <div class="card-color p-3 mb-3 rounded-3">
-          <p>Show most recent news article?</p>
-        </div>
-
-        <!-- history of QuickReaches -->
+        <!-- account's drafts -->
         <div class="card-color p-3 rounded-3">
-          <p>History of QuickReaches</p>
+          <h5 class="header-border pb-2"><strong><%= @account.name %> Drafts</strong></h5>
         </div>
-      </div>
 
+        <div class="trigger-labels">
+          <p>Date Added</p>
+          <!-- insert draft name here (just use template's name)-->
+          <p class="col-3">Event</p>
+          <p class="col-3">Template</p>
+        </div>
+
+        <!-- insert draft records here -->
+      </div>
     </div>
   </div>
 </div>
