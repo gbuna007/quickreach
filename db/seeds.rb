@@ -47,11 +47,13 @@ apple_marketing.save!
 
 # triggers
 trigger_grab1 = Trigger.new
+trigger_grab1.name = "Grab negative news draft"
 trigger_grab1.account = grab
 trigger_grab1.contact = grab_director
 trigger_grab1.save!
 
 trigger_grab2 = Trigger.new
+trigger_grab2.name = "Grab positive news draft"
 trigger_grab2.account = grab
 trigger_grab2.contact = grab_manager
 trigger_grab2.save!

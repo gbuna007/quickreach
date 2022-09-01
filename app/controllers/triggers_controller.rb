@@ -2,6 +2,9 @@ class TriggersController < ApplicationController
   def index
     @triggers = policy_scope(Trigger)
     @triggers = Trigger.all
+
+    # new trigger for trigger form
+    @trigger = Trigger.new
     # raise
   end
 
