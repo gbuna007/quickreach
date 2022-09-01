@@ -7,10 +7,10 @@ class TriggerPolicy < ApplicationPolicy
   end
 
   def index?
-    record.user = user
+    record.user == user
   end
 
   def create?
-
+    record.user == user
   end
 end
