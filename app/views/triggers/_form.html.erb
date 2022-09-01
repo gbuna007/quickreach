@@ -7,10 +7,10 @@
     </div>
 
     <div class="col-12 p-2">
-    <%= f.simple_fields_for :keywords do |k| %>
+    <%= f.simple_fields_for :keywords, data: {keywords_for_trigger_target: "form", action: "submit->keywords-for-trigger#addKeys" } do |k| %>
       <div class="">
         <%= k.input :name, class:"col-10", placeholder: "Enter a Keyword" %>
-        <%= k.button :submit, class: "btn", data: { action: "submit->keywords-for-trigger#addKeys" } %>
+        <%= k.button :submit, class: "btn" %>
       </div>
     <% end %>
 

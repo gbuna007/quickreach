@@ -10,21 +10,29 @@ class TriggersController < ApplicationController
 
   def create
     @trigger = Trigger.new(trigger_params)
+    # @keyword = Keyword.new
+    # @trigger.user = current_user
     authorize @trigger
     # set trigger.account and trigger.contact?
     if @trigger.save
       redirect_to triggers_path
+      raise
     else
       # render :new, status: :unprocessable_entity
     end
   end
 
   def update
-    @trigger = Trigger.find(params[:id])
-    if @trigger.update(trigger_params)
-      redirect_to triggers_path
+    @trigger.update(trigger_params)
+    @keyword = Keyword.new
+    @trigger.user = current_user
+    # raise
+    authorize @trigger
+    @trigger.save
+    if @trigger.save
+      redirect_to trigger_path(@trigger)
     else
-      # render :edit, status: :unprocessable_entity
+      # render :new, status: :unprocessable_entity
     end
   end
 
@@ -38,5 +46,9 @@ class TriggersController < ApplicationController
 
   def trigger_params
     params.require(:trigger).permit(:date_added, :name, :account_id, :contact_id)
+  end
+
+  def keyword_params
+    params.require(:keyword).permit(:name)
   end
 end
