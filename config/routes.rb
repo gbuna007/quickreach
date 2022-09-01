@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   resources :accounts, only: %i[index show]
 
   resources :triggers, only: %i[index create update destroy]
+
+  resources :drafts, only: %i[show edit]
 end

@@ -7,4 +7,5 @@ class Trigger < ApplicationRecord
   belongs_to :contact
   has_many :keywords
   # accepts_nested_attributes_for :keywords
+  belongs_to :template
 end
