@@ -6,4 +6,5 @@ class Trigger < ApplicationRecord
   # the user can add more recipients themselves
   belongs_to :contact
   has_many :keywords
+  belongs_to :template
 end
