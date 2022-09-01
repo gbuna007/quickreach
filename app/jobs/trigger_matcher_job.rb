@@ -20,15 +20,19 @@ class TriggerMatcherJob < ApplicationJob
             draft.template = trigger.template
 
             body = draft.template.body
-            account_name = draft.trigger.account.name
-            contact_fn = draft.trigger.contact.first_name
+            draft.edited_body = body
+            subject = draft.template.subject
+            draft.edited_subject = subject
 
-            # body.gsub!("<<account_name>>", draft.trigger.account.name)
-            # body.gsub!("<<contact_fn>>", draft.trigger.contact.first_name)
+            var = {
+              account_name: draft.trigger.account.name,
+              contact_fn: draft.trigger.contact.first_name
+            }
 
-            draft.template.update(body: body.gsub!("<<account_name>>", draft.trigger.account.name))
-
-            draft.template.update(body: body.gsub!("<<contact_fn>>", draft.trigger.contact.first_name))
+            var.each do |k, v|
+              draft.edited_body.gsub!("<<#{k}>>", v)
+              draft.edited_subject.gsub!("<<#{k}>>", v)
+            end
 
             draft.save!
           end

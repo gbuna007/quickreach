@@ -4,6 +4,8 @@ class CreateDrafts < ActiveRecord::Migration[7.0]
       t.references :trigger, null: false, foreign_key: true
       t.references :template, null: false, foreign_key: true
       t.boolean :sent, default: false
+      t.string :edited_subject
+      t.string :edited_body
 
       t.timestamps
     end
