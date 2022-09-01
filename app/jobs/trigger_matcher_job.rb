@@ -11,16 +11,13 @@ class TriggerMatcherJob < ApplicationJob
 
         # bn.values.flatten.join(" ") = "this is a placeholder title straitstimes.com grab gojek drivers earnings acquisition Bunardi   this is a placeholder content grab ride-hailing  drivers angry valuation drop overvalued 2022-08-30  "
         triggers.each do |trigger|
-          result = trigger.keywords.any? do |tkw|
+          result = trigger.keywords.all? do |tkw|
             bn.values.flatten.join(" ").include?(tkw["name"])
-          end
-          binding.pry
+          end # result will be true or false.
+
+          # if true, notify user
+          # if true, create draft
         end
-
-
-        # if true, notify user
-        # if true, create draft
-
       end
     end
   end
