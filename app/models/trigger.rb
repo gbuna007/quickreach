@@ -6,8 +6,5 @@ class Trigger < ApplicationRecord
   # the user can add more recipients themselves
   belongs_to :contact
   has_many :keywords
-
-  def split_keywords
-    keywords.join(', ')
-  end
+  # accepts_nested_attributes_for :keywords
 end

@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" data-controller="keywords-for-trigger">
   <%= simple_form_for(trigger) do |f| %>
 
     <div class="d-flex col-12">
@@ -7,19 +7,22 @@
     </div>
 
     <div class="col-12 p-2">
-      <div>
-        <input type="text" class="form-control">
+    <%= f.simple_fields_for :keywords do |k| %>
+      <div class="">
+        <%= k.input :name, class:"col-10", placeholder: "Enter a Keyword" %>
+        <%= k.button :submit, class: "btn", data: { action: "submit->keywords-for-trigger#addKeys" } %>
       </div>
+    <% end %>
 
-      <div class="d-flex mt-3 align-items-center">
-        <span class="keyword bg-secondary text-white text-xs p-2 rounded-pill me-2">Keyword <i class="fa fa-times"></i></span>
-        <span class="keyword bg-secondary text-white text-xs p-2 rounded-pill me-2">Keyword <i class="fa fa-times"></i></span>
-        <span class="keyword bg-secondary text-white text-xs p-2 rounded-pill me-2">Keyword <i class="fa fa-times"></i></span>
+      <div class="d-flex mt-3 align-items-center" data-keywords-for-trigger-target ="pillDisplay">
+        <span class="keyword bg-dark-blu text-dy text-xs p-2 rounded-pill me-2">Keyword <i class="fa fa-times"></i></span>
+        <span class="keyword bg-dark-blu text-dy text-xs p-2 rounded-pill me-2">Keyword <i class="fa fa-times"></i></span>
+        <span class="keyword bg-dark-blu text-dy text-xs p-2 rounded-pill me-2">Keyword <i class="fa fa-times"></i></span>
       </div>
     </div>
 
     <div class="p-2">
-      <%= f.button :submit, html: { class: "" } %>
+      <%= f.button :submit, input_html: { class: "" } %>
     </div>
   <% end %>
 </div>

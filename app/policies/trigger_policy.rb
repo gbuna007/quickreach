@@ -7,6 +7,10 @@ class TriggerPolicy < ApplicationPolicy
   end
 
   def index?
-    record.first.user = user
+    record.user = user
+  end
+
+  def create?
+
   end
 end

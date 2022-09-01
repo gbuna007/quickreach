@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import KeywordsForTriggerController from "./keywords_for_trigger_controller"
+application.register("keywords-for-trigger", KeywordsForTriggerController)

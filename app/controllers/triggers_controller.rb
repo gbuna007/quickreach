@@ -10,6 +10,7 @@ class TriggersController < ApplicationController
 
   def create
     @trigger = Trigger.new(trigger_params)
+    authorize @trigger
     # set trigger.account and trigger.contact?
     if @trigger.save
       redirect_to triggers_path
