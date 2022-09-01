@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_31_141003) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_01_093915) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,9 +37,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_141003) do
     t.index ["account_id"], name: "index_contacts_on_account_id"
   end
 
+  create_table "drafts", force: :cascade do |t|
+    t.bigint "trigger_id", null: false
+    t.bigint "template_id", null: false
+    t.boolean "sent", default: false
+    t.string "edited_subject"
+    t.string "edited_body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["template_id"], name: "index_drafts_on_template_id"
+    t.index ["trigger_id"], name: "index_drafts_on_trigger_id"
+  end
+
   create_table "keywords", force: :cascade do |t|
     t.string "name"
-    t.bigint "trigger_id", null: false
+    t.bigint "trigger_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["trigger_id"], name: "index_keywords_on_trigger_id"
@@ -61,10 +73,32 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_141003) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.string "recipient_type", null: false
+    t.bigint "recipient_id", null: false
+    t.string "type", null: false
+    t.jsonb "params"
+    t.datetime "read_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["read_at"], name: "index_notifications_on_read_at"
+    t.index ["recipient_type", "recipient_id"], name: "index_notifications_on_recipient"
+  end
+
   create_table "old_news", force: :cascade do |t|
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "templates", force: :cascade do |t|
+    t.string "name"
+    t.string "subject"
+    t.text "body"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_templates_on_user_id"
   end
 
   create_table "triggers", force: :cascade do |t|
@@ -74,8 +108,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_141003) do
     t.bigint "contact_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "template_id"
     t.index ["account_id"], name: "index_triggers_on_account_id"
     t.index ["contact_id"], name: "index_triggers_on_contact_id"
+    t.index ["template_id"], name: "index_triggers_on_template_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -94,7 +130,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_141003) do
 
   add_foreign_key "accounts", "users"
   add_foreign_key "contacts", "accounts"
+  add_foreign_key "drafts", "templates"
+  add_foreign_key "drafts", "triggers"
   add_foreign_key "keywords", "triggers"
+  add_foreign_key "templates", "users"
   add_foreign_key "triggers", "accounts"
   add_foreign_key "triggers", "contacts"
+  add_foreign_key "triggers", "templates"
 end
