@@ -108,3 +108,6 @@ google = OldNews.create(link: "google.com")
 template_grab = Template.new(name: "Grab Challenger Sell", body: "This is a placeholder text\r\nChecking if we will be able to interpolate this following {account.first_name}", subject: "Testing template")
 template_grab.user = user1
 template_grab.save!
+
+trigger_grab1.template = template_grab
+trigger_grab1.save!
