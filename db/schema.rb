@@ -40,7 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_061659) do
   create_table "drafts", force: :cascade do |t|
     t.bigint "trigger_id", null: false
     t.bigint "template_id", null: false
-    t.boolean "sent"
+    t.boolean "sent", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["template_id"], name: "index_drafts_on_template_id"

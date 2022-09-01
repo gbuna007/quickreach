@@ -5,4 +5,8 @@ class DraftPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+
+  def edit?
+    record.template.user == user
+  end
 end

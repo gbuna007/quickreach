@@ -8,5 +8,6 @@ class DraftsController < ApplicationController
 
   def set_draft
     @draft = Draft.find(params[:id])
+    authorize @draft
   end
 end
