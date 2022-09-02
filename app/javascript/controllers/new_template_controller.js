@@ -23,7 +23,7 @@ export default class extends Controller {
       headers: { "Accept": "application/json"  },
       body: new FormData(this.submitTarget)
     })
-      .then(response => response.text())
+      .then(response => response.json())
       .then((data) => {
         if (data.inserted_item) {
           console.log(this.rowsTarget)

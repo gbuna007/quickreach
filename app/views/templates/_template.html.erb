@@ -1,0 +1,14 @@
+<div class="info shadow-sm">
+  <p><%= template.updated_at.strftime("%D") %></p>
+  <div class="info-content col-3">
+    <%= template.name %>
+  </div>
+  <div class="info-content col-3">
+    <%= template.body.scan(/<<(.+?)>>/).flatten.join(", ") %>
+  </div>
+
+  <div class="info-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+</div>

@@ -13,4 +13,5 @@ class TemplatePolicy < ApplicationPolicy
   def create?
     true
   end
+
 end
