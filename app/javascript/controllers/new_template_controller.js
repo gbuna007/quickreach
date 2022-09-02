@@ -26,9 +26,9 @@ export default class extends Controller {
       .then(response => response.json())
       .then((data) => {
         if (data.inserted_item) {
-          console.log(this.rowsTarget)
+          this.rowsTarget.insertAdjacentHTML("beforeend", data.inserted_item)
         }
-        this.submitTarget.outerHTML = data.submit
+        this.submitTarget.outerHTML = data.form
       })
   }
 }
