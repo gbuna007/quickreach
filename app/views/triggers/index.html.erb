@@ -16,10 +16,9 @@
     <div class="trigger-form">
       <%= render "form", trigger: @trigger %>
     </div>
-    <%# <%= render 'trigger_rows', triggers: @triggers %>
     <% @triggers.each do |trigger| %>
       <div class="info">
-        <%= trigger.updated_at.strftime("%d/%m/%Y") %>
+        <%= trigger.updated_at.strftime("%D") %>
         <div class="info-content col-3">
           <%= trigger.name %>
         </div>

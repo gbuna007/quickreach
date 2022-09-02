@@ -15,18 +15,17 @@
     <div class="col-12 p-2">
     <%= f.simple_fields_for :keywords, data: {keywords_for_trigger_target: "form", action: "submit->keywords-for-trigger#addKeys" } do |k| %>
       <div class="">
-        <%= k.input :name, label: false, class:"col-10", placeholder: "Enter a Keyword" %>
+        <%= k.input :name, label: false, class: "col-10", placeholder: "Enter a Keyword" %>
         <%= k.button :submit, class: "btn" %>
       </div>
     <% end %>
 
-      <div class="d-flex mt-3 align-items-center" data-keywords-for-trigger-target ="pillDisplay">
 
+      <div class="d-flex mt-3 align-items-center" data-keywords-for-trigger-target ="pillDisplay">
         <label for="key1">
           <span class="keyword bg-dark-blu text-dy text-xs p-2 rounded-pill me-2">Keyword <i class="fa fa-times"></i></span>
         </label>
         <input type="checkbox" name="key1" id="key1">
-
 
         <span class="keyword bg-dark-blu text-dy text-xs p-2 rounded-pill me-2">Keyword <i class="fa fa-times"></i></span>
 
