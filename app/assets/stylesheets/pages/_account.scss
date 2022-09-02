@@ -1,11 +1,11 @@
 // where does the blue text color come from? config/colors.scss?
 
-.container-color {
-  background-color: #E8AA42;
-
+.account-container {
+  border: solid 1px #1F4690;
 }
 
-.card-color {
+.stats-card {
+  border: solid 1px #1F4690;
   background-color: #FFE5B4;
 }
 
@@ -13,16 +13,16 @@
   border-bottom: solid 1px #1F4690;
 }
 
-.circle {
-  border: 1px solid;
-  border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  padding: 10px;
-  background-color: #1F4690;
-  color: white;
-
+.num-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 34px;
+  height: 34px;
+  border: 1px solid;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: #1F4690;
+  color: white;
 }
