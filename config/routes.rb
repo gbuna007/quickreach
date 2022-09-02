@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, except: %i[new after_sign_up_path_for after_sign_in_path_for]
+  # if a user signs up, take them to the CRM page
+  # if a user logs in, take them to account dashboard
+  # if a user logs out, take them to the landing page
+  devise_for :users, controllers: { registrations: "registrations" }
 
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do
@@ -11,10 +14,6 @@ Rails.application.routes.draw do
       get '/news', to: 'news#index'
     end
   end
-
-  # if a user signs up, take them to the CRM page
-  # if a user logs in to an existing account, take them to account dashboard
-  devise_for :users, controllers: { registrations: 'users/registrations' }, only: %i[new]
 
   root to: "pages#home" # landing page
   resources :pages, only: %i[index] # CRM page
