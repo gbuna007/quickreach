@@ -117,3 +117,6 @@ keyword8.save!
 # draft
 
 draft1 = Draft.new(edited_body: "Hello Greg!\r\nThis is a placeholder text\r\nChecking if we will be able to interpolate this following Grab", edited_subject: "Testing template")
+draft1.trigger = Trigger.first
+draft1.template = Template.first
+draft1.save!
