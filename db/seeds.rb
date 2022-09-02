@@ -56,7 +56,6 @@ trigger_grab2.name = "Grab positive news draft"
 trigger_grab2.account = grab
 trigger_grab2.contact = grab_manager
 
-
 #news
 news1 = News.create(title: "this is a placeholder title", link: "straitstimes.com", keywords: ["grab", "gojek", "drivers", "earnings", "acquisition"], creator: "Bunardi", pubDate: Date.today - 1.day, content: "this is a placeholder content grab ride-hailing  drivers angry valuation drop overvalued market value loss cuts")
 
