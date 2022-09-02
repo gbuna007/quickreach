@@ -1,4 +1,4 @@
-class TriggerPolicy < ApplicationPolicy
+class TemplatePolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
@@ -6,15 +6,12 @@ class TriggerPolicy < ApplicationPolicy
     end
   end
 
-  def index?
-    record.first.user = user
+  def new?
+    true
   end
 
   def create?
     true
   end
 
-  def update?
-    record.user == user
-  end
 end

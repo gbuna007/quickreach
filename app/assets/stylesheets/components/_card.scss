@@ -9,19 +9,35 @@
   min-height: 100%;
   width: 2%;
   padding: 2%;
-  background-color: rgba($color: #df4646, $alpha: 1.0);
+  background-color: rgba($color: #cb1a1a, $alpha: 1);
   border-radius: 2px 0 0 2px;
 }
 
 .account-card-content {
   width: 98%;
-  background-color: #FFE5B4;
+  background-color: rgba($color: #1F4690, $alpha: 1);
+}
+
+.card{
+  display: flex;
+  flex-direction: row;
+  border: none;
+  box-shadow: 0px 0px 1px 1px rgba($color: #231955, $alpha: 0.2);
+}
+
+.theme-text{
+  color: #FFE5B4;
+  text-decoration: none;
+  &:hover{
+    color: #E8AA42;
+    background-color: #FFE5B4;
+  }
 }
 
 .account-card-text {
   text-decoration: none;
-  color: #1F4690;
+  color: #FFE5B4;
   &:hover {
-    color: #1F4690;
+    color: #E8AA42;
   }
 }

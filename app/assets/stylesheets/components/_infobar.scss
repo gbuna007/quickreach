@@ -2,9 +2,11 @@
   display: flex;
   align-items: center;
   margin-bottom: 8px;
-  background: white;
+  background-color: rgba($color: #1F4690, $alpha: 1.0);
+  color: #FFE5B4;
+  text-shadow: 0px 0px 1px rgba($color: #231955, $alpha: 1.0);
   padding: 8px 16px;
-  border: 1px solid rgb(235,235,235);
+  // border: 1px solid rgb(235,235,235);
 }
 
 .info .info-content {
@@ -18,25 +20,26 @@
 }
 
 .info small {
-  color: #999999;
+  color: #E8AA42;
   font-weight: bold;
 }
 .info .info-actions {
-  opacity: 0;
+  opacity: 0.7;
   display: flex;
   transition: ease .3s;
 }
 
 .info:hover .info-actions {
+  font-style: italic;
   opacity: 1;
 }
 
 .info .info-actions a {
-  color: #999999;
+  color: #FFE5B4;
   margin-left: 16px;
   font-size: 14px;
 }
 
 .info .info-actions a:hover {
-  color: #555555;
+  color: #E8AA42;
 }
