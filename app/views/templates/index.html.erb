@@ -1,2 +1,40 @@
-<h1>Templates#index</h1>
-<p>Find me in app/views/templates/index.html.erb</p>
+<div class="wrapperbody">
+  <%= render "shared/sidebar" %>
+  <div class="main-content ms-3">
+
+    <div class ="navbar mx-5 my-1">
+      <div><h1>Templates</h1></div>
+    </div>
+
+    <div class="trigger-labels">
+      <p>Date Added</p>
+      <p class="col-2 flex-grow-1">Template Name</p>
+      <p class="col-6">Variables</p>
+    </div>
+    <div class="new-template border border-success d-flex justify-content-center">
+      <p class="align-self-center">new template</p>
+    </div>
+
+    <% @templates.each do |template| %>
+      <div class="info">
+        <p><%= template.updated_at.strftime("%D") %></p>
+        <div class="info-content col-3">
+          <%= template.name %>
+        </div>
+        <div class="info-content col-3">
+          <%= template.body.scan(/<<(.+?)>>/).flatten.join(", ") %>
+        </div>
+
+        <%# <div class="info-content col-3">
+          <% trigger.keywords.each do |keyword| %>
+            <%# <%= keyword.name %>
+          <%# <% end %>
+
+        <div class="info-actions">
+          <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+          <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

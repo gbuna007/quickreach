@@ -13,6 +13,8 @@ class TriggerMatcherJob < ApplicationJob
             bn.values.flatten.join(" ").include?(tkw["name"])
           end # result will be true or false.
           # if true, notify user
+
+
           # if true, create draft
           if result
             draft = Draft.new
