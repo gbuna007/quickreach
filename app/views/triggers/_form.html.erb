@@ -6,7 +6,8 @@
     </div>
     <div class="d-flex col-12">
       <div class="p-2 col-6"><%= f.association :account, prompt:"Choose a company" %></div>
-      <div class="p-2 col-6"><%= f.association :contact, prompt:"Choose the email recipient" %></div>
+      <% label_method = proc { |p| "#{p.first_name} #{p.last_name} - #{p.title}" } %>
+      <div class="p-2 col-6"><%= f.association :contact, label_method: label_method, prompt:"Choose the email recipient" %></div>
     </div>
     <div class="d-flex col-12">
       <div class="p-2 col-12"><%= f.association :template, prompt:"Choose the email template" %></div>
