@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+  <div>
+    <h1>Connect QuickReach to Salesforce</h1>
+
+    <div class="p-3">
+      <!-- username & password -->
+      <form action="#">
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input class="form-control" placeholder="susandoe937">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input class="form-control" placeholder="******">
+        </div>
+      </form>
+
+      <!-- consent checkbox -->
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          I authorize QuickReach to access my Salesforce account and CRM
+        </label>
+      </div>
+
+      <%= link_to 'Login', accounts_path, class: "qt-btn" %>
+    </div>
+  </div>
+</div>

@@ -1,40 +1,41 @@
 <div class="wrapperbody">
   <%= render "shared/sidebar" %>
 
-  <div class="container-color main-content rounded-3 p-3">
+  <div class="account-container main-content rounded-3 p-3">
     <h1 class="ps-3"><%= @account.name %></h1>
 
-    <div class="ps-3 row d-flex-inline">
+    <div class="row d-flex-inline ps-3">
       <!-- COLUMN 1 -->
       <div class="col-5">
-        <!-- statistics -->
-        <div class="card-color p-3 pb-1 mb-3 rounded-3">
+        <!-- stats -->
+        <div class="stats-card mb-3 rounded-3 p-3 pb-1">
           <div class="d-flex justify-content-around align-items-center">
             <div>
               <div class="d-flex align-items-center">
-                <p class="circle me-2"><%= @account.triggers.count %></p>
+                <p class="num-icon me-2"><%= @account.triggers.count %></p>
                 <p>Active Triggers</p>
               </div>
               <div class="d-flex align-items-center">
-                <p class="circle me-2"><%= @account.triggers.count %></p>
+                <p class="num-icon me-2"><%= @account.triggers.count %></p>
                 <p>Active Drafts</p>
               </div>
             </div>
             <div>
               <div class="d-flex align-items-center">
-                <p class="circle me-2"><%= @account.triggers.count %></p>
+                <p class="num-icon me-2"><%= @account.triggers.count %></p>
                 <p>Active Templates</p>
               </div>
               <div class="d-flex align-items-center">
-                <p class="circle me-2"><%= @account.triggers.count %></p>
+                <p class="num-icon me-2"><%= @account.triggers.count %></p>
                 <p>QuickReaches</p>
               </div>
             </div>
           </div>
         </div>
+        <!-- end of stats -->
 
         <!-- details -->
-        <div class="card-color p-3 pb-1 mb-3 rounded-3">
+        <div class="card-color mb-3 rounded-3 p-3 pb-1">
           <div class="header-border mb-2">
             <h5><strong>Account Details</strong></h5>
           </div>
@@ -43,9 +44,10 @@
           <p><strong>Potential Revenue:</strong> SGD $<%= @account.potential_rev %></p>
           <p><strong>Amount Spent:</strong> SGD $<%= @account.amount_spent %></p>
         </div>
+        <!-- end of details -->
 
         <!-- contacts -->
-        <div class="card-color p-3 rounded-3">
+        <div class="card-color rounded-3 p-3">
           <div class="header-border mb-2">
             <h5><strong>Contacts</strong></h5>
           </div>
@@ -53,21 +55,27 @@
             <p class="m-0"><%= contact.first_name %> <%= contact.last_name %> - <em><%= contact.title %></em></p>
           <% end %>
         </div>
+        <!-- end of contacts -->
       </div>
+      <!-- end of column 1 -->
 
       <!-- COLUMN 2-->
       <div class="col-6 ms-3">
-        <!-- most recent news article -->
-        <div class="card-color p-3 mb-3 rounded-3">
-          <p>Show most recent news article?</p>
+        <!-- account's drafts -->
+        <div class="card-color rounded-3 p-3">
+          <h5 class="header-border pb-2"><strong><%= @account.name %> Drafts</strong></h5>
         </div>
 
-        <!-- history of QuickReaches -->
-        <div class="card-color p-3 rounded-3">
-          <p>History of QuickReaches</p>
+        <div class="trigger-labels">
+          <p>Date Added</p>
+          <!-- insert draft name here (just use template's name)-->
+          <p class="col-3">Event</p>
+          <p class="col-3">Template</p>
         </div>
+
+        <!-- insert draft records here -->
       </div>
-
+      <!-- end of column 2 -->
     </div>
   </div>
 </div>
