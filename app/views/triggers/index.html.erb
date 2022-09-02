@@ -6,14 +6,17 @@
       <div><h1>Triggers</h1></div>
     </div>
 
-    <div class="trigger-labels">
-      <p>Date Added/<br>Updated</p>
+    <div class="trigger-labels fw-bold">
+      <p>Date</p>
       <p class="col-3">Trigger Name</p>
       <p class="col-3">Account</p>
       <p class="col-3">Keywords</p>
       <p>Template</p>
     </div>
-
+    <div class="trigger-form">
+      <%= render "form", trigger: @trigger %>
+    </div>
+    <%# <%= render 'trigger_rows', triggers: @triggers %>
     <% @triggers.each do |trigger| %>
       <div class="info">
         <%= trigger.updated_at.strftime("%d/%m/%Y") %>
@@ -37,6 +40,6 @@
       </div>
     <% end %>
     <hr>
-    <%= render "form", trigger: @trigger %>
+
   </div>
 </div>

@@ -5,6 +5,9 @@ class DraftsController < ApplicationController
     authorize @draft
   end
 
+  def index
+  end
+
   private
 
   def set_draft

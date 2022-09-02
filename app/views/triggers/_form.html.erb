@@ -2,22 +2,35 @@
   <%= simple_form_for(trigger) do |f| %>
 
     <div class="d-flex col-12">
-      <div class="p-2 col-6"><%= f.input :name, label: "Trigger Name" %></div>
-      <div class="p-2 col-6"><%= f.association :account, prompt:"Choose a company" %></div>
+      <div class="p-2 col-12"><%= f.input :name, label: "Trigger Name" %></div>
     </div>
-
+    <div class="d-flex col-12">
+      <div class="p-2 col-6"><%= f.association :account, prompt:"Choose a company" %></div>
+      <div class="p-2 col-6"><%= f.association :contact, prompt:"Choose the email recipient" %></div>
+    </div>
+    <div class="d-flex col-12">
+      <div class="p-2 col-12"><%= f.association :template, prompt:"Choose the email template" %></div>
+    </div>
     <div class="col-12 p-2">
     <%= f.simple_fields_for :keywords, data: {keywords_for_trigger_target: "form", action: "submit->keywords-for-trigger#addKeys" } do |k| %>
       <div class="">
-        <%= k.input :name, class:"col-10", placeholder: "Enter a Keyword" %>
+        <%= k.input :name, label: false, class:"col-10", placeholder: "Enter a Keyword" %>
         <%= k.button :submit, class: "btn" %>
       </div>
     <% end %>
 
       <div class="d-flex mt-3 align-items-center" data-keywords-for-trigger-target ="pillDisplay">
+
+        <label for="key1">
+          <span class="keyword bg-dark-blu text-dy text-xs p-2 rounded-pill me-2">Keyword <i class="fa fa-times"></i></span>
+        </label>
+        <input type="checkbox" name="key1" id="key1">
+
+
         <span class="keyword bg-dark-blu text-dy text-xs p-2 rounded-pill me-2">Keyword <i class="fa fa-times"></i></span>
+
         <span class="keyword bg-dark-blu text-dy text-xs p-2 rounded-pill me-2">Keyword <i class="fa fa-times"></i></span>
-        <span class="keyword bg-dark-blu text-dy text-xs p-2 rounded-pill me-2">Keyword <i class="fa fa-times"></i></span>
+
       </div>
     </div>
 
