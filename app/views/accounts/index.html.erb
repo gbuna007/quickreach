@@ -2,7 +2,7 @@
   <%= render "shared/sidebar" %>
   <div class="main-content ms-3">
 
-    <div class ="navbar mx-5 my-1">
+    <div class ="navbar">
       <div><h1>Accounts</h1></div>
       <div>Search bar</div>
     </div>
@@ -10,27 +10,25 @@
     <!-- grid for cards -->
     <div class="row">
       <% @accounts.each do |account| %>
-        <%= link_to account_path(account.id), class:"col-3 p-0 m-0 theme-text" do %>
+        <%= link_to account_path(account.id), class:"col-3 p-0 m-0 account-card-text" do %>
           <!-- card container -->
-          <div class="card p-0 m-2">
+          <div class="account-card p-0 m-2">
             <!-- card status -->
-            <div class="stripe">
+            <div class="account-card-stripe">
             </div>
 
-            <div class="card-main-content">
+            <div class="account-card-content">
               <!-- top section -->
               <div class="d-flex justify-content-center">
                 <!-- company name -->
                 <div class="m-2"><h4><strong><%= account.name %></strong></h4></div>
               </div>
 
-              <div class="card-body">
+              <div class="card-body ps-3">
                 <!-- textfield -->
-                <div class = "card-text">
-                  <p><strong>Account Status:</strong></p>
-                  <p><%= account.status %></p>
-                  <p><strong>Potential Revenue:</strong></p>
-                  <p>$<%= account.potential_rev %> </p>
+                <div class = "account-card-text">
+                  <p><strong>Account Status:</strong> <%= account.status %></p>
+                  <p><strong>Potential Revenue:</strong> $<%= account.potential_rev %></p>
                   <!-- end of text field -->
                 </div>
               </div>

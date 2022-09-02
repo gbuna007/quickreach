@@ -1,0 +1,11 @@
+.qt-btn {
+  text-decoration: none;
+  border: solid 1px #1F4690;
+  color: #1F4690;
+  width: 100px;
+  padding: 8px 40px 8px 40px;
+  &:hover {
+    background-color: #1F4690;
+    color: #FFE5B4;
+  }
+}

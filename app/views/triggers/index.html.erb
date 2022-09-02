@@ -4,11 +4,10 @@
 
     <div class ="navbar mx-5 my-1">
       <div><h1>Triggers</h1></div>
-      <div>Modal Btn</div>
     </div>
 
     <div class="trigger-labels">
-      <p>Date Added</p>
+      <p>Date Added/<br>Updated</p>
       <p class="col-3">Trigger Name</p>
       <p class="col-3">Account</p>
       <p class="col-3">Keywords</p>
@@ -17,7 +16,7 @@
 
     <% @triggers.each do |trigger| %>
       <div class="info">
-        <p>14th January</p>
+        <%= trigger.updated_at.strftime("%d/%m/%Y") %>
         <div class="info-content col-3">
           <%= trigger.name %>
         </div>
@@ -37,5 +36,7 @@
         </div>
       </div>
     <% end %>
+    <hr>
+    <%= render "form", trigger: @trigger %>
   </div>
 </div>

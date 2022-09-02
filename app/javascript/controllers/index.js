@@ -9,3 +9,5 @@ application.register("hello", HelloController)
 
 import NewTemplateController from "./new_template_controller"
 application.register("new-template", NewTemplateController)
+import KeywordsForTriggerController from "./keywords_for_trigger_controller"
+application.register("keywords-for-trigger", KeywordsForTriggerController)
