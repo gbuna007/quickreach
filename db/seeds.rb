@@ -113,3 +113,7 @@ keyword7.save!
 keyword8 = Keyword.new(name: "delivery")
 keyword8.trigger = trigger_grab2
 keyword8.save!
+
+# draft
+
+draft1 = Draft.new(edited_body: "Hello Greg!\r\nThis is a placeholder text\r\nChecking if we will be able to interpolate this following Grab", edited_subject: "Testing template")
