@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_093915) do
     t.string "category"
     t.string "status"
     t.float "potential_rev"
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "amount_spent"
