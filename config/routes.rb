@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   resources :accounts, only: %i[index show]
 
-  resources :templates, only: %i[index]
+  resources :templates, only: %i[index create]
 
   resources :triggers, only: %i[index create update destroy]
 

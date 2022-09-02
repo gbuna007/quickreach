@@ -12,34 +12,18 @@
       <p class="col-6">Variables</p>
     </div>
 
-    <div class="new-template border border-success d-flex justify-content-center mb-3" >
-      <p class="align-self-center" data-action="click->new-template#revealForm">New template</p>
+    <div class="new-template border border-primary d-flex justify-content-center mb-3 rounded" >
+      <p class="align-self-center fw-bold my-2" data-action="click->new-template#revealForm">New template</p>
     </div>
     <div class="template-form d-none" data-new-template-target="form">
-        <%= simple_form_for(@template) do |f| %>
+        <%= simple_form_for(@template, html: { class: "mb-3"}, data: {new_template_target: "submit",
+        action: "submit->new-template#create"}) do |f| %>
           <%= f.input :name %>
           <%= f.input :subject %>
           <%= f.input :body %>
           <%= f.submit %>
         <% end %>
     </div>
-    <div class="existing-templates" data-new-template-target="rows"></div>
-      <% @templates.each do |template| %>
-        <div class="info shadow-sm">
-          <p><%= template.updated_at.strftime("%D") %></p>
-          <div class="info-content col-3">
-            <%= template.name %>
-          </div>
-          <div class="info-content col-3">
-            <%= template.body.scan(/<<(.+?)>>/).flatten.join(", ") %>
-          </div>
-
-          <div class="info-actions">
-            <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-            <a href="#">Delete <i class="far fa-trash-alt"></i></a>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <%= render 'template_rows', templates: @templates %>
   </div>
 </div>
