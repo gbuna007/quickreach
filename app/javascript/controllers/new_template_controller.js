@@ -15,17 +15,20 @@ export default class extends Controller {
 
   // a request will be sent to create the template once user submits the form
   create(event) {
-    console.log("AJAX Request");
     event.preventDefault();
+    this.formTarget.classList.toggle("d-none")
     const url = this.submitTarget.action
     fetch(url, {
       method: "POST",
-      headers: { "Accept": "*/*" },
+      headers: { "Accept": "application/json"  },
       body: new FormData(this.submitTarget)
     })
       .then(response => response.text())
       .then((data) => {
-        console.log(data);
+        if (data.inserted_item) {
+          console.log(this.rowsTarget)
+        }
+        this.submitTarget.outerHTML = data.submit
       })
   }
 }

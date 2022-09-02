@@ -8,11 +8,15 @@ class TemplatesController < ApplicationController
     @template = Template.new(template_params)
     authorize @template
     @template.user = current_user
-    @template.save
 
     respond_to do |format|
-      format.html { redirect_to templates_path }
-      format.text { render partial: "templates/template_rows", locals: { templates: @templates }, formats: [:html] }
+      if @template.save
+        format.html { redirect_to templates_path }
+        format.json # Follow the classic Rails flow and look for a create.json view
+      else
+        format.html { render "templates/index", status: :unprocessable_entity }
+        format.json # Follow the classic Rails flow and look for a create.json view
+      end
     end
   end
 
