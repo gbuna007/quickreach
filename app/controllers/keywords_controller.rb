@@ -4,9 +4,9 @@ class KeywordsController < ApplicationController
     authorize @keyword
 
     @keyword.save
-    respond_to do |format|
-      format.json
-    end
+    # respond_to do |format|
+    #   format.json
+    # end
   end
 
   private

@@ -4,6 +4,7 @@ class TriggersController < ApplicationController
     @triggers = Trigger.all
 
     # new trigger for trigger form
+    @user = current_user
     @trigger = Trigger.new
     @keyword = Keyword.new
     # raise
@@ -11,13 +12,11 @@ class TriggersController < ApplicationController
 
   def create
     @trigger = Trigger.new(trigger_params)
-    @keyword = Keyword.new
-    @trigger.user = current_user
+    # @trigger.user = current_user
     authorize @trigger
     # set trigger.account and trigger.contact?
     if @trigger.save
       redirect_to triggers_path
-      raise
     else
       # render :new, status: :unprocessable_entity
     end

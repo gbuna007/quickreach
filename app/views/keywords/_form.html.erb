@@ -1,4 +1,7 @@
-<%= simple_form_for(keyword, data: { keywords_for_trigger_target: "formKeys", action: "submit->keywords-for-trigger#createKeys" }) do |f| %>
-  <%= f.input :name, label: false, placeholder: "Enter a keyword" %>
+<%= simple_form_for(keyword, data: {
+  keywords_for_trigger_target: "formkey",
+  action: "submit->keywords-for-trigger#createKey"
+  }) do |f| %>
+  <%= f.input :name, required: false, placeholder: "Enter a keyword" %>
   <%= f.submit %>
 <% end %>
