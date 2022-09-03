@@ -7,14 +7,7 @@
     </div>
 
     <div class="col-12 p-2">
-    <%= f.simple_fields_for :keywords, data: {keywords_for_trigger_target: "form", action: "submit->keywords-for-trigger#addKeys" } do |k| %>
-      <div class="">
-        <%= k.input :name, class:"col-10", placeholder: "Enter a Keyword" %>
-        <%= k.button :submit, class: "btn" %>
-      </div>
-    <% end %>
-
-      <div class="d-flex mt-3 align-items-center" data-keywords-for-trigger-target ="pillDisplay">
+      <div class="d-flex mt-3 align-items-center" data-keywords-for-trigger-target ="keyItems">
         <span class="keyword bg-dark-blu text-dy text-xs p-2 rounded-pill me-2">Keyword <i class="fa fa-times"></i></span>
         <span class="keyword bg-dark-blu text-dy text-xs p-2 rounded-pill me-2">Keyword <i class="fa fa-times"></i></span>
         <span class="keyword bg-dark-blu text-dy text-xs p-2 rounded-pill me-2">Keyword <i class="fa fa-times"></i></span>
@@ -25,4 +18,13 @@
       <%= f.button :submit, input_html: { class: "" } %>
     </div>
   <% end %>
+
+  <%= simple_form_for(keyword, data: {
+                              insert_in_list_target: 'form',
+                              action: 'submit->keywords-for-trigger-target#createKeyword'
+                              }) do |f| %>
+                                <%= f.input :name %>
+                                <%= f.submit %>
+                              <% end %>
+
 </div>
