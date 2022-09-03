@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :accounts
+  has_many :templates
   has_many :notifications, as: :recipient
 end
