@@ -4,16 +4,17 @@ class TriggerMatcherJob < ApplicationJob
   queue_as :default
 
   def perform
-    if BREAKING_NEWS.count > 0
+    breaking_news = News.where(breaking: true)
+    if breaking_news.count > 0
       triggers = Trigger.all
-      BREAKING_NEWS.each do |bn|
+      breaking_news.each do |bn|
         # check if any bn matches any of the triggers' keywords
+
         triggers.each do |trigger|
           result = trigger.keywords.all? do |tkw|
-            bn.values.flatten.join(" ").include?(tkw["name"])
+            bn.attributes.values.join(" ").include?(tkw["name"])
           end # result will be true or false.
           # if true, notify user
-
 
           # if true, create draft
           if result
@@ -28,7 +29,8 @@ class TriggerMatcherJob < ApplicationJob
 
             var = {
               account_name: draft.trigger.account.name,
-              contact_fn: draft.trigger.contact.first_name
+              contact_fn: draft.trigger.contact.first_name,
+              account_category: draft.trigger.account.category
             }
 
             var.each do |k, v|

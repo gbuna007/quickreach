@@ -1,4 +1,5 @@
 class TemplatesController < ApplicationController
+  skip_after_action :verify_authorized, only: :show
   def index
     @templates = policy_scope(Template)
     @template = Template.new
@@ -12,12 +13,15 @@ class TemplatesController < ApplicationController
     respond_to do |format|
       if @template.save
         format.html { redirect_to templates_path }
-        format.json # Follow the classic Rails flow and look for a create.json view
       else
         format.html { render "templates/index", status: :unprocessable_entity }
-        format.json # Follow the classic Rails flow and look for a create.json view
       end
+      format.json
     end
+  end
+
+  def show
+    redirect_to templates_path
   end
 
   private
