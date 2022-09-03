@@ -1,0 +1,12 @@
+<p>Hi <%= @recipient.email %>,</p>
+
+<p>You have 1 new draft ready as follows:</p>
+<p>Trigger ID: <%= @draft.trigger.id %></p>
+<p>Account Name: <%= @draft.trigger.account.name %></p>
+
+<p><%= link_to "Click here", "Notification.first.to_notification.url" %> to review and reach your client quickly!</p>
+
+<p>Cheers,</p>
+<p>QuickReach</p>
+
+<%# <%= Notification.first.to_notification.message %>

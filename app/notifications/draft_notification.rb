@@ -6,22 +6,16 @@
 class DraftNotification < Noticed::Base
   # Add your delivery methods
   #
-  # deliver_by :database
-  # deliver_by :email, mailer: "UserMailer"
-  # deliver_by :slack
-  # deliver_by :custom, class: "MyDeliveryMethod"
+  deliver_by :database
+  deliver_by :email, mailer: "DraftMailer"
 
-  # Add required params
-  #
-  # param :post
+  param :draft
 
-  # Define helper methods to make rendering easier.
-  #
-  # def message
-  #   t(".message")
-  # end
-  #
-  # def url
-  #   post_path(params[:post])
-  # end
+  def url
+    drafts_path
+  end
+
+  def message
+    t(".message")
+  end
 end

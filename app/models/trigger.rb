@@ -5,7 +5,11 @@ class Trigger < ApplicationRecord
   # bc we only create a draft for one recipient
   # the user can add more recipients themselves
   belongs_to :contact
+  belongs_to :template
+
   has_many :keywords
   # accepts_nested_attributes_for :keywords
-  belongs_to :template
+  has_many :drafts
+
+  validates :name, presence: true
 end

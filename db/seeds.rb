@@ -56,9 +56,6 @@ trigger_grab2.name = "Grab positive news draft"
 trigger_grab2.account = grab
 trigger_grab2.contact = grab_manager
 
-# old news seed
-google = OldNews.create(link: "google.com")
-
 # template seed for ANN
 template_grab = Template.new(name: "Grab Challenger Sell", body: "Hello <<contact_fn>>!\r\nThis is a placeholder text\r\nChecking if we will be able to interpolate this following <<account_name>>", subject: "Testing template")
 template_grab.user = user1
@@ -108,5 +105,4 @@ keyword8.save!
 
 draft1 = Draft.new(edited_body: "Hello Greg!\r\nThis is a placeholder text\r\nChecking if we will be able to interpolate this following Grab", edited_subject: "Testing template")
 draft1.trigger = Trigger.first
-draft1.template = Template.first
 draft1.save!
