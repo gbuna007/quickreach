@@ -15,6 +15,6 @@ class TriggerPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    true
   end
 end
