@@ -10,4 +10,6 @@ class Trigger < ApplicationRecord
   has_many :keywords
   # accepts_nested_attributes_for :keywords
   has_many :drafts
+
+  validates :name, presence: true
 end

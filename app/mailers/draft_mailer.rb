@@ -3,7 +3,7 @@ class DraftMailer < ApplicationMailer
   before_action { @draft = params[:draft]}
 
   default to:       -> { @recipient.email },
-          from:     -> { @recipeient.email }
+          from:     -> { "sag@quickreach.me" }
 
   def new_draft_ready
     # @user = User.first
