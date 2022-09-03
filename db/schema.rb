@@ -60,7 +60,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_093915) do
   create_table "news", force: :cascade do |t|
     t.string "title"
     t.string "link"
-    t.text "keywords", default: [], array: true
     t.string "creator"
     t.string "video_url"
     t.string "description"
@@ -69,6 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_093915) do
     t.string "image_url"
     t.string "source_id"
     t.string "full_description"
+    t.boolean "breaking", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
