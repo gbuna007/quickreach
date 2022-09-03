@@ -29,7 +29,8 @@ class TriggerMatcherJob < ApplicationJob
 
             var = {
               account_name: draft.trigger.account.name,
-              contact_fn: draft.trigger.contact.first_name
+              contact_fn: draft.trigger.contact.first_name,
+              account_category: draft.trigger.account.category
             }
 
             var.each do |k, v|

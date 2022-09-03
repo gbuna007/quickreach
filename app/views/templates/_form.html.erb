@@ -1,7 +1,18 @@
-<%= simple_form_for(template, html: { class: "mb-3"}, data: {new_template_target: "submit",
+<div class="row">
+  <div class="col-7">
+    <%= simple_form_for(template, html: { class: "mb-3"}, data: {new_template_target: "submit",
         action: "submit->new-template#create"}) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :subject %>
-  <%= f.input :body %>
-  <%= f.submit %>
-<% end %>
+      <%= f.input :name %>
+      <%= f.input :subject %>
+      <%= f.input :body %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <div class="col-5">
+    <p>Note on Variables:</p>
+    <p>In order for QuickReach to populate the right information, please use the following variables in your body:</p>
+    <p>account_name: draft.trigger.account.name</p>
+    <p>contact_fn: draft.trigger.contact.first_name</p>
+    <p>account_category: draft.trigger.account.category</p>
+  </div>
+</div>
