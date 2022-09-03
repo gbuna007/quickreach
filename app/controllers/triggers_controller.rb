@@ -5,13 +5,14 @@ class TriggersController < ApplicationController
 
     # new trigger for trigger form
     @trigger = Trigger.new
+    @keyword = Keyword.new
     # raise
   end
 
   def create
     @trigger = Trigger.new(trigger_params)
-    # @keyword = Keyword.new
-    # @trigger.user = current_user
+    @keyword = Keyword.new
+    @trigger.user = current_user
     authorize @trigger
     # set trigger.account and trigger.contact?
     if @trigger.save
@@ -48,7 +49,4 @@ class TriggersController < ApplicationController
     params.require(:trigger).permit(:date_added, :name, :account_id, :contact_id, :keywords, :template_id)
   end
 
-  def keyword_params
-    params.require(:keyword).permit(:name)
-  end
 end
