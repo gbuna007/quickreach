@@ -7,10 +7,15 @@ class DraftNotification < Noticed::Base
   # Add your delivery methods
   #
   deliver_by :database
-  deliver_by :email, mailer: "DraftMailer", if: :email_notifications?
+  deliver_by :email, mailer: "DraftMailer"
+
+  param :draft
 
   def url
-    # change this to the draft link
+    drafts_path
   end
 
+  def message
+    t(".message")
+  end
 end

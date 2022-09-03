@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  notifications:
+    draft_notification:
+      message: "You have a new draft"
