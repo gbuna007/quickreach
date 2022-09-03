@@ -14,7 +14,6 @@ class TriggerMatcherJob < ApplicationJob
           result = trigger.keywords.all? do |tkw|
             bn.attributes.values.join(" ").include?(tkw["name"])
           end # result will be true or false.
-          # if true, notify user
 
           # if true, create draft
           if result
@@ -40,6 +39,10 @@ class TriggerMatcherJob < ApplicationJob
 
             draft.save!
           end
+
+           # if true, notify user
+          #  notification = DraftNotification.with(draft: @draft)
+          # notification.deliver_later(@draft.trigger.account.user)
         end
       end
     end
