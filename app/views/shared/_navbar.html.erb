@@ -16,9 +16,9 @@
           <li class="nav-item dropdown">
             <%= cl_image_tag "v1661742874/development/avatarstock.jpg", width: 40, height: 40, crop: "fill", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Reintegrate CRM", salesforce_path, class: "dropdown-item" %>
-              <%= link_to "Create a Template", templates_path, class: "dropdown-item" %>
-              <%= link_to "Create a Trigger", triggers_path, class: "dropdown-item" %>
+              <%= link_to "Reintegrate CRM", salesforce_path, class: "dropdown-item border-bottom" %>
+              <%= link_to "Dashboard", accounts_path, class: "dropdown-item border-bottom" %>
+              <%= link_to "Manage Account", edit_user_registration_path, class: "dropdown-item border-bottom" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
