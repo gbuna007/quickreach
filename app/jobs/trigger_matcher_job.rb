@@ -20,6 +20,7 @@ class TriggerMatcherJob < ApplicationJob
             draft = Draft.new
             draft.trigger = trigger
             draft.template = trigger.template
+            user = draft.trigger.account.user
 
             body = draft.template.body
             draft.edited_body = body
@@ -38,11 +39,9 @@ class TriggerMatcherJob < ApplicationJob
             end
 
             draft.save!
-          end
 
-           # if true, notify user
-          #  notification = DraftNotification.with(draft: @draft)
-          # notification.deliver_later(@draft.trigger.account.user)
+            DraftNotification.with(draft:).deliver_later(user)
+          end
         end
       end
     end
