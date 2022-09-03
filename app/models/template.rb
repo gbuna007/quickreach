@@ -1,4 +1,4 @@
 class Template < ApplicationRecord
   belongs_to :user
-  has_many :drafts
+  has_many :triggers
 end
