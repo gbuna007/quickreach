@@ -98,9 +98,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_093915) do
     t.string "name"
     t.bigint "account_id", null: false
     t.bigint "contact_id", null: false
+    t.bigint "template_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "template_id"
     t.index ["account_id"], name: "index_triggers_on_account_id"
     t.index ["contact_id"], name: "index_triggers_on_contact_id"
     t.index ["template_id"], name: "index_triggers_on_template_id"
