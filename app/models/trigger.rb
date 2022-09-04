@@ -8,7 +8,8 @@ class Trigger < ApplicationRecord
   belongs_to :template
 
   has_many :keywords
-  # accepts_nested_attributes_for :keywords
+  accepts_nested_attributes_for :keywords, reject_if: :all_blank, allow_destroy: true
+
   has_many :drafts
 
   validates :name, presence: true

@@ -6,7 +6,7 @@ class TriggersController < ApplicationController
     # new trigger for trigger form
     @user = current_user
     @trigger = Trigger.new
-    @keyword = Keyword.new
+    @trigger.keywords.build
     # raise
   end
 
@@ -14,13 +14,26 @@ class TriggersController < ApplicationController
     @trigger = Trigger.new(trigger_params)
     # @trigger.user = current_user
     authorize @trigger
+    raise
     # set trigger.account and trigger.contact?
-    if @trigger.save
-      redirect_to triggers_path
-    else
-      # render :new, status: :unprocessable_entity
+    # if @trigger.save
+    #   redirect_to triggers_path
+    # else
+    #   # render :new, status: :unprocessable_entity
+    # end
+    # respond_to do |format|
+    #   if params[:add_keyword]
+    #     @trigger.keywords.build
+    #     format.html { render 'form2', status: :unprocessable_entity }
+    #   else
+    #     if @trigger.save
+    #       format.html { redirect_to triggers_path, notice: "Trigger was successfully created." }
+    #     else
+    #       format.html { render 'form2', status: :unprocessable_entity }
+    #     end
+    #   end
+
     end
-  end
 
   def update
     @trigger.update(trigger_params)
@@ -45,7 +58,7 @@ class TriggersController < ApplicationController
   private
 
   def trigger_params
-    params.require(:trigger).permit(:date_added, :name, :account_id, :contact_id, :keywords, :template_id)
+    params.require(:trigger).permit(:date_added, :name, :account_id, :contact_id, :template_id, keywords_attributes: %i[id name _destroy])
   end
 
 end
