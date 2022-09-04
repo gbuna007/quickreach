@@ -14,26 +14,13 @@ class TriggersController < ApplicationController
     @trigger = Trigger.new(trigger_params)
     # @trigger.user = current_user
     authorize @trigger
-    raise
-    # set trigger.account and trigger.contact?
-    # if @trigger.save
-    #   redirect_to triggers_path
-    # else
-    #   # render :new, status: :unprocessable_entity
-    # end
-    # respond_to do |format|
-    #   if params[:add_keyword]
-    #     @trigger.keywords.build
-    #     format.html { render 'form2', status: :unprocessable_entity }
-    #   else
-    #     if @trigger.save
-    #       format.html { redirect_to triggers_path, notice: "Trigger was successfully created." }
-    #     else
-    #       format.html { render 'form2', status: :unprocessable_entity }
-    #     end
-    #   end
 
+    if @trigger.save
+      redirect_to triggers_path
+    else
+      render 'form2', status: :unprocessable_entity
     end
+  end
 
   def update
     @trigger.update(trigger_params)
