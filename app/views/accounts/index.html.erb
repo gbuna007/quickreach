@@ -14,7 +14,7 @@
           <!-- card container -->
           <div class="account-card p-0 m-2">
             <!-- card status -->
-            <div class="account-card-stripe">
+            <div class="account-card-stripe <%= 'trigger-on' if account.triggers.count > 0 %>">
             </div>
 
             <div class="account-card-content">
