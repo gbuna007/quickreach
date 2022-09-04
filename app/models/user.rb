@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :accounts
   has_many :templates
   has_many :notifications, as: :recipient
+  has_many :triggers, through: :accounts
 end

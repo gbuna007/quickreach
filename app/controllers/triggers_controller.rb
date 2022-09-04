@@ -1,13 +1,15 @@
 class TriggersController < ApplicationController
   def index
-    @triggers = policy_scope(Trigger)
-    @triggers = Trigger.all
+    @triggers = []
+    policy_scope(Trigger).each do |trigger|
+      if trigger.account.user == current_user
+        @triggers << trigger
+      end
+    end
 
     # new trigger for trigger form
-    @user = current_user
     @trigger = Trigger.new
     @trigger.keywords.build
-    # raise
   end
 
   def create
