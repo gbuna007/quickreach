@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import FilterContactsController from "./filter_contacts_controller"
+application.register("filter-contacts", FilterContactsController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
