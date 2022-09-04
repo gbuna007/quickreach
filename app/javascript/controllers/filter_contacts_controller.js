@@ -10,6 +10,7 @@ export default class extends Controller {
   }
 
   select(e) {
-    console.log("TODO: send request in AJAX")
+    console.log(e.target.value)
+    console.log(e.target.options[e.target.value].text) // grab / gojek
   }
 }
