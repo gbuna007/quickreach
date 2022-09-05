@@ -5,8 +5,8 @@
       <div><h1>Templates</h1></div>
     </div>
 
-    <div class="new-row new-template border border-primary d-flex justify-content-center mb-3 rounded" >
-      <p class="align-self-center fw-bold my-2" data-action="click->new-template#revealForm">New Email Template</p>
+    <div class="new-template border border-primary d-flex justify-content-center mb-3 rounded" >
+      <button class="align-self-center fw-bold btn-reveal" data-action="click->new-template#revealForm">New Email Template</button>
     </div>
     <div class="template-form d-none" data-new-template-target="form">
         <%= render 'form', template: @template %>
