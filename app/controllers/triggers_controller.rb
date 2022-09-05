@@ -10,6 +10,7 @@ class TriggersController < ApplicationController
     # new trigger for trigger form
     @trigger = Trigger.new
     @trigger.keywords.build
+    # raise
   end
 
   def create
@@ -20,19 +21,21 @@ class TriggersController < ApplicationController
     if @trigger.save
       redirect_to triggers_path
     else
-      render 'form2', status: :unprocessable_entity
+      render 'index', status: :unprocessable_entity
     end
   end
 
   def update
-    @trigger.update(trigger_params)
+    @trigger = Trigger.find(params[:id])
     @trigger.keywords.build
+    @trigger.update(trigger_params)
 
     authorize @trigger
+    index
     if @trigger.save
       redirect_to triggers_path
     else
-      render 'form2', status: :unprocessable_entity
+      render 'index', status: :unprocessable_entity
     end
   end
 
