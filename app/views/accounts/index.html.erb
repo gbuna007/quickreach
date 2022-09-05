@@ -1,11 +1,15 @@
-<div class="wrapperbody">
+<div class="row m-0 p-0">
   <%= render "shared/sidebar" %>
-  <div class="main-content ms-3">
+  <div class="col-10 flex-grow-1 main-content">
 
     <div class ="navbar">
       <div><h1>Accounts</h1></div>
-      <div>Search bar</div>
+      <%# <div>Search bar</div> %>
     </div>
+
+    <% if @accounts.count == 0%>
+      <p><%= link_to "Please integrate QuickReach with your CRM to view accounts", pages_path, class: "fs-3" %></p>
+    <% end %>
 
     <!-- grid for cards -->
     <div class="row">
@@ -14,7 +18,7 @@
           <!-- card container -->
           <div class="account-card p-0 m-2">
             <!-- card status -->
-            <div class="account-card-stripe">
+            <div class="account-card-stripe <%= 'trigger-on' if account.triggers.count > 0 %>">
             </div>
 
             <div class="account-card-content">
@@ -26,7 +30,7 @@
 
               <div class="card-body ps-3">
                 <!-- textfield -->
-                <div class = "account-card-text">
+                <div>
                   <p><strong>Account Status:</strong> <%= account.status %></p>
                   <p><strong>Potential Revenue:</strong> $<%= account.potential_rev %></p>
                   <!-- end of text field -->

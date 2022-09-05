@@ -3,7 +3,6 @@ class CreateNews < ActiveRecord::Migration[7.0]
     create_table :news do |t|
       t.string :title
       t.string :link
-      t.text :keywords, array: true, default: []
       t.string :creator
       t.string :video_url
       t.string :description
@@ -12,6 +11,7 @@ class CreateNews < ActiveRecord::Migration[7.0]
       t.string :image_url
       t.string :source_id
       t.string :full_description
+      t.boolean :breaking, default: true
 
       t.timestamps
     end

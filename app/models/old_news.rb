@@ -1,2 +1,0 @@
-class OldNews < ApplicationRecord
-end

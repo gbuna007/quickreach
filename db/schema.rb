@@ -39,13 +39,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_093915) do
 
   create_table "drafts", force: :cascade do |t|
     t.bigint "trigger_id", null: false
-    t.bigint "template_id", null: false
     t.boolean "sent", default: false
     t.string "edited_subject"
     t.string "edited_body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["template_id"], name: "index_drafts_on_template_id"
     t.index ["trigger_id"], name: "index_drafts_on_trigger_id"
   end
 
@@ -60,7 +58,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_093915) do
   create_table "news", force: :cascade do |t|
     t.string "title"
     t.string "link"
-    t.text "keywords", default: [], array: true
     t.string "creator"
     t.string "video_url"
     t.string "description"
@@ -69,6 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_093915) do
     t.string "image_url"
     t.string "source_id"
     t.string "full_description"
+    t.boolean "breaking", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -83,12 +81,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_093915) do
     t.datetime "updated_at", null: false
     t.index ["read_at"], name: "index_notifications_on_read_at"
     t.index ["recipient_type", "recipient_id"], name: "index_notifications_on_recipient"
-  end
-
-  create_table "old_news", force: :cascade do |t|
-    t.string "link"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "templates", force: :cascade do |t|
@@ -106,9 +98,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_093915) do
     t.string "name"
     t.bigint "account_id", null: false
     t.bigint "contact_id", null: false
+    t.bigint "template_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "template_id"
     t.index ["account_id"], name: "index_triggers_on_account_id"
     t.index ["contact_id"], name: "index_triggers_on_contact_id"
     t.index ["template_id"], name: "index_triggers_on_template_id"
@@ -117,6 +109,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_093915) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.boolean "admin", default: false, null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -130,7 +123,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_093915) do
 
   add_foreign_key "accounts", "users"
   add_foreign_key "contacts", "accounts"
-  add_foreign_key "drafts", "templates"
   add_foreign_key "drafts", "triggers"
   add_foreign_key "keywords", "triggers"
   add_foreign_key "templates", "users"
