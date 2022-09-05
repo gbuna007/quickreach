@@ -67,13 +67,30 @@
         </div>
 
         <div class="trigger-labels">
-          <p>Date Added</p>
+          <p class="col-2">Date Updated</p>
           <!-- insert draft name here (just use template's name)-->
-          <p class="col-3">Event</p>
-          <p class="col-3">Template</p>
+          <p class="col-5">Event</p>
+          <p class="col-1">Draft</p>
         </div>
 
         <!-- insert draft records here -->
+        <% @account.triggers.each do |trigger| %>
+          <% trigger.drafts.each do |draft| %>
+            <!-- display for each item-->
+              <div class="info">
+                <div class="col-2">
+                  <%= draft.updated_at.strftime("%D") %>
+                </div>
+                <div class="info-content col-4">
+                  <%= draft.trigger.name %>
+                </div>
+
+                <div class="info-actions">
+                  <%= link_to "View Draft", drafts_path %>
+                </div>
+              </div>
+          <% end %>
+        <% end %>
       </div>
       <!-- end of column 2 -->
     </div>
