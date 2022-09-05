@@ -7,11 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # users
-user1 = User.create(first_name: "Ann", last_name: "Lim", email: "ann@gmail.com", password: "ann123") # have accounts, contacts, HAVE triggers
+user1 = User.create(first_name: "Ann", last_name: "Lim", email: "ann@gmail.com", password: "ann123") # have accounts, contacts, templates, HAVE triggers
 user2 = User.create(first_name: "Bob", last_name: "Lee", email: "bob@gmail.com", password: "bob123") # have accounts, contacts, NO triggers
 user3 = User.create(first_name: "Chan", last_name: "Chan", email: "chan@gmail.com", password: "chan123") # no accounts
 
-# accounts
+# Ann's accounts
 grab = Account.new(name: "Grab", category: "transportation", status: "Lead", potential_rev: 1000000, amount_spent: 1000)
 grab.user = user1
 grab.save!
@@ -20,6 +20,7 @@ gojek = Account.new(name: "Gojek", category: "transportation", status: "Prospect
 gojek.user = user1
 gojek.save!
 
+# Bob's accounts
 apple = Account.new(name: "Apple", category: "consumer electronics", status: "Live", potential_rev: 1500000, amount_spent: 15000)
 apple.user = user2
 apple.save!
@@ -28,7 +29,7 @@ samsung = Account.new(name: "Samsung", category: "consumer electronics", status:
 samsung.user = user2
 samsung.save!
 
-# contacts
+# Ann's Grab contacts
 grab_manager = Contact.new(email: "bteo@grab.com", title: "Digital Manager", first_name: "Bryan", last_name: "Teo")
 grab_manager.account = grab
 grab_manager.save!
@@ -37,6 +38,7 @@ grab_director = Contact.new(email: "gfriedman@grab.com", title: "Digital Directo
 grab_director.account = grab
 grab_director.save!
 
+# Bob's Apple contacts
 apple_tech = Contact.new(email: "jgeorge@apple.com", title: "Engineering Manager", first_name: "Jansen", last_name: "George")
 apple_tech.account = apple
 apple_tech.save!
@@ -45,29 +47,40 @@ apple_marketing = Contact.new(email: "achan@apple.com", title: "Marketing Manage
 apple_marketing.account = apple
 apple_marketing.save!
 
-# triggers
+# Ann's templates
+grab_template1 = Template.new(
+  name: "Grab Challenger Sell",
+  body: "Hello <<contact_fn>>!\r\nHope you have been well!\r\n
+  Just wanted to check in as recently we have seen that <<account_name>> is experiencing some challenges with profitability.
+  \r\nKeen to understand your challenges better to see if we can support your effort in keeping <<account_name>> as a leader in <<account_category>> sector.",
+  subject: "Improving campaign profitability for <<account_name>>")
+grab_template1.user = user1
+grab_template1.save!
+
+grab_template2 = Template.new(
+  name: "Congrats!",
+  body: "Hello <<contact_fn>>!\r\nWe wanted to congratulate you on <<account_name>>'s successful launch.
+  \r\nKeen to understand how we can continue to support your effort in keeping <<account_name>> as a leader in <<account_category>> sector.",
+  subject: "Improving campaign profitability for <<account_name>>")
+grab_template2.user = user1
+grab_template2.save!
+
+# Ann's Grab triggers
 trigger_grab1 = Trigger.new
 trigger_grab1.name = "Grab negative news draft"
 trigger_grab1.account = grab
 trigger_grab1.contact = grab_director
+trigger_grab1.template = grab_template1
+trigger_grab1.save!
 
 trigger_grab2 = Trigger.new
 trigger_grab2.name = "Grab positive news draft"
 trigger_grab2.account = grab
 trigger_grab2.contact = grab_manager
-
-# template seed for ANN
-template_grab = Template.new(name: "Grab Challenger Sell", body: "Hello <<contact_fn>>!\r\nHope you have been well!\r\nJust wanted to check in as recently we have seen that <<account_name>> is experiencing some challenges with profitability.\r\nKeen to understand your challenges better to see if we can support your effort in keeping <<account_name>> as a leader in <<account_category>> sector.", subject: "Improving campaign profitability for <<account_name>>")
-template_grab.user = user1
-template_grab.save!
-
-trigger_grab1.template = template_grab
-trigger_grab1.save!
-
-trigger_grab2.template = template_grab
+trigger_grab2.template = grab_template2
 trigger_grab2.save!
 
-# keywords for trigger grab1
+# Ann's keywords for Grab trigger 1
 keyword1 = Keyword.new(name: "grab")
 keyword1.trigger = trigger_grab1
 keyword1.save!
@@ -76,19 +89,7 @@ keyword2 = Keyword.new(name: "market value")
 keyword2.trigger = trigger_grab1
 keyword2.save!
 
-keyword3 = Keyword.new(name: "overvalued")
-keyword3.trigger = trigger_grab1
-keyword3.save!
-
-keyword4 = Keyword.new(name: "loss")
-keyword4.trigger = trigger_grab1
-keyword4.save!
-
-keyword5 = Keyword.new(name: "cuts")
-keyword5.trigger = trigger_grab1
-keyword5.save!
-
-# keywords for trigger grab2
+# Ann's keywords for Grab trigger 2
 keyword6 = Keyword.new(name: "grab")
 keyword6.trigger = trigger_grab2
 keyword6.save!
@@ -96,9 +97,3 @@ keyword6.save!
 keyword7 = Keyword.new(name: "growth")
 keyword7.trigger = trigger_grab2
 keyword7.save!
-
-keyword8 = Keyword.new(name: "delivery")
-keyword8.trigger = trigger_grab2
-keyword8.save!
-
-# draft - deleted so that we can show the draft creation
