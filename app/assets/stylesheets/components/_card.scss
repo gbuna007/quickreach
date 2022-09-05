@@ -1,27 +1,30 @@
 .account-card {
   display: flex;
   flex-direction: row;
-  border: solid 1px #1F4690;
+  border: none;
   box-shadow: 0px 0px 1px 1px rgba($color: #231955, $alpha: 0.2);
 }
 
 .account-card-stripe {
   min-height: 100%;
-  width: 2%;
-  padding: 2%;
-  background-color: rgba($color: #cb1a1a, $alpha: 1);
+  width: 1%;
+  padding: 1%;
+  background-color: rgba($color: #cb1a1a, $alpha: 0.7);
   border-radius: 2px 0 0 2px;
 
 
 }
 
 .trigger-on {
-  background-color: rgba($color: #4ccb1a, $alpha: 1);
+  background-color: rgba($color: #4ccb1a, $alpha: 0.7);
 }
 
 .account-card-content {
   width: 98%;
-  background-color: rgba($color: #1F4690, $alpha: 1);
+  background-color: rgba($color: #fffcf2, $alpha: 1);
+  &:hover{
+    background-color: rgba($color: #d1d1d1, $alpha: 1);
+  }
 }
 
 .card{
@@ -42,8 +45,8 @@
 
 .account-card-text {
   text-decoration: none;
-  color: #FFE5B4;
+  color: #1F4690;
   &:hover {
-    color: #E8AA42;
+    color: #231955;
   }
 }

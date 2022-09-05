@@ -1,6 +1,6 @@
-<div class="wrapperbody">
+<div class="row m-0 p-0">
   <%= render "shared/sidebar" %>
-  <div class="main-content ms-3" data-controller="new-trigger">
+  <div class="col-10 flex-grow-1 main-content" data-controller="new-trigger">
     <div class ="navbar mx-5 my-1">
       <div><h1>Triggers</h1></div>
     </div>
@@ -16,11 +16,11 @@
 
     <!-- details -->
     <div class="trigger-labels fw-bold">
-      <p>Date</p>
-      <p class="col-3">Trigger Name</p>
+      <p class="col-1">Date</p>
+      <p class="col-2">Trigger Name</p>
       <p class="col-3">Account</p>
       <p class="col-3">Keywords</p>
-      <p>Template</p>
+      <%# <p>Template</p> %>
     </div>
     <!-- display for each item-->
     <% @triggers.each do |trigger| %>
@@ -38,6 +38,7 @@
             <%= keyword.name %>,
           <% end %>
         </div>
+
 
         <div class="info-actions">
           <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>

@@ -1,6 +1,6 @@
-<div class="wrapperbody">
+<div class="row m-0 p-0">
   <%= render "shared/sidebar" %>
-  <div class="main-content ms-3">
+  <div class="col-10 flex-grow-1 main-content">
 
     <div class ="navbar mx-5 my-1">
       <div><h1>Drafts</h1></div>
@@ -9,7 +9,7 @@
     <div class="trigger-labels fw-bold">
       <p class="col-1">Date</p>
       <p class="col-5">Account</p>
-      <p class="col-5">Trigger Event Name</p>
+      <p class="col-5">Trigger Name</p>
       <p class="col-1">Actions</p>
     </div>
 
@@ -39,7 +39,7 @@
               </div>
               <div class="offcanvas-body">
                 <div class="d-flex align-items-center justify-content-center">
-                  <div class="">
+                  <div class="w-100">
                     <%= render "form", draft: draft %>
                   </div>
                 </div>
@@ -49,6 +49,5 @@
       </div>
     <% end %>
     <hr>
-
   </div>
 </div>

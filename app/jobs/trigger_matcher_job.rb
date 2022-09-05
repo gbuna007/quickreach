@@ -39,8 +39,7 @@ class TriggerMatcherJob < ApplicationJob
 
             draft.save!
 
-            binding.pry
-            DraftNotification.with(draft:).deliver_later(user)
+            DraftNotification.with(draft:).deliver_later(@recipient)
           end
         end
       end

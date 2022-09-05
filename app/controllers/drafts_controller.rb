@@ -2,9 +2,12 @@ class DraftsController < ApplicationController
   before_action :set_draft, only: %i[update]
 
   def index
-    # @drafts = policy_scope(Draft)
-    @drafts = Draft.all
-    # @user = @drafts
+    @drafts = []
+    policy_scope(Draft).each do |draft|
+      if draft.trigger.account.user == current_user
+        @drafts << draft
+      end
+    end
   end
 
   # def edit
