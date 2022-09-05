@@ -25,7 +25,6 @@ Rails.application.routes.draw do
 
   resources :triggers, only: %i[index create update destroy]
 
-
   resources :keywords, only: :create
 
   resources :drafts, only: %i[index show edit update]

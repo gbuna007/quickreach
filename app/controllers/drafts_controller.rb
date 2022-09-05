@@ -27,12 +27,6 @@ class DraftsController < ApplicationController
     end
   end
 
-  def update
-  end
-
-  def destroy
-  end
-
   private
 
   def draft_params
