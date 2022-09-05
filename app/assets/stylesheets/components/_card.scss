@@ -11,8 +11,6 @@
   padding: 1%;
   background-color: rgba($color: #cb1a1a, $alpha: 0.7);
   border-radius: 2px 0 0 2px;
-
-
 }
 
 .trigger-on {
@@ -23,30 +21,13 @@
   width: 98%;
   background-color: rgba($color: #fffcf2, $alpha: 1);
   &:hover{
-    background-color: rgba($color: #d1d1d1, $alpha: 1);
-  }
-}
-
-.card{
-  display: flex;
-  flex-direction: row;
-  border: none;
-  box-shadow: 0px 0px 1px 1px rgba($color: #231955, $alpha: 0.2);
-}
-
-.theme-text{
-  color: #FFE5B4;
-  text-decoration: none;
-  &:hover{
-    color: #E8AA42;
-    background-color: #FFE5B4;
+    background-color: #1F4690;
+    color: #FFE5B4;
+    border-color: #1F4690;
   }
 }
 
 .account-card-text {
   text-decoration: none;
   color: #1F4690;
-  &:hover {
-    color: #231955;
-  }
 }
