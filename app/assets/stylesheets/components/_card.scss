@@ -21,14 +21,13 @@
   width: 98%;
   background-color: rgba($color: #fffcf2, $alpha: 1);
   &:hover{
-    background-color: rgba($color: #d1d1d1, $alpha: 1);
+    background-color: #1F4690;
+    color: #FFE5B4;
+    border-color: #1F4690;
   }
 }
 
 .account-card-text {
   text-decoration: none;
   color: #1F4690;
-  &:hover {
-    color: #231955;
-  }
 }
