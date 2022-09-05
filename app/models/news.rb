@@ -1,3 +1,3 @@
 class News < ApplicationRecord
-  belongs_to :draft
+  has_many :drafts
 end

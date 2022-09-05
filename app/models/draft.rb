@@ -1,4 +1,4 @@
 class Draft < ApplicationRecord
   belongs_to :trigger
-  has_one :news
+  belongs_to :news
 end
