@@ -1,0 +1,28 @@
+<div class="trigger-form" data-controller="trigger-form">
+
+  <%= simple_form_for @trigger, data: {controller: "filter-contacts"} do |form| %>
+    <div>
+      <%= form.input :name, label: "Trigger Name" %>
+    </div>
+    <div>
+      <%= form.association :account, collection: policy_scope(Account), prompt:"Choose a company", input_html: {data: {action: "change->filter-contacts#select"}} %>
+
+
+      <% label_method = proc { |p| "#{p.first_name} #{p.last_name} - #{p.title}" } %>
+      <%= form.association :contact, input_html: {data: {filter_contacts_target: "selection"}}, label_method: label_method, prompt:"Choose the email recipient" %>
+
+
+      <%= form.association :template, prompt:"Choose the email template" %>
+    </div>
+
+    <%= link_to_add_nested(form, :keywords, '#keywords') %>
+    <div id='keywords'>
+      <%= form.fields_for :keywords do |keywords_f| %>
+        <%= render 'keyword_fields', form: keywords_f %>
+      <% end %>
+    </div>
+    <br>
+    <%= form.submit %>
+  <% end %>
+
+</div>

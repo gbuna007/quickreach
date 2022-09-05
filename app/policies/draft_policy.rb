@@ -11,6 +11,6 @@ class DraftPolicy < ApplicationPolicy
   end
 
   def update?
-    record.template.user == user
+    record.trigger.account.user == user
   end
 end

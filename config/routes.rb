@@ -27,5 +27,5 @@ Rails.application.routes.draw do
 
   resources :keywords, only: :create
 
-  resources :drafts, only: %i[index show edit]
+  resources :drafts, only: %i[index show edit update]
 end

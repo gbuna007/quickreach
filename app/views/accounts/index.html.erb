@@ -7,6 +7,10 @@
       <%# <div>Search bar</div> %>
     </div>
 
+    <% if @accounts.count == 0%>
+      <p><%= link_to "Please integrate QuickReach with your CRM to view accounts", pages_path, class: "fs-3" %></p>
+    <% end %>
+
     <!-- grid for cards -->
     <div class="row">
       <% @accounts.each do |account| %>
@@ -14,7 +18,7 @@
           <!-- card container -->
           <div class="account-card p-0 m-2">
             <!-- card status -->
-            <div class="account-card-stripe">
+            <div class="account-card-stripe <%= 'trigger-on' if account.triggers.count > 0 %>">
             </div>
 
             <div class="account-card-content">

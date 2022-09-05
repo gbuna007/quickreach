@@ -1,10 +1,19 @@
 <div class="wrapperbody">
   <%= render "shared/sidebar" %>
-  <div class="main-content ms-3">
-
+  <div class="main-content ms-3" data-controller="new-trigger">
     <div class ="navbar mx-5 my-1">
       <div><h1>Triggers</h1></div>
     </div>
+
+    <div class="new-trigger border border-primary d-flex justify-content-center mb-3 rounded" >
+      <p class="align-self-center fw-bold my-2" data-action="click->new-trigger#revealForm">New Trigger</p>
+    </div>
+
+    <!-- new form item -->
+    <div class="trigger-form d-none" data-new-trigger-target="form">
+      <%= render "form2", trigger: @trigger %>
+    </div>
+
     <!-- details -->
     <div class="trigger-labels fw-bold">
       <p>Date</p>
@@ -12,11 +21,6 @@
       <p class="col-3">Account</p>
       <p class="col-3">Keywords</p>
       <p>Template</p>
-    </div>
-    <!-- new form item -->
-    <div class="trigger-form" data-controller="keywords-for-trigger">
-      <%= render "form", trigger: @trigger %>
-      <%= render "keywords/form",  keyword: @keyword %>
     </div>
     <!-- display for each item-->
     <% @triggers.each do |trigger| %>
@@ -41,8 +45,6 @@
         </div>
       </div>
     <% end %>
-    <hr>
-
   </div>
 </div>
 
@@ -74,7 +76,7 @@
       <div id="flush-collapseTwoX" class="accordion-collapse collapse" aria-labelledby="flush-headingTwoX"
         data-mdb-parent="#accordionFlushExampleX">
         <div class="accordion-body">
-          <%= render "keywords/form",  keyword: @keyword %>
+          <%# <%= render "keywords/form",  keyword: @keyword %> %>
         </div>
       </div>
     </div>

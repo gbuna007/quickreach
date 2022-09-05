@@ -1,5 +1,5 @@
 class DraftsController < ApplicationController
-  # before_action :set_draft, only: %i[index]
+  before_action :set_draft, only: %i[update]
 
   def index
     # @drafts = policy_scope(Draft)
@@ -12,14 +12,15 @@ class DraftsController < ApplicationController
   # end
 
   def update
+    authorize @draft
     @draft.update(draft_params)
     # raise
-    authorize @draft
+
     @draft.save
     if @draft.save
       redirect_to drafts_path
     else
-      render :new, status: :unprocessable_entity
+      render 'index', status: :unprocessable_entity
     end
   end
 
@@ -29,7 +30,7 @@ class DraftsController < ApplicationController
     params.require(:draft).permit(%i[edited_subject edited_body])
   end
 
-  # def set_draft
-  #   @draft = Draft.find(params[:id])
-  # end
+  def set_draft
+    @draft = Draft.find(params[:id])
+  end
 end

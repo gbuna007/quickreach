@@ -747,6 +747,10 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
+vanilla-nested@arielj/vanilla-nested:
+  version "1.7.0"
+  resolved "https://codeload.github.com/arielj/vanilla-nested/tar.gz/17bc36e840f4f017efd78f76227702dce2b3c97e"
+
 watchpack@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-2.4.0.tgz#fa33032374962c78113f93c7f2fb4c54c9862a5d"
