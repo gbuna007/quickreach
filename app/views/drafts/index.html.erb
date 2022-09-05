@@ -8,8 +8,9 @@
     <!-- details -->
     <div class="trigger-labels fw-bold">
       <p class="col-1">Date</p>
-      <p class="col-5">Account</p>
-      <p class="col-5">Trigger Name</p>
+      <p class="col-2">Account</p>
+      <p class="col-3">Trigger Name</p>
+      <p class="col-4">News Link</p>
       <p class="col-1">Actions</p>
     </div>
 
@@ -17,11 +18,16 @@
     <% @drafts.each do |draft| %>
       <div class="info">
         <%= draft.updated_at.strftime("%D") %>
-        <div class="info-content col-4 px-5">
+        <div class="info-content col-2 px-5">
           <%= draft.trigger.account.name %>
         </div>
-        <div class="info-content col-4">
+        <div class="info-content col-3">
           <%= draft.trigger.name %>
+        </div>
+        <div class="info-content col-4">
+          <%= link_to draft.news.link,
+          draft.news.link,
+           target: '_blank' %>
         </div>
 
         <div class="info-actions">
