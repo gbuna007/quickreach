@@ -57,7 +57,7 @@ trigger_grab2.account = grab
 trigger_grab2.contact = grab_manager
 
 # template seed for ANN
-template_grab = Template.new(name: "Grab Challenger Sell", body: "Hello <<contact_fn>>!\r\nThis is a placeholder text\r\nChecking if we will be able to interpolate this following <<account_name>>", subject: "Testing template")
+template_grab = Template.new(name: "Grab Challenger Sell", body: "Hello <<contact_fn>>!\r\nHope you have been well!\r\nJust wanted to check in as recently we have seen that <<account_name>> is experiencing some challenges with profitability.\r\nKeen to understand your challenges better to see if we can support your effort in keeping <<account_name>> as a leader in <<account_category>> sector.", subject: "Improving campaign profitability for <<account_name>>")
 template_grab.user = user1
 template_grab.save!
 
@@ -101,8 +101,4 @@ keyword8 = Keyword.new(name: "delivery")
 keyword8.trigger = trigger_grab2
 keyword8.save!
 
-# draft
-
-draft1 = Draft.new(edited_body: "Hello Greg!\r\nThis is a placeholder text\r\nChecking if we will be able to interpolate this following Grab", edited_subject: "Testing template")
-draft1.trigger = Trigger.first
-draft1.save!
+# draft - deleted so that we can show the draft creation

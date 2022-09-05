@@ -16,11 +16,11 @@
 
     <!-- details -->
     <div class="trigger-labels fw-bold">
-      <p>Date</p>
-      <p class="col-3">Trigger Name</p>
+      <p class="col-1">Date</p>
+      <p class="col-2">Trigger Name</p>
       <p class="col-3">Account</p>
       <p class="col-3">Keywords</p>
-      <p>Template</p>
+      <%# <p>Template</p> %>
     </div>
     <!-- display for each item-->
     <% @triggers.each do |trigger| %>
@@ -38,6 +38,7 @@
             <%= keyword.name %>,
           <% end %>
         </div>
+
 
         <div class="info-actions">
           <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
