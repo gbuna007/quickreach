@@ -14,9 +14,9 @@ class TriggersController < ApplicationController
 
   def create
     @trigger = Trigger.new(trigger_params)
-    # @trigger.user = current_user
     authorize @trigger
 
+    # @trigger.user = current_user
     if @trigger.save
       redirect_to triggers_path
     else
@@ -26,15 +26,13 @@ class TriggersController < ApplicationController
 
   def update
     @trigger.update(trigger_params)
-    @keyword = Keyword.new
-    @trigger.user = current_user
-    # raise
+    @trigger.keywords.build
+
     authorize @trigger
-    @trigger.save
     if @trigger.save
-      redirect_to trigger_path(@trigger)
+      redirect_to triggers_path
     else
-      # render :new, status: :unprocessable_entity
+      render 'form2', status: :unprocessable_entity
     end
   end
 
