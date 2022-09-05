@@ -1,6 +1,6 @@
-<div class="wrapperbody">
+<div class="row m-0 p-0">
   <%= render "shared/sidebar" %>
-  <div class="main-content ms-3">
+  <div class="col-10 flex-grow-1 main-content">
 
     <div class ="navbar">
       <div><h1>Accounts</h1></div>
@@ -30,7 +30,7 @@
 
               <div class="card-body ps-3">
                 <!-- textfield -->
-                <div class = "account-card-text">
+                <div>
                   <p><strong>Account Status:</strong> <%= account.status %></p>
                   <p><strong>Potential Revenue:</strong> $<%= account.potential_rev %></p>
                   <!-- end of text field -->
