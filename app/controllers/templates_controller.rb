@@ -1,5 +1,4 @@
 class TemplatesController < ApplicationController
-  skip_after_action :verify_authorized, only: :show
   def index
     @templates = policy_scope(Template)
     @template = Template.new

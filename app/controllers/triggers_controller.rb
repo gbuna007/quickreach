@@ -10,31 +10,32 @@ class TriggersController < ApplicationController
     # new trigger for trigger form
     @trigger = Trigger.new
     @trigger.keywords.build
+    # raise
   end
 
   def create
     @trigger = Trigger.new(trigger_params)
-    # @trigger.user = current_user
     authorize @trigger
 
+    # @trigger.user = current_user
     if @trigger.save
       redirect_to triggers_path
     else
-      render 'form2', status: :unprocessable_entity
+      render 'index', status: :unprocessable_entity
     end
   end
 
   def update
+    @trigger = Trigger.find(params[:id])
+    @trigger.keywords.build
     @trigger.update(trigger_params)
-    @keyword = Keyword.new
-    @trigger.user = current_user
-    # raise
+
     authorize @trigger
-    @trigger.save
+    index
     if @trigger.save
-      redirect_to trigger_path(@trigger)
+      redirect_to triggers_path
     else
-      # render :new, status: :unprocessable_entity
+      render 'index', status: :unprocessable_entity
     end
   end
 

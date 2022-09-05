@@ -5,8 +5,8 @@
       <div><h1>Triggers</h1></div>
     </div>
 
-    <div class="new-row new-trigger border border-primary d-flex justify-content-center mb-3 rounded" >
-      <p class="align-self-center fw-bold my-2" data-action="click->new-trigger#revealForm">New Trigger</p>
+    <div class="new-trigger border border-primary d-flex justify-content-center mb-3 p-0 rounded" >
+      <button class="align-self-center btn-reveal fw-bold" data-action="click->new-trigger#revealForm">New Trigger</button>
     </div>
 
     <!-- new form item -->
@@ -41,45 +41,33 @@
 
 
         <div class="info-actions">
-          <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-          <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+          <!-- off canvas for trigger editing -->
+          <!-- btn -->
+            <button class="edit-form-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Edit Trigger <i class="fas fa-pencil-alt"></i></button>
+          <!-- content-->
+            <div class="offcanvas offcanvas-end bg-dark-blu text-dy" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+              <div class="offcanvas-header">
+                <div id="offcanvasRightLabel">
+                  <h2><strong><%= trigger.name %></strong></h2>
+                </div>
+
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div class="d-flex align-items-center justify-content-center">
+                  <div class="w-100">
+                    <%= render "form2", trigger: trigger %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <%= link_to trigger_path(trigger),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do
+          %>
+          <p>Delete <i class="far fa-trash-alt"></i></p>
+          <% end %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-
-
-<!--
-
-  <div class="accordion accordion-borderless" id="accordionFlushExampleX">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingOneX">
-        <button class="accordion-button" type="button" data-mdb-toggle="collapse"
-          data-mdb-target="#flush-collapseOneX" aria-expanded="true" aria-controls="flush-collapseOneX">
-          Accordion Item #1
-        </button>
-      </h2>
-      <div id="flush-collapseOneX" class="accordion-collapse collapse show"
-        aria-labelledby="flush-headingOneX" data-mdb-parent="#accordionFlushExampleX">
-        <div class="accordion-body">
-          <%= render "form", trigger: @trigger %>
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingTwoX">
-        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
-          data-mdb-target="#flush-collapseTwoX" aria-expanded="false" aria-controls="flush-collapseTwoX">
-          Accordion Item #2
-        </button>
-      </h2>
-      <div id="flush-collapseTwoX" class="accordion-collapse collapse" aria-labelledby="flush-headingTwoX"
-        data-mdb-parent="#accordionFlushExampleX">
-        <div class="accordion-body">
-          <%# <%= render "keywords/form",  keyword: @keyword %> %>
-        </div>
-      </div>
-    </div>
-  </div>
--->
