@@ -71,12 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_061659) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< Updated upstream
-  create_table "old_news", force: :cascade do |t|
-    t.string "link"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-=======
+
   create_table "notifications", force: :cascade do |t|
     t.string "recipient_type", null: false
     t.bigint "recipient_id", null: false
@@ -87,7 +82,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_061659) do
     t.datetime "updated_at", null: false
     t.index ["read_at"], name: "index_notifications_on_read_at"
     t.index ["recipient_type", "recipient_id"], name: "index_notifications_on_recipient"
->>>>>>> Stashed changes
   end
 
   create_table "templates", force: :cascade do |t|
