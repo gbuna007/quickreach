@@ -5,6 +5,6 @@ class TriggerMailerPreview < ActionMailer::Preview
     contact = trigger.contact
     template = trigger.template
     # This is how you pass value to params[:user] inside mailer definition!
-    TriggerMailer.with(template: template).template
+    TriggerMailer.with(template:).template
   end
 end

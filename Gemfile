@@ -85,3 +85,5 @@ group :test do
 end
 
 gem "noticed", "~> 1.5"
+
+gem 'vanilla_nested', github: 'arielj/vanilla-nested', branch: :main

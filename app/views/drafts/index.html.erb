@@ -1,19 +1,53 @@
-<div class="wrapperbody">
+<div class="row m-0 p-0">
   <%= render "shared/sidebar" %>
-  <div class="main-content ms-3" data-controller="new-template">
-    <h1>Drafts</h1>
+  <div class="col-10 flex-grow-1 main-content">
 
-    <div class="trigger-labels">
-      <p>Date Added/Updated</p>
-      <p>Subject</p>
-      <p>Account</p>
-      <p>Event</p>
+    <div class ="navbar mx-5 my-1">
+      <div><h1>Drafts</h1></div>
+    </div>
+    <!-- details -->
+    <div class="trigger-labels fw-bold">
+      <p class="col-1">Date</p>
+      <p class="col-5">Account</p>
+      <p class="col-5">Trigger Name</p>
+      <p class="col-1">Actions</p>
     </div>
 
-    <div>
-      <p>02/09/2022</p>
-    </div>
+    <!-- display for each item-->
+    <% @drafts.each do |draft| %>
+      <div class="info">
+        <%= draft.updated_at.strftime("%D") %>
+        <div class="info-content col-4 px-5">
+          <%= draft.trigger.account.name %>
+        </div>
+        <div class="info-content col-4">
+          <%= draft.trigger.name %>
+        </div>
 
-    <%#= render 'template_rows', templates: @templates %>
+        <div class="info-actions">
+          <!-- off canvas for email editing -->
+          <!-- btn -->
+            <button class="edit-form-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Edit Draft <i class="fas fa-pencil-alt"></i></button>
+          <!-- content-->
+            <div class="offcanvas offcanvas-end bg-dark-blu text-dy" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+              <div class="offcanvas-header">
+                <div id="offcanvasRightLabel">
+                  <h2><strong><%= draft.trigger.name %></strong></h2>
+                </div>
+
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div class="d-flex align-items-center justify-content-center">
+                  <div class="w-100">
+                    <%= render "form", draft: draft %>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    <% end %>
+    <hr>
   </div>
 </div>

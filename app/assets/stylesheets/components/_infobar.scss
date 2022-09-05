@@ -43,3 +43,14 @@
 .info .info-actions a:hover {
   color: #E8AA42;
 }
+
+.edit-form-btn{
+  background-color: #1F4690;
+  border: none;
+  color: #FFE5B4;
+  font-size: 14px;
+  &:hover{
+    background-color: #1F4690;
+    color: #E8AA42;
+  }
+}

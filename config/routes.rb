@@ -21,9 +21,11 @@ Rails.application.routes.draw do
 
   resources :accounts, only: %i[index show]
 
-  resources :templates, only: %i[index create]
+  resources :templates, only: %i[index create show]
 
   resources :triggers, only: %i[index create update destroy]
 
-  resources :drafts, only: %i[index show edit update destroy]
+  resources :keywords, only: :create
+
+  resources :drafts, only: %i[index show edit update]
 end

@@ -1,24 +1,26 @@
 class TriggersController < ApplicationController
   def index
-    @triggers = policy_scope(Trigger)
-    @triggers = Trigger.all
+    @triggers = []
+    policy_scope(Trigger).each do |trigger|
+      if trigger.account.user == current_user
+        @triggers << trigger
+      end
+    end
 
     # new trigger for trigger form
     @trigger = Trigger.new
-    # raise
+    @trigger.keywords.build
   end
 
   def create
     @trigger = Trigger.new(trigger_params)
-    # @keyword = Keyword.new
     # @trigger.user = current_user
     authorize @trigger
-    # set trigger.account and trigger.contact?
+
     if @trigger.save
       redirect_to triggers_path
-      raise
     else
-      # render :new, status: :unprocessable_entity
+      render 'form2', status: :unprocessable_entity
     end
   end
 
@@ -45,10 +47,7 @@ class TriggersController < ApplicationController
   private
 
   def trigger_params
-    params.require(:trigger).permit(:date_added, :name, :account_id, :contact_id)
+    params.require(:trigger).permit(:date_added, :name, :account_id, :contact_id, :template_id, keywords_attributes: %i[id name _destroy])
   end
 
-  def keyword_params
-    params.require(:keyword).permit(:name)
-  end
 end
