@@ -40,6 +40,7 @@ class TriggersController < ApplicationController
 
   def destroy
     @trigger = Trigger.find(params[:id])
+    authorize @trigger
     @trigger.destroy
     redirect_to triggers_path, status: :see_other
   end

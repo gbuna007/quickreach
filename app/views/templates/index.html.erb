@@ -1,7 +1,7 @@
 <div class="row m-0 p-0">
   <%= render "shared/sidebar" %>
 
-  <div class="col-10 flex-grow-1 main-content align-self-center" data-controller="new-template">
+  <div class="col-10 flex-grow-1 main-content align-self-center min-vh-100" data-controller="new-template">
     <div class="navbar mb-3">
       <h1 class="m-0">Templates</h1>
       <button class="qt-btn w-25 fw-bold" data-action="click->new-template#revealForm">New Email Template</button>
@@ -33,7 +33,7 @@
 
     <!-- table of templates -->
     <div class="headers fw-bold border">
-      <p class="col-1">Date</p>
+      <p class="ps-4 col-1">Date</p>
       <p class="col-2 flex-grow-1 ms-2">Template Name</p>
       <p class="col-6">Variables</p>
     </div>

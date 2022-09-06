@@ -1,4 +1,4 @@
-<div class="trigger-form" data-controller="trigger-form">
+<div class="trigger-form p-5" data-controller="trigger-form">
 
   <%= simple_form_for trigger, data: {controller: "filter-contacts"} do |form| %>
     <div>
@@ -16,7 +16,7 @@
     </div>
 
     <%= link_to_add_nested(form, :keywords, '#keywords', link_classes:'m-0') do %>
-      <button class="themed-btn mb-3">Click to add a new keyword</button>
+      <button class="qt-btn mb-3">Click to add a new keyword</button>
     <% end %>
     <div id='keywords'>
       <%= form.fields_for :keywords do |keywords_f| %>
