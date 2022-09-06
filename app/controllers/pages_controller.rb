@@ -23,7 +23,6 @@ class PagesController < ApplicationController
         # save to db
         account.save!
       end
-
     end
   end
 end

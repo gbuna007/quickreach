@@ -3,7 +3,7 @@ class DraftMailer < ApplicationMailer
   before_action { @draft = params[:draft]}
 
   default to:       -> { @recipient.email },
-          from:     -> { "grace@ndom-forest.io" }
+          from:     -> { "grace@random-forest.io" }
 
   def draft_notification
     # @user = User.first
