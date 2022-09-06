@@ -15,14 +15,14 @@
       <%= form.association :template, prompt:"Choose the email template" %>
     </div>
 
-    <%= link_to_add_nested(form, :keywords, '#keywords') %>
+    <span class="link-label"><%= link_to_add_nested(form, :keywords, '#keywords') %></p>
     <div id='keywords'>
       <%= form.fields_for :keywords do |keywords_f| %>
         <%= render 'keyword_fields', form: keywords_f %>
       <% end %>
     </div>
     <br>
-    <%= form.submit %>
+    <%= form.submit class: 'themed-btn' %>
   <% end %>
 
 </div>
