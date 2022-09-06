@@ -18,16 +18,19 @@ export default class extends Controller {
     event.preventDefault();
     this.formTarget.classList.toggle("d-none")
     const url = this.submitTarget.action
+
+    // goes to routes --> templates#create
     fetch(url, {
       method: "POST",
       headers: { "Accept": "application/json"  },
       body: new FormData(this.submitTarget)
     })
       .then(response => response.json())
-      .then((data) => {
-        if (data.inserted_item) {
+      .then((data) => { // data is what is returned by create.json.jbuilder
+        if (data.inserted_item) { // if template is saved (form is submitted properly)
           this.rowsTarget.insertAdjacentHTML("beforeend", data.inserted_item)
         }
+        // replace the old form with a new one / the old one with errors
         this.submitTarget.outerHTML = data.form
       })
   }

@@ -1,28 +1,7 @@
-<div class="row d-flex justify-content-center">
-  <div class="col-7">
-    <%= simple_form_for(template, html: { class: "mb-3"}, data: {new_template_target: "submit",
-        action: "submit->new-template#create"}) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :subject %>
-      <%= f.input :body, as: :text, input_html: { :rows => 12 } %>
-      <%= f.submit %>
-    <% end %>
-  </div>
-
-  <div class="col-4 border border-dark p-2 me-2">
-    <h3>Note on Variables:</h3>
-    <p>In order for QuickReach to accurately use your template, please use the following components in your body wrapped in <%= "<< >>" %>:</p>
-    <ul>
-      <li>account_name (e.g. Grab)</li>
-      <li>contact_fn (contact's first name e.g. Bob)</li>
-      <li>account_category (e.g. transportation)</li>
-    </ul>
-
-    <p>Example: </p>
-    <p>Hello <%= "<<contact_fn>>" %>!
-      Just wanted to check in as recently we have seen that <%= "<<account_name>>" %>
-      is experiencing some challenges with profitability. Keen to understand
-      your challenges better to see if we can support your effort in keeping
-      <%= "<<account_name>>" %> as a leader in the <%= "<<account_category>>" %> sector.</p>
-  </div>
-</div>
+<%= simple_form_for(template, html: { class: "mb-3"}, data: {new_template_target: "submit",
+    action: "submit->new-template#create"}) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :subject %>
+  <%= f.input :body, as: :text, input_html: { :rows => 12 } %>
+  <%= f.submit %>
+<% end %>
