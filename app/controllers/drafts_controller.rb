@@ -30,6 +30,7 @@ class DraftsController < ApplicationController
   end
 
   def send_draft
+    authorize @draft
     TriggerMailer.send_draft(@draft).deliver_later
 
     flash[:notice] = "Draft has been sent."
