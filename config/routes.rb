@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   root to: "pages#home" # landing page
   resources :pages, only: %i[index] # CRM page
-  get "salesforce", to: "pages#salesforce"
+  get "salesforce", to: "pages#salesforce" # salesforce page
 
   resources :accounts, only: %i[index show]
 
