@@ -27,5 +27,6 @@ Rails.application.routes.draw do
 
   resources :keywords, only: :create
 
-  resources :drafts, only: %i[index show edit update]
+  resources :drafts, only: %i[index update destroy]
+  get "send_draft/:id", to: 'drafts#send_draft', as: :send_draft
 end

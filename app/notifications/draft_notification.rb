@@ -7,7 +7,7 @@ class DraftNotification < Noticed::Base
   # Add your delivery methods
   #
   deliver_by :database
-  deliver_by :email, mailer: "DraftMailer"
+  deliver_by :email, mailer: "DraftMailer", debug: true, method: :draft_notification
 
   param :draft
 

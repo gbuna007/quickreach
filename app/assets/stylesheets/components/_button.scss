@@ -10,12 +10,7 @@
   }
 }
 
-.link-label a{
-  text-decoration: none;
-  color: #1F4690;
-  &:hover{
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: underline;
-  }
+.fontawesome-to-btn{
+  border: none;
+  background-color: transparent;
 }
