@@ -10,17 +10,17 @@
     </div>
 
     <!-- new form item -->
-    <div class="trigger-form d-none" data-new-trigger-target="form">
+    <div class="trigger-form d-none mb-5" data-new-trigger-target="form">
       <%= render "form2", trigger: @trigger %>
     </div>
 
     <!-- details -->
     <div class="trigger-labels fw-bold">
       <p class="col-1">Date</p>
-      <p class="col-2">Trigger Name</p>
+      <p class="col-3">Trigger Name</p>
       <p class="col-3">Account</p>
       <p class="col-3">Keywords</p>
-      <%# <p>Template</p> %>
+      <p class="col-1">Actions</p>
     </div>
     <!-- display for each item-->
     <% @triggers.each do |trigger| %>

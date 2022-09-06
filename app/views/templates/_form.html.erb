@@ -1,19 +1,7 @@
-<div class="row d-flex justify-content-center">
-  <div class="col-7">
-    <%= simple_form_for(template, html: { class: "mb-3"}, data: {new_template_target: "submit",
-        action: "submit->new-template#create"}) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :subject %>
-      <%= f.input :body, as: :text, input_html: { :rows => 12 } %>
-      <%= f.submit %>
-    <% end %>
-  </div>
-
-  <div class="col-4 border border-dark p-2 me-2">
-    <h3>Note on Variables:</h3>
-    <p>In order for QuickReach to populate the right information, please use the following variables in your body wrapped in <<\var_name>>:</p>
-    <p>account_name: Account Name, e.g. Grab</p>
-    <p>contact_fn: Contact's first name</p>
-    <p>account_category: Account's category, e.g. transportation,finance, e-commerce</p>
-  </div>
-</div>
+<%= simple_form_for(template, html: { class: "mb-3"}, data: {new_template_target: "submit",
+    action: "submit->new-template#create"}) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :subject %>
+  <%= f.input :body, as: :text, input_html: { :rows => 12 } %>
+  <%= f.submit %>
+<% end %>

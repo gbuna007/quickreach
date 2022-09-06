@@ -6,15 +6,21 @@ class TemplatesController < ApplicationController
 
   def create
     @template = Template.new(template_params)
-    authorize @template
     @template.user = current_user
+    authorize @template
 
     respond_to do |format|
       if @template.save
+        # create new template to override in create.json.jbuilder => not sure why we have to do this..
+        @template = Template.new
+        # if the format is html, do this
         format.html { redirect_to templates_path }
       else
         format.html { render "templates/index", status: :unprocessable_entity }
       end
+
+      # format should be json so so the program should always hit this line
+      # then go to create.json.jbuilder
       format.json
     end
   end

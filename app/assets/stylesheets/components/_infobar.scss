@@ -2,11 +2,15 @@
   display: flex;
   align-items: center;
   margin-bottom: 8px;
-  background-color: rgba($color: #1F4690, $alpha: 1.0);
-  color: #FFE5B4;
-  text-shadow: 0px 0px 1px rgba($color: #231955, $alpha: 1.0);
-  padding: 8px 16px;
-  // border: 1px solid rgb(235,235,235);
+  // background-color: rgba($color: #1F4690, $alpha: 1.0);
+  color: black;
+  padding: 8px 24px;
+  margin: 0px;
+  border-bottom: 1px solid;
+  min-height: 8vh;
+  &:hover{
+    background-color: lightgrey;
+  }
 }
 
 .info .info-content {
@@ -20,7 +24,7 @@
 }
 
 .info small {
-  color: #E8AA42;
+  color: black;
   font-weight: bold;
 }
 .info .info-actions {
@@ -29,32 +33,30 @@
   transition: ease .3s;
 }
 
-.info:hover .info-actions {
-  font-style: italic;
-  opacity: 1;
-}
-
 .info .info-actions a {
-  color: #FFE5B4;
+  color: black;
   margin-left: 16px;
   font-size: 14px;
+  text-decoration: none;
 }
 
 .info .info-actions a:hover {
-  color: #E8AA42;
+  color: black;
+  text-decoration: underline;
+  font-style: italic;
 }
 
 a.news-url {
-  color: #FFE5B4 !important;
+  color: black !important;
 }
 
 .edit-form-btn{
-  background-color: #1F4690;
+  background-color: transparent;
   border: none;
-  color: #FFE5B4;
   font-size: 14px;
   &:hover{
-    background-color: #1F4690;
-    color: #E8AA42;
+    background-color: transparent;
+    font-style: italic;
+    text-decoration: underline;
   }
 }
