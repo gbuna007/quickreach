@@ -1,20 +1,20 @@
 <div class="row m-0 p-0">
   <%= render "shared/sidebar" %>
-  <div class="col-10 flex-grow-1 main-content" data-controller="new-template">
-    <div class ="navbar">
-      <div><h1>Templates</h1></div>
+
+  <div class="col-10 flex-grow-1 main-content align-self-center" data-controller="new-template">
+    <div class="navbar mb-3">
+      <h1 class="m-0">Templates</h1>
+      <button class="w-25 border border-primary rounded btn-reveal fw-bold" data-action="click->new-template#revealForm">New Email Template</button>
     </div>
 
-    <div class="new-template border border-primary d-flex justify-content-center mb-3 rounded" >
-      <button class="align-self-center fw-bold btn-reveal" data-action="click->new-template#revealForm">New Email Template</button>
-    </div>
+    <!-- form -->
     <div class="template-form d-none" data-new-template-target="form">
-      <div class="row d-flex justify-content-center">
+      <div class="d-flex justify-content-between">
         <div class="col-7">
           <%= render 'form', template: @template %>
         </div>
 
-        <div class="col-4 border border-dark p-2 me-2">
+        <div class="col-4 border border-dark p-3">
           <h3>Note on Variables:</h3>
           <p>In order for QuickReach to accurately use your template, please use the following components in your body wrapped in <%= "<< >>" %>:</p>
           <ul>
@@ -33,7 +33,8 @@
       </div>
     </div>
 
-    <div class="trigger-labels fw-bold">
+    <!-- table of templates -->
+    <div class="trigger-labels fw-bold mt-5">
       <p class="col-1">Date</p>
       <p class="col-2 flex-grow-1 ms-2">Template Name</p>
       <p class="col-6">Variables</p>

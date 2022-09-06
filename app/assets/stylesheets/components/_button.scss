@@ -1,25 +1,15 @@
-.qt-btn {
+.qt-btn{
   text-decoration: none;
   border: solid 1px #1F4690;
+  border-radius: 3px;
   color: #1F4690;
-  width: 100px;
   padding: 8px 40px 8px 40px;
   &:hover {
     background-color: #1F4690;
     color: #FFE5B4;
   }
 }
-.themed-btn{
-  text-decoration: none;
-  border: solid 1px #1F4690;
-  border-radius: 4px;
-  color: #1F4690;
-  padding: 8px;
-  &:hover {
-    background-color: #1F4690;
-    color: #FFE5B4;
-  }
-}
+
 .link-label a{
   text-decoration: none;
   color: #1F4690;
