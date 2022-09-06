@@ -23,17 +23,16 @@
 
 .side-nav-btn {
   min-width: 70%;
+  width: 125px;
   margin-top: 10%;
   margin-bottom: 5%;
   color: #1F4690;
   border-color: #1F4690;
+  transition: 40ms;
   &:hover {
     background-color: #1F4690;
     color: #FFE5B4;
     border-color: #1F4690;
+    font-weight: bold;
   }
-}
-
-.sidebar-btn {
-  width: 125px;
 }

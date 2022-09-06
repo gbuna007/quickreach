@@ -4,7 +4,20 @@
 
     <div class ="navbar">
       <div><h1>Accounts</h1></div>
-      <%# <div>Search bar</div> %>
+      <div class="search-form-control form-group">
+      <%= form_with url: accounts_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control bar-mid-width",
+          id: "search_query",
+          placeholder: "Search for an account!"
+        %>
+
+        <%= button_tag type:'submit', class:"btn bg-transparent" do %>
+          <i class="fa-solid fa-magnifying-glass"></i> Search
+        <% end %>
+      <% end %>
+    </div>
     </div>
 
     <% if @accounts.count == 0%>
