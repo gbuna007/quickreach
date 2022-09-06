@@ -20,7 +20,6 @@ class TriggerMailer < ApplicationMailer
       subject: @draft.edited_subject,
       to: @draft.trigger.contact.email,
       from: 'grace@random-forest.io',
-      html_body: @draft.edited_body,
       track_opens: 'true',
       message_stream: 'outbound'
     )
