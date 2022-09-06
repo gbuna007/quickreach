@@ -31,18 +31,18 @@
   display: flex;
 }
 
-.info .info-actions a {
+.info-removal {
   color: black;
   margin-left: 16px;
   font-size: 14px;
   text-decoration: none;
+  &:hover{
+    color: black;
+    text-decoration: underline;
+    font-style: italic;
+  }
 }
 
-.info .info-actions a:hover {
-  color: black;
-  text-decoration: underline;
-  font-style: italic;
-}
 
 a.news-url {
   color: black !important;
