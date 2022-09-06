@@ -24,16 +24,16 @@
         <div class="info-content col-3">
           <%= draft.trigger.name %>
         </div>
-        <div class="info-content col-4">
+        <div class="info-content col-5">
           <%= link_to draft.news.link,
           draft.news.link,
            target: '_blank', class: "news_url" %>
         </div>
 
-        <div class="info-actions">
+        <div class="info-actions d-flex">
           <!-- off canvas for email editing -->
           <!-- btn -->
-            <button class="edit-form-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Edit Draft <i class="fas fa-pencil-alt"></i></button>
+            <button class="edit-form-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Edit<i class="fas fa-pencil-alt"></i></button>
           <!-- content-->
             <div class="offcanvas offcanvas-end bg-dark-blu text-dy" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
               <div class="offcanvas-header">
@@ -51,6 +51,11 @@
                 </div>
               </div>
             </div>
+            <%= link_to send_draft_path(draft), controller: "drafts", action: "send_draft" do %>
+              <p>Send <i class="fa-solid fa-paper-plane"></i></p>
+            <% end %>
+
+
             <%= link_to draft_path(draft),
               data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do
             %>
