@@ -27,10 +27,9 @@ class TriggersController < ApplicationController
 
   def update
     @trigger = Trigger.find(params[:id])
-    @trigger.keywords.build
     @trigger.update(trigger_params)
-
     authorize @trigger
+
     index
     if @trigger.save
       redirect_to triggers_path
