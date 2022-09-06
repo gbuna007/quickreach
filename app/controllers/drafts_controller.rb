@@ -1,5 +1,5 @@
 class DraftsController < ApplicationController
-  before_action :set_draft, only: %i[update]
+  before_action :set_draft, only: %i[update send_draft]
 
   def index
     @drafts = []
@@ -31,6 +31,10 @@ class DraftsController < ApplicationController
     @draft = Draft.find(params[:id])
     @draft.destroy
     redirect_to drafts_path, status: :see_other
+  end
+
+  def send_draft
+    TriggerMailer.send_draft(@draft).deliver_later
   end
 
   private
