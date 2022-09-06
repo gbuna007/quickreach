@@ -48,7 +48,6 @@ class TriggersController < ApplicationController
   private
 
   def trigger_params
-    params.require(:trigger).permit(:date_added, :name, :account_id, :contact_id, :template_id, keywords_attributes: %i[id name _destroy])
+    params.require(:trigger).permit(:name, :account_id, :contact_id, :template_id, keywords_attributes: %i[id name _destroy])
   end
-
 end

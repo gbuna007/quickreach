@@ -51,9 +51,13 @@
                 </div>
               </div>
             </div>
+            <%= link_to draft_path(draft),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do
+            %>
+            <p>Delete <i class="far fa-trash-alt"></i></p>
+            <% end %>
         </div>
       </div>
     <% end %>
-    <hr>
   </div>
 </div>

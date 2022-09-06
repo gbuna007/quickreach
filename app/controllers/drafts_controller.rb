@@ -27,6 +27,12 @@ class DraftsController < ApplicationController
     end
   end
 
+  def destroy
+    @draft = Draft.find(params[:id])
+    @draft.destroy
+    redirect_to drafts_path, status: :see_other
+  end
+
   private
 
   def draft_params
