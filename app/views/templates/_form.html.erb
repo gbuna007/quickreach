@@ -1,7 +1,7 @@
-<%= simple_form_for(template, html: { class: "mb-3"}, data: {new_template_target: "submit",
+<%= simple_form_for(template, data: {new_template_target: "submit",
     action: "submit->new-template#create"}) do |f| %>
   <%= f.input :name %>
   <%= f.input :subject %>
   <%= f.input :body, as: :text, input_html: { :rows => 12 } %>
-  <%= f.submit %>
+  <%= f.submit class: 'qt-btn' %>
 <% end %>

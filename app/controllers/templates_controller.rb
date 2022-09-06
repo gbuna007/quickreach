@@ -12,7 +12,7 @@ class TemplatesController < ApplicationController
     respond_to do |format|
       if @template.save
         # create new template to override in create.json.jbuilder => not sure why we have to do this..
-        @template = Template.new
+        @new_template = Template.new
         # if the format is html, do this
         format.html { redirect_to templates_path }
       else
