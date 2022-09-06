@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "sag@quickreach.me"
+  default from: "grace@random-forest.io"
   layout "mailer"
 end

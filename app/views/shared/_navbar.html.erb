@@ -14,7 +14,7 @@
         <% if user_signed_in? %>
           <p class= "me-3 my-2">Hello <%= current_user.email %></p>
           <li class="nav-item dropdown">
-            <%= cl_image_tag "v1661742874/development/avatarstock.jpg", width: 40, height: 40, crop: "fill", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag "avatarstock.jpg", width: 40, height: 40, crop: "fill", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Reintegrate CRM", pages_path, class: "dropdown-item border-bottom" %>
               <%= link_to "Dashboard", accounts_path, class: "dropdown-item border-bottom" %>
