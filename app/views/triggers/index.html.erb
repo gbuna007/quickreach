@@ -1,13 +1,13 @@
 <div class="row m-0 p-0">
   <%= render "shared/sidebar" %>
   <div class="col-10 flex-grow-1 main-content" data-controller="new-trigger">
-    <div class ="navbar">
+    <div class ="navbar mb-3">
       <div><h1>Triggers</h1></div>
       <button class="qt-btn w-25 fw-bold" data-action="click->new-trigger#revealForm">New Trigger</button>
     </div>
 
     <!-- new form item -->
-    <div class="trigger-form d-none mb-5" data-new-trigger-target="form">
+    <div class="trigger-form d-none mb-5 bg-light" data-new-trigger-target="form">
       <%= render "form2", trigger: @trigger %>
     </div>
 
@@ -20,7 +20,6 @@
       <p class ="me-5">Actions</p>
     </div>
     <!-- display for each item-->
-    <% j = 1 %>
     <% @triggers.each do |trigger| %>
       <div class="info">
         <%= trigger.updated_at.strftime("%D") %>
@@ -41,9 +40,9 @@
         <div class="info-actions">
           <!-- off canvas for trigger editing -->
           <!-- btn -->
-          <button class="edit-form-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight<%=j%>" aria-controls="offcanvasRight<%=j%>">Edit Trigger <i class="fas fa-pencil-alt"></i></button>
+          <button class="edit-form-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight<%= "canvas-#{trigger.id}" %>" aria-controls="offcanvasRight<%= "canvas-#{trigger.id}" %>">Edit Trigger <i class="fas fa-pencil-alt"></i></button>
           <!-- content-->
-          <div class="offcanvas offcanvas-end bg-canvas text-canvas" tabindex="-1" id="offcanvasRight<%=j%>" aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas offcanvas-end bg-canvas text-canvas" tabindex="-1" id="offcanvasRight<%= "canvas-#{trigger.id}" %>" aria-labelledby="offcanvasRightLabel">
             <!--header-->
             <div class="offcanvas-header">
               <div id="offcanvasRightLabel">
@@ -54,7 +53,7 @@
             <!-- body -->
             <div class="offcanvas-body">
               <div class="d-flex align-items-center justify-content-center">
-                <div class="w-100">
+                <div class="w-100 text-canvas">
                   <%= render "form2", trigger: trigger %>
                 </div>
               </div>
@@ -67,51 +66,6 @@
           <% end %>
         </div>
       </div>
-      <% j += 1 %>
     <% end %>
-
-    <br>
-    <hr>
-    <br>
-
-    <% i = 1 %>
-    <% @triggers.each do |trigger| %>
-      <div class="info">
-        <%= trigger.updated_at.strftime("%D") %>
-        <div class="info-content col-3">
-          <%= trigger.name %>
-        </div>
-        <div class="info-content col-3">
-          <%= trigger.account.name %>
-        </div>
-
-        <div class="info-content col-3">
-          <% trigger.keywords.each do |keyword| %>
-            <%= keyword.name %>,
-          <% end %>
-        </div>
-
-
-        <div class="info-action col-2 d-flex">
-          <!-- btn -->
-          <button class="edit-form-btn" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample<%=i%>" aria-expanded="false" aria-controls="multiCollapseExample<%=i%>">
-            Edit Trigger <i class="fas fa-pencil-alt"></i>
-          </button>
-          <%= link_to trigger_path(trigger),
-              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do
-          %>
-            <p>Delete <i class="far fa-trash-alt"></i></p>
-          <% end %>
-        </div>
-      </div>
-          <!-- content-->
-      <div class="collapse" id="multiCollapseExample<%=i%>">
-        <div class="card card-body">
-          <%= render "form2", trigger: trigger %>
-        </div>
-      </div>
-    <% i +=1 %>
-  <% end %>
-
   </div>
 </div>

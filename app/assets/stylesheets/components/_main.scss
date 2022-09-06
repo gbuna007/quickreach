@@ -15,6 +15,36 @@
 }
 .text-canvas{
   color: #FFE5B4;
+  button{
+    color: #FFE5B4;
+    border: none;
+    &:hover{
+      color: #E8AA42;
+    }
+  }
+  .qt-btn{
+    color: #1F4690;
+    &:hover{
+      background-color: whitesmoke;
+      color: #E8AA42;
+    }
+    a{
+      border: none;
+      &:hover{
+        background-color: none;
+        border: none;
+      }
+    }
+  }
+}
+.keywords{
+  button{
+    color: #FFE5B4;
+    border: none;
+    &:hover{
+      color: #E8AA42;
+    }
+  }
 }
 .bg-canvas{
  background-color: #1F4690;
