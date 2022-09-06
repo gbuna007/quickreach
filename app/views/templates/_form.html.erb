@@ -11,9 +11,18 @@
 
   <div class="col-4 border border-dark p-2 me-2">
     <h3>Note on Variables:</h3>
-    <p>In order for QuickReach to populate the right information, please use the following variables in your body wrapped in <<\var_name>>:</p>
-    <p>account_name: Account Name, e.g. Grab</p>
-    <p>contact_fn: Contact's first name</p>
-    <p>account_category: Account's category, e.g. transportation,finance, e-commerce</p>
+    <p>In order for QuickReach to accurately use your template, please use the following components in your body wrapped in <%= "<< >>" %>:</p>
+    <ul>
+      <li>account_name (e.g. Grab)</li>
+      <li>contact_fn (contact's first name e.g. Bob)</li>
+      <li>account_category (e.g. transportation)</li>
+    </ul>
+
+    <p>Example: </p>
+    <p>Hello <%= "<<contact_fn>>" %>!
+      Just wanted to check in as recently we have seen that <%= "<<account_name>>" %>
+      is experiencing some challenges with profitability. Keen to understand
+      your challenges better to see if we can support your effort in keeping
+      <%= "<<account_name>>" %> as a leader in the <%= "<<account_category>>" %> sector.</p>
   </div>
 </div>
