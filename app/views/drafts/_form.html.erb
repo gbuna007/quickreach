@@ -1,5 +1,5 @@
 <%= simple_form_for(draft) do |f| %>
   <%= f.input :edited_subject %>
-  <%= f.input :edited_body, as: :text, :input_html{ class: "min-textarea-height-75" } %>
+  <%= f.input :edited_body, as: :text, input_html: { :rows => 12 } %>
   <%= f.submit %>
 <% end %>

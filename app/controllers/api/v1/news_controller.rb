@@ -1,9 +1,8 @@
-require "csv"
+require 'csv'
 
 class Api::V1::NewsController < Api::V1::BaseController
   def index
     filepath = File.join Rails.root, 'public', 'data', "news_api.csv"
-
     CSV.foreach(filepath, headers: :first_row, liberal_parsing: true) do |row|
       # if news already exist in database (compared through link), then update the breaking to false.
       # if news the link does not match any rec, create a new news instance with default breaking equals to true

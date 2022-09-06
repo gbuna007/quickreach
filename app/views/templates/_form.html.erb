@@ -4,7 +4,7 @@
         action: "submit->new-template#create"}) do |f| %>
       <%= f.input :name %>
       <%= f.input :subject %>
-      <%= f.input :body %>
+      <%= f.input :body, as: :text, input_html: { :rows => 12 } %>
       <%= f.submit %>
     <% end %>
   </div>

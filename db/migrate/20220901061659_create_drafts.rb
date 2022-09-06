@@ -5,6 +5,7 @@ class CreateDrafts < ActiveRecord::Migration[7.0]
       t.boolean :sent, default: false
       t.string :edited_subject
       t.string :edited_body
+      t.references :news, null: false, foreign_key: true
 
       t.timestamps
     end
