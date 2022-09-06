@@ -9,4 +9,8 @@ class DraftPolicy < ApplicationPolicy
   def update?
     record.trigger.account.user == user
   end
+
+  def send_draft?
+    record.trigger.account.user == user
+  end
 end
