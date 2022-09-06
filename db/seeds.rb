@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # users
-user1 = User.create(first_name: "Ann", last_name: "Lim", email: "grace@random-forest.io", password: "ann123") # have accounts, contacts, templates, HAVE triggers
+user1 = User.create(first_name: "Ann", last_name: "Lim", email: "grace@random-forest.io", password: "grace123") # have accounts, contacts, templates, HAVE triggers
 user2 = User.create(first_name: "Bob", last_name: "Lee", email: "bob@gmail.com", password: "bob123") # have accounts, contacts, NO triggers
 user3 = User.create(first_name: "Chan", last_name: "Chan", email: "chan@gmail.com", password: "chan123") # no accounts
 admin = User.create(email: "seb@lewagon.org", password: "password", admin: true)
