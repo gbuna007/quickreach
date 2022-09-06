@@ -10,10 +10,6 @@ class DraftsController < ApplicationController
     end
   end
 
-  # def edit
-  #   authorize @draft
-  # end
-
   def update
     authorize @draft
     @draft.update(draft_params)
@@ -35,6 +31,9 @@ class DraftsController < ApplicationController
 
   def send_draft
     TriggerMailer.send_draft(@draft).deliver_later
+
+    flash[:notice] = "Draft has been sent."
+    redirect_to drafts_path
   end
 
   private
