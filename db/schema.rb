@@ -42,8 +42,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_093915) do
     t.boolean "sent", default: false
     t.string "edited_subject"
     t.string "edited_body"
+    t.bigint "news_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["news_id"], name: "index_drafts_on_news_id"
     t.index ["trigger_id"], name: "index_drafts_on_trigger_id"
   end
 
@@ -123,6 +125,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_093915) do
 
   add_foreign_key "accounts", "users"
   add_foreign_key "contacts", "accounts"
+  add_foreign_key "drafts", "news"
   add_foreign_key "drafts", "triggers"
   add_foreign_key "keywords", "triggers"
   add_foreign_key "templates", "users"
