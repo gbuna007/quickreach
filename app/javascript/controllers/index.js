@@ -13,8 +13,8 @@ application.register("hello", HelloController)
 import HowHighlightController from "./how_highlight_controller"
 application.register("how-highlight", HowHighlightController)
 
-import KeywordsForTriggerController from "./keywords_for_trigger_controller"
-application.register("keywords-for-trigger", KeywordsForTriggerController)
+import KeywordsController from "./keywords_controller"
+application.register("keywords", KeywordsController)
 
 import NewTemplateController from "./new_template_controller"
 application.register("new-template", NewTemplateController)

@@ -1,0 +1,11 @@
+<div data-controller="keywords" class="mb-5">
+<%#= simple_form_for trigger, data: {controller: "keywords-for-trigger"} do |form| %>
+  <!-- click to add a keyword btn -->
+  <button data-action="click->keywords#createKeyword" class="qt-btn">Click to add a keyword</button>
+
+  <!-- keyword input boxes -->
+  <%# trigger.keywords.each do |keyword| %>
+    <%#= render "keyword", keyword: keyword %>
+  <%# end %>
+<%# end %>
+</div>

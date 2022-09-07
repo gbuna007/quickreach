@@ -56,14 +56,13 @@
 
           <!-- off-canvas edit form -->
           <div class="offcanvas offcanvas-end bg-canvas text-canvas" tabindex="-1" id="offcanvasRight<%= "canvas-#{trigger.id}" %>" aria-labelledby="offcanvasRightLabel">
-            <!-- header -->
             <div class="offcanvas-header">
               <h2>Edit Trigger</h2>
             </div>
 
-            <!-- body -->
             <div class="offcanvas-body">
-              <%= render "form2", trigger: trigger %>
+              <%= render "keywords_form", trigger: trigger %>
+              <%#= render "other_info_form", trigger: trigger %>
             </div>
           </div>
 
