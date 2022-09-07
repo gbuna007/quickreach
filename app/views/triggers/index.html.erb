@@ -4,8 +4,8 @@
   <div class="col-10 flex-grow-1 main-content align-self-center min-vh-100" data-controller="new-trigger">
     <!-- main header -->
     <div class="navbar mb-3">
-      <h1 class="m-0">Triggers</h1>
-      <button class="qt-btn w-25 fw-bold" data-action="click->new-trigger#revealForm">New Trigger</button>
+      <h1 class="m-0 responsive-font-lg">Triggers</h1>
+      <button class="qt-btn w-25 fw-bold responsive-font-reg" data-action="click->new-trigger#revealForm">New Trigger</button>
     </div>
 
     <!-- new trigger form -->
@@ -13,21 +13,39 @@
       <%= render "form2", trigger: @trigger %>
     </div>
 
-    <!-- table headers -->
-    <div class="headers fw-bold">
-      <p class="ps-4">Date</p>
-      <p class="">Trigger Name</p>
-      <p class="">Account Name</p>
-      <p class="">Template Name</p>
+    <!-- details -->
+    <div id="header" class="responsive-font-reg">
+      <p class="col-1">Date</p>
+      <div class="info-content col-3">
+        <p>Name</p>
+      </div>
+      <div class="info-content col-3">
+        <p>Account</p>
+      </div>
+
+      <div class="info-content col-3">
+        <p>Template</p>
+      </div>
+      <div class="info-action px-3">
+        <p class="px-5">Actions</p>
+      </div>
     </div>
 
     <!-- each trigger row -->
     <% @triggers.each do |trigger| %>
-      <div class="info">
-        <%= trigger.updated_at.strftime("%D") %>
-        <div class="info-content"><%= trigger.name %></div>
-        <div class="info-content"><%= trigger.account.name %></div>
-        <div class="info-content"><%= trigger.template.name %></div>
+      <div class="info responsive-font-reg">
+          <p class="col-1"> <%= trigger.updated_at.strftime("%D") %> </p>
+        <div class="info-content col-3">
+          <p><%= trigger.name %></p>
+        </div>
+        <div class="info-content col-3">
+          <p><%= trigger.account.name %></p>
+        </div>
+
+        <div class="info-content col-3">
+          <p><%= trigger.template.name %></p>
+        </div>
+
 
         <!-- edit/delete buttons -->
         <div class="info-actions">

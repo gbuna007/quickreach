@@ -13,6 +13,27 @@
   }
 }
 
+#header{
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  // background-color: rgba($color: #1F4690, $alpha: 1.0);
+  color: #1F4690;
+  font-weight: bold;
+  padding: 8px 24px;
+  margin: 0px;
+  border-bottom: 1px solid;
+  min-height: 8vh;
+  .info-content{
+    flex-grow: 1;
+    padding: 0 24px;
+  }
+  p{
+  margin: 0;
+  line-height: 1.4;
+  }
+}
+
 .info .info-content {
   flex-grow: 1;
   padding: 0 24px;
@@ -51,7 +72,7 @@ a.news-url {
 .edit-form-btn{
   background-color: transparent;
   border: none;
-  font-size: 14px;
+  font-size: 1vw;
   &:hover{
     background-color: transparent;
     font-style: italic;
