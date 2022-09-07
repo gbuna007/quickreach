@@ -12,9 +12,9 @@
 .list-for-items {
   position: fixed;
   left: 0;
-  width: 14%;
+  width: 10%;
   margin: 0;
-  padding: 0;
+  // padding: 0 ;
   li{
     list-style: none;
     margin: 0;
@@ -26,13 +26,13 @@
   width: 125px;
   margin-top: 10%;
   margin-bottom: 5%;
-  color: #1F4690;
-  border-color: #1F4690;
+  color: $qr-blue;
+  border-color: $qr-blue;
   transition: 40ms;
   &:hover {
-    background-color: #1F4690;
+    background-color: $qr-blue;
     color: #FFE5B4;
-    border-color: #1F4690;
+    border-color: $qr-blue;
     font-weight: bold;
   }
 }

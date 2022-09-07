@@ -8,8 +8,10 @@
   margin: 0px;
   border-bottom: 1px solid;
   min-height: 8vh;
+  transition: 300ms;
+
   &:hover{
-    background-color: lightgrey;
+    background-color: rgba($qr-blue, 0.1);
   }
 }
 
@@ -19,6 +21,7 @@
   margin-bottom: 8px;
   // background-color: rgba($color: #1F4690, $alpha: 1.0);
   color: #1F4690;
+  font-size: 1.25vw;
   font-weight: bold;
   padding: 8px 24px;
   margin: 0px;

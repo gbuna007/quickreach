@@ -12,20 +12,30 @@
     </div>
 
     <!-- details -->
-    <div id="header" class="responsive-font-reg">
+    <div id="header">
       <p class="col-1">Date</p>
       <div class="info-content col-3">
         <p>Name</p>
       </div>
       <div class="info-content col-3">
         <p>Account</p>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-filter"></i>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <%= @triggers.each do |trigger| %>
+            <li><%= link_to triggers_path trigger.account.name, class:"dropdown-item" %></li>
+          <% end %>
+          </ul>
+        </div>
       </div>
 
       <div class="info-content col-3">
         <p>Template</p>
       </div>
-      <div class="info-action px-3">
-        <p class="px-5">Actions</p>
+      <div class="info-action p-1">
+        <p class="px-4">Actions</p>
       </div>
     </div>
     <!-- display for each item-->
@@ -47,7 +57,7 @@
         <div class="info-actions">
           <!-- off canvas for trigger editing -->
           <!-- btn -->
-          <button class="edit-form-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight<%= "canvas-#{trigger.id}" %>" aria-controls="offcanvasRight<%= "canvas-#{trigger.id}" %>">Edit Trigger <i class="fas fa-pencil-alt"></i></button>
+          <button class="edit-form-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight<%= "canvas-#{trigger.id}" %>" aria-controls="offcanvasRight<%= "canvas-#{trigger.id}" %>">Edit <i class="fas fa-pencil-alt"></i></button>
           <!-- content-->
           <div class="offcanvas offcanvas-end bg-canvas text-canvas" tabindex="-1" id="offcanvasRight<%= "canvas-#{trigger.id}" %>" aria-labelledby="offcanvasRightLabel">
             <!--header-->
