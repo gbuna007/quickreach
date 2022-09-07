@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   resources :templates, only: %i[index create show]
 
   resources :triggers, only: %i[index create update destroy]
+  get 'filter_contacts_by_accounts', to: 'accounts#filter_contacts_by_accounts'
+
 
   resources :keywords, only: :create
 
