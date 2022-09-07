@@ -3,7 +3,7 @@
   <div class="col-10 flex-grow-1 main-content">
 
     <div class ="navbar">
-      <div><h1>Accounts</h1></div>
+      <div><h1 class=" responsive-font-lg">Accounts</h1></div>
       <div class="search-form-control form-group">
       <%= form_with url: accounts_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
@@ -38,18 +38,18 @@
               <!-- top section -->
               <div class="d-flex justify-content-center">
                 <!-- company name -->
-                <div class="m-2"><h4><strong><%= account.name %></strong></h4></div>
+                <div class="m-2 responsive-font-large"><h4><strong><%= account.name %></strong></h4></div>
               </div>
 
-              <div class="card-body ps-3">
+              <%# <div class="card-body d-flex align-items-center p-3"> %>
                 <!-- textfield -->
-                <div>
-                  <p><strong>Account Status:</strong> <%= account.status %></p>
-                  <p><strong>Account Category:</strong> <%= account.category %></p>
-                  <p><strong>Potential Revenue:</strong><br> $<%= account.potential_rev %></p>
+                <div class="card-text responsive-font-reg p-3">
+                  <p>Account Status: <small><%= account.status.capitalize %></small></p>
+                  <p>Category: <small><%= account.category.capitalize %></small></p>
+                  <p>Potential Revenue: <small>$<%= account.potential_rev %></small> </p>
                   <!-- end of text field -->
                 </div>
-              </div>
+              <%# </div> %>
             </div>
             <!-- end of card -->
           </div>
