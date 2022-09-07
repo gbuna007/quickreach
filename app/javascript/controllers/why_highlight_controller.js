@@ -16,28 +16,28 @@ export default class extends Controller {
         <p>As the data is synced with your CRM, any updates within CRM will be reflected on QuickReach.</p>"
         this.descriptionTarget.innerHTML = desc1;
         e.currentTarget.classList.add("active")
-        this.imageTarget.innerHTML = "<img width='300' height='250' class='highlight-image-why' src='http://res.cloudinary.com/twx-a/image/upload/c_fill,h_225,w_275/development/integrate_crm.png'>"
+        this.imageTarget.innerHTML = "<img width='275' height='225' class='highlight-image-why' src='https://res.cloudinary.com/twx-a/image/upload/c_scale,w_275/v1662525001/production/integrate_crm.png'>"
         break;
       case "2":
         const desc2 = "<p>Process of reading breaking news, deciding their relevancy, and drafting emails is repetitive and takes a lot of time.</p>\
         <p>Through automation QuickReach will enable you to focus on high-value activities such as speaking to your clients and prospects.</p>"
         this.descriptionTarget.innerHTML = desc2;
         e.currentTarget.classList.add("active")
-        this.imageTarget.innerHTML = "<img width='300' height='250' class='highlight-image-why' src='http://res.cloudinary.com/twx-a/image/upload/c_fill,h_225,w_275/development/automate_news.png'>"
+        this.imageTarget.innerHTML = "<img width='275' height='225' class='highlight-image-why' src='https://res.cloudinary.com/twx-a/image/upload/c_scale,w_275/v1662523708/production/automate_news.png'>"
         break;
       case "3":
         const desc3 = "<p>Delegate news research to us.</p>\
         <p>Our system is connected to top global and regional publications and will check for any breaking news every 5 minutes.</p>"
         this.descriptionTarget.innerHTML = desc3;
         e.currentTarget.classList.add("active")
-        this.imageTarget.innerHTML = "<img width='300' height='250' class='highlight-image-why' src='http://res.cloudinary.com/twx-a/image/upload/c_fill,h_225,w_275/development/newspaper.png'>"
+        this.imageTarget.innerHTML = "<img width='275' height='225' class='highlight-image-why' src='https://res.cloudinary.com/twx-a/image/upload/c_fill,w_275/v1662527546/production/newspaper.png'>"
         break;
       case "4":
         const desc4 = "<p>When there is a relevant breaking news, QuickReach will generate a draft and notify you</p>\
         <p>Drafts will be pre-polulated with the right information and are ready to send after a review.</p>"
         this.descriptionTarget.innerHTML = desc4;
         e.currentTarget.classList.add("active")
-        this.imageTarget.innerHTML = "<img width='300' height='250' class='highlight-image-why' src='http://res.cloudinary.com/twx-a/image/upload/c_fill,h_225,w_275/development/email.png'>"
+        this.imageTarget.innerHTML = "<img width='275' height='225' class='highlight-image-why' src='https://res.cloudinary.com/twx-a/image/upload/c_fill,w_275/v1662527634/production/email.png'>"
         break;
     }
   }
