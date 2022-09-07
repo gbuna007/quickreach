@@ -10,12 +10,20 @@ body{
   background-color: #FFE5B4;
 }
 
-.qr-why:hover {
+.qr-why.active {
   background-color: #1F4690;
   color: #FFE5B4;
 }
 
-.qr-how:hover {
+.qr-how.active {
   background-color: #1F4690;
   color: #FFE5B4;
+}
+
+.qr-how {
+  cursor: pointer;
+}
+
+.qr-why {
+  cursor: pointer;
 }
