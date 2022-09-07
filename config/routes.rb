@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :triggers, only: %i[index create update destroy] do
     resources :keywords, only: :create
   end
+  get 'filter_contacts_by_accounts', to: 'accounts#filter_contacts_by_accounts'
 
   resources :drafts, only: %i[index update destroy]
   get "send_draft/:id", to: 'drafts#send_draft', as: :send_draft

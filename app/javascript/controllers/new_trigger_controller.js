@@ -5,7 +5,6 @@ export default class extends Controller {
   static targets = ["rows", "form", "submit"]
 
   connect() {
-    console.log("new_trigger controller connected");
   }
 
   revealForm() {
