@@ -1,71 +1,63 @@
 <div class="row m-0 p-0">
   <%= render "shared/sidebar" %>
-  <div class="col-10 flex-grow-1 main-content" data-controller="new-trigger">
-    <div class ="navbar mb-3">
-      <div><h1>Triggers</h1></div>
+
+  <div class="col-10 flex-grow-1 main-content align-self-center min-vh-100" data-controller="new-trigger">
+    <!-- main header -->
+    <div class="navbar mb-3">
+      <h1 class="m-0">Triggers</h1>
       <button class="qt-btn w-25 fw-bold" data-action="click->new-trigger#revealForm">New Trigger</button>
     </div>
 
-    <!-- new form item -->
+    <!-- new trigger form -->
     <div class="trigger-form d-none mb-5 bg-light" data-new-trigger-target="form">
       <%= render "form2", trigger: @trigger %>
     </div>
 
-    <!-- details -->
+    <!-- table headers -->
     <div class="headers fw-bold">
       <p class="ps-4">Date</p>
-      <p class="col-3">Trigger Name</p>
-      <p class="col-3">Account</p>
-      <p class="col-3">Keywords</p>
-      <p class ="me-5">Actions</p>
+      <p class="">Trigger Name</p>
+      <p class="">Account Name</p>
+      <p class="">Template Name</p>
     </div>
-    <!-- display for each item-->
+
+    <!-- each trigger row -->
     <% @triggers.each do |trigger| %>
       <div class="info">
         <%= trigger.updated_at.strftime("%D") %>
-        <div class="info-content col-3">
-          <%= trigger.name %>
-        </div>
-        <div class="info-content col-3">
-          <%= trigger.account.name %>
-        </div>
+        <div class="info-content"><%= trigger.name %></div>
+        <div class="info-content"><%= trigger.account.name %></div>
+        <div class="info-content"><%= trigger.template.name %></div>
 
-        <div class="info-content col-3">
-          <% trigger.keywords.each do |keyword| %>
-            <%= keyword.name %>,
-          <% end %>
-        </div>
-
-
+        <!-- edit/delete buttons -->
         <div class="info-actions">
-          <!-- off canvas for trigger editing -->
-          <!-- btn -->
-          <button class="edit-form-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight<%= "canvas-#{trigger.id}" %>" aria-controls="offcanvasRight<%= "canvas-#{trigger.id}" %>">Edit Trigger <i class="fas fa-pencil-alt"></i></button>
-          <!-- content-->
+          <!-- edit btn -->
+          <button class="edit-form-btn" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight<%= "canvas-#{trigger.id}" %>"
+            aria-controls="offcanvasRight<%= "canvas-#{trigger.id}" %>">
+              Edit Trigger <i class="fas fa-pencil-alt"></i>
+          </button>
+
+          <!-- off-canvas edit form -->
           <div class="offcanvas offcanvas-end bg-canvas text-canvas" tabindex="-1" id="offcanvasRight<%= "canvas-#{trigger.id}" %>" aria-labelledby="offcanvasRightLabel">
-            <!--header-->
+            <!-- header -->
             <div class="offcanvas-header">
-              <div id="offcanvasRightLabel">
-                <h2><strong><%= trigger.name %></strong></h2>
-              </div>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              <h2><%= trigger.name %> Trigger</h2>
             </div>
+
             <!-- body -->
             <div class="offcanvas-body">
-              <div class="d-flex align-items-center justify-content-center">
-                <div class="w-100 text-canvas">
-                  <%= render "form2", trigger: trigger %>
-                </div>
-              </div>
+              <%= render "form2", trigger: trigger %>
             </div>
           </div>
-          <%= link_to trigger_path(trigger),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do
-          %>
-          <p>Delete <i class="far fa-trash-alt"></i></p>
+
+          <!-- delete btn -->
+          <%= link_to trigger_path(trigger), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <p>Delete <i class="far fa-trash-alt"></i></p>
           <% end %>
         </div>
       </div>
     <% end %>
   </div>
+
 </div>
