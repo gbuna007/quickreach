@@ -12,7 +12,12 @@
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
           <% end %>
-
+          <%= f.input :first_name,
+                      required: false,
+                      autofocus: true %>
+          <%= f.input :last_name,
+                      required: false,
+                      autofocus: true %>
           <%= f.input :current_password,
                       required: true,
                       input_html: { autocomplete: "current-password" } %>

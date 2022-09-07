@@ -51,8 +51,7 @@ apple_marketing.save!
 # Ann's templates
 grab_template1 = Template.new(
   name: "Grab Challenger Sell",
-  body: "Hello <<contact_fn>>!\r\nHope you have been well!\r\n
-  Just wanted to check in as recently we have seen that <<account_name>> is experiencing some challenges with profitability.
+  body: "Hello <<contact_fn>>!\r\nHope you have been well!\r\nJust wanted to check in as recently we have seen that <<account_name>> is experiencing some challenges with profitability.
   \r\nKeen to understand your challenges better to see if we can support your effort in keeping <<account_name>> as a leader in <<account_category>> sector.",
   subject: "Improving campaign profitability for <<account_name>>")
 grab_template1.user = user1

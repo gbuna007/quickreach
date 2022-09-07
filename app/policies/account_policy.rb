@@ -9,4 +9,8 @@ class AccountPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def filter_contacts_by_accounts?
+    record.user == user
+  end
 end
