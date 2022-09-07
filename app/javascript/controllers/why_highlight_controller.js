@@ -24,14 +24,14 @@ export default class extends Controller {
         e.currentTarget.classList.add("active")
         break;
       case "3":
-        const desc3 = "<p>yyyyy.</p>\
-        <p>yyyyy.</p>"
+        const desc3 = "<p>Delegate news research to us.</p>\
+        <p>Our system will check for any breaking news every 5 minutes.</p>"
         this.descriptionTarget.innerHTML = desc3;
         e.currentTarget.classList.add("active")
         break;
       case "4":
-        const desc4 = "<p>zzzzzz.</p>\
-        <p>zzzz.</p>"
+        const desc4 = "<p>When there is a relevant breaking news, QuickReach will generate a draft and notify you</p>\
+        <p>Drafts will be pre-polulated with the right information and are ready to send after a <2 mins review.</p>"
         this.descriptionTarget.innerHTML = desc4;
         e.currentTarget.classList.add("active")
         break;

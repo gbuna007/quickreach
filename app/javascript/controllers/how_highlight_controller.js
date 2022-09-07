@@ -18,20 +18,19 @@ export default class extends Controller {
         e.currentTarget.classList.add("active")
         break;
       case "2":
-        const desc2 = "<p>aaaaaaaaa.</p>\
-        <p>aaaaaaa.</p>"
+        const desc2 = "<p>You understand how to communicate with your clients best.</p>\
+        <p>QuickReach allows you to import your sales email templates into the system.</p>"
         this.descriptionTarget.innerHTML = desc2;
         e.currentTarget.classList.add("active")
         break;
       case "3":
-        const desc3 = "<p>bbbbbbb.</p>\
-        <p>bbbbbbbb.</p>"
+        const desc3 = "<p>Triggers will automate the news matching and targeting.</p>\
+        <p>You will be able to create triggers to fit specific outreach needs including specifiying keywords what are relevant to the outreach strategy.</p>"
         this.descriptionTarget.innerHTML = desc3;
         e.currentTarget.classList.add("active")
         break;
       case "4":
-        const desc4 = "<p>ccccccc.</p>\
-        <p>ccccccc.</p>"
+        const desc4 = "<p>Once a draft has been created, you will be able to review the draft before sending incase there are any adjustments needed.</p>"
         this.descriptionTarget.innerHTML = desc4;
         e.currentTarget.classList.add("active")
         break;
