@@ -11,54 +11,81 @@
       <%= cl_image_tag("home-main-image.png", width: 500, height: 450, crop: :fill) %>
     </div>
   </div>
-  <div class="vw-100 position-absolute start-0 mx-0 py-4 border-top border-4 solution">
-    <div class="row mx-0">
-      <div class="col-12 my-4 mx-0">
-        <h2 class="text-center">Why choose QuickReach?</h2>
+  <div class="vw-100 start-0 mx-0 py-5 position-absolute border-top border-4 solution">
+    <div class="primary-highlight mb-5" data-controller="why-highlight">
+      <div class="row mx-0 my-2">
+        <div class="col-12 py-4 mx-0">
+          <h2 class="text-center fw-bold">Why choose QuickReach?</h2>
+        </div>
       </div>
-    </div>
-    <div class="row d-flex justify-content-center my-5 pb-4 mx-0">
-      <div class="col-2 border border-2 me-4">
-        <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-gear fs-1"></i></p>
-        <p class="text-center">Accurate data through CRM Integration</p>
-      </div>
-      <div class="col-2 border border-2 me-4">
-        <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-clock fs-1"></i></p>
-        <p class="text-center">Automate your workflow</p>
-      </div>
-      <div class="col-2 border border-2 me-4">
-        <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-magnifying-glass fs-1"></i></p>
-        <p class="text-center">Automated news query</p>
-      </div>
-      <div class="col-2 border border-2">
-        <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-paper-plane fs-1"></i></p>
-        <p class="text-center">Pre-created drafts ready for you to send</p>
-      </div>
-    </div>
-    <div class="row secondary-highlight">
-      <div class="col-12 mx-0 px-0">
-          <div class="col-12 my-4 mx-0">
-            <h2 class="text-center py-4">How to QuickReach?</h2>
+      <div class="row d-flex justify-content-center pb-4 mx-0">
+        <div class="col-4 me-3">
+          <div class="row mb-2">
+            <div class="col border border-2 me-2 qr-why active" data-action="click->why-highlight#update" data-id="1" data-why-highlight-target="card">
+              <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-gear fs-1"></i></p>
+              <p class="text-center">Accurate data through CRM Integration</p>
+            </div>
+            <div class="col border border-2 qr-why" data-action="click->why-highlight#update" data-id="2" data-why-highlight-target="card">
+              <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-clock fs-1"></i></p>
+              <p class="text-center">Automate your workflow</p>
+            </div>
           </div>
-      <div class="row d-flex justify-content-center mb-5">
-        <div class="col-2 border border-2 me-4">
-          <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-file-import fs-1"></i></p>
-          <p class="text-center">Intergrate your CRM</p>
+          <div class="row">
+            <div class="col border border-2 me-2 qr-why" data-action="click->why-highlight#update" data-id="3" data-why-highlight-target="card">
+              <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-magnifying-glass fs-1"></i></p>
+              <p class="text-center">Automated news query</p>
+            </div>
+            <div class="col border border-2 qr-why" data-action="click->why-highlight#update" data-id="4" data-why-highlight-target="card">
+              <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-paper-plane fs-1"></i></p>
+              <p class="text-center">Pre-created drafts ready for you to send</p>
+            </div>
+          </div>
         </div>
-        <div class="col-2 border border-2 me-4">
-          <p class="d-flex justify-content-center mt-4"><i class="fa-sharp fa-solid fa-envelope fs-1"></i></p>
-          <p class="text-center">Create or Add your own email templates</p>
+        <div class="col-4 description why pt-3" data-why-highlight-target="description">
+          <p>Quickly reach out to relevant accounts and contacts through your CRM as source-of-truth.</p>
+          <p>As the data is synced with your CRM, any updates within CRM will be reflected on QuickReach.</p>
         </div>
-        <div class="col-2 border border-2 me-4">
-          <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-thumbtack fs-1"></i></p>
-          <p class="text-center">Add keywords and triggers for each company</p>
-        </div>
-        <div class="col-2 border border-2">
-          <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-book-open fs-1"></i></p>
-          <p class="text-center">Review your drafts when the breaking news hits</p>
+        <div class="col-1" data-why-highlight-target="image">
+          <%= cl_image_tag("v1662524978/development/integrate_crm.png", width: 275, height: 225, crop: :fill, class: "highlight-image-why") %>
         </div>
       </div>
     </div>
-
+    <div class="row secondary-highlight bg-white" data-controller="how-highlight">
+      <div class="col-12 mx-0 px-0">
+        <div class="col-12 my-4 mx-0">
+          <h2 class="text-center py-4 fw-bold mt-5">How to QuickReach?</h2>
+        </div>
+      <div class="row d-flex justify-content-center my-2 pb-4 mx-0">
+        <div class="col-1" data-how-highlight-target="image">
+          <%= cl_image_tag("v1662524978/development/int_how.png", width: 275, height: 225, crop: :fill, class: "highlight-image-how") %>
+        </div>
+        <div class="col-4 me-3 description how pt-3" data-how-highlight-target="description">
+          <p>We have existing integration available with world's major CRMs: Salesforce, Hubspot, Zoho, and Sugar CRM.</p>
+          <p>Quick and easy! Get your CRM Accounts and Contact into Quickreach within 5 mins just with your CRM login details.</p>
+        </div>
+        <div class="col-4">
+          <div class="row mb-2">
+            <div class="col border border-2 me-2 qr-how active" data-action="click->how-highlight#update" data-id="1" data-how-highlight-target="card">
+              <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-file-import fs-1"></i></p>
+              <p class="text-center">Intergrate your CRM</p>
+            </div>
+            <div class="col border border-2 qr-how" data-action="click->how-highlight#update" data-id="2" data-how-highlight-target="card">
+              <p class="d-flex justify-content-center mt-4"><i class="fa-sharp fa-solid fa-envelope fs-1"></i></p>
+              <p class="text-center">Create or Add your own email templates</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col border border-2 me-2 qr-how" data-action="click->how-highlight#update" data-id="3" data-how-highlight-target="card">
+              <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-thumbtack fs-1"></i></p>
+              <p class="text-center">Add keywords and triggers for each company</p>
+            </div>
+            <div class="col border border-2 qr-how" data-action="click->how-highlight#update" data-id="4" data-how-highlight-target="card">
+              <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-book-open fs-1"></i></p>
+              <p class="text-center">Review your drafts before sending out</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

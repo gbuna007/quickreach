@@ -9,3 +9,79 @@ body{
   color: #1F4690;
   background-color: #FFE5B4;
 }
+
+.qr-why.active {
+  background-color: #1F4690;
+  color: #FFE5B4;
+}
+
+.qr-how.active {
+  background-color: #1F4690;
+  color: #FFE5B4;
+}
+
+.qr-how {
+  cursor: pointer;
+}
+
+.qr-why {
+  cursor: pointer;
+}
+
+// .description.why {
+//   background-image: url(https://res.cloudinary.com/twx-a/image/upload/e_improve,w_300,h_600,c_thumb,g_auto/v1662524087/development/automate_news.png);
+// }
+.primary-highlight {
+  position: relative;
+}
+
+@keyframes fadeInWhyImg {
+  0% { opacity: 0; right: 250px }
+  100% { opacity: 0.8; right: 75px }
+}
+
+@keyframes fadeInHowImg {
+  0% { opacity: 0; left: 250px }
+  100% { opacity: 0.8; left: 100px }
+}
+
+@keyframes fadeInTxt {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.highlight-image-why {
+  opacity: 0;
+  position: absolute;
+  overflow: hidden;
+  right: 75px;
+  top: 215px;
+  animation: 500ms fadeInWhyImg 300ms forwards;
+}
+
+.highlight-image-how {
+  opacity: 0;
+  position: absolute;
+  overflow: hidden;
+  left: 100px;
+  top: 815px;
+  animation: 500ms fadeInHowImg 300ms forwards;
+}
+
+.description.why {
+  opacity: 1;
+  z-index: 1;
+
+  p {
+    animation: fadeInTxt 300ms forwards;
+  }
+}
+
+.description.how {
+  opacity: 1;
+  z-index: 1;
+
+  p {
+    animation: fadeInTxt 300ms forwards;
+  }
+}
