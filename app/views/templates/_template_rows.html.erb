@@ -6,7 +6,8 @@
         <%= template.name %>
       </div>
       <div class="info-content col-3">
-        <%= template.body.scan(/<<(.+?)>>/).flatten.join(", ") %>
+        <%# template.body.scan(/<<(.+?)>>/).flatten.join(", ") %>
+        <%= template.subject %>
       </div>
 
       <div class="info-actions">
