@@ -1,4 +1,4 @@
 class Contact < ApplicationRecord
   belongs_to :account
-  has_many :triggers
+  has_many :triggers, dependent: :destroy
 end
