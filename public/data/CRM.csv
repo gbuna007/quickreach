@@ -1,0 +1,7 @@
+name,category,status,potential_rev,amount_spent,email,title,first_name,last_name
+Grab,transportation,lead,1000000,1000,bteo@grab.com,Digital Manager,Bryan,Teo
+Grab,transportation,lead,1000000,1000,gfriedman@grab.com,Digital Director,Greg,Friedman
+Apple,consumer electronics,Live,1500000,15000,jgeorge@apple.com,Engineering Manager,Jansen,George
+Apple,consumer electronics,Live,1500000,15000,achan@apple.com,Marketing Manager,Apple,Chan
+Gojek,transportation,Prospect,500000,5000,,,,
+Samsung,consumer electronics,Churned,1250000,1250,,,,
