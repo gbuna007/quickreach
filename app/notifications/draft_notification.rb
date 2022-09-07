@@ -12,7 +12,7 @@ class DraftNotification < Noticed::Base
   param :draft
 
   def url
-    drafts_path
+    # drafts_path
   end
 
   def message
