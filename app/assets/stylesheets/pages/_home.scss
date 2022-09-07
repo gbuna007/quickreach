@@ -35,20 +35,32 @@ body{
   position: relative;
 }
 
+@keyframes fadeInWhy {
+  0% { opacity: 0; right: 250px }
+  100% { opacity: 0.6; right: 50px }
+}
+
+@keyframes fadeInHow {
+  0% { opacity: 0; left: 250px }
+  100% { opacity: 0.6; left: 70px }
+}
+
 .highlight-image-why {
-  opacity: 60%;
+  opacity: 0;
   position: absolute;
   overflow: hidden;
-  right: 50px;
+  right: 250px;
   top: 180px;
+  animation: 500ms fadeInWhy 300ms forwards;
 }
 
 .highlight-image-how {
-  opacity: 60%;
+  opacity: 0;
   position: absolute;
   overflow: hidden;
   left: 70px;
   top: 685px;
+  animation: 500ms fadeInHow 300ms forwards;
 }
 
 .description.why {
