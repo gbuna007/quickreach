@@ -12,38 +12,40 @@
     </div>
   </div>
   <div class="vw-100 position-absolute start-0 mx-0 py-4 border-top border-4 solution">
-    <div class="row mx-0">
-      <div class="col-12 py-4 mx-0">
-        <h2 class="text-center">Why choose QuickReach?</h2>
-      </div>
-    </div>
-    <div class="row d-flex justify-content-center pb-4 mx-0">
-      <div class="col-5">
-        <div class="row mb-2">
-          <div class="col border border-2 me-2 qr-why active">
-            <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-gear fs-1"></i></p>
-            <p class="text-center">Accurate data through CRM Integration</p>
-          </div>
-          <div class="col border border-2 qr-why">
-            <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-clock fs-1"></i></p>
-            <p class="text-center">Automate your workflow</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col border border-2 me-2 qr-why">
-            <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-magnifying-glass fs-1"></i></p>
-            <p class="text-center">Automated news query</p>
-          </div>
-          <div class="col border border-2 qr-why">
-            <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-paper-plane fs-1"></i></p>
-            <p class="text-center">Pre-created drafts ready for you to send</p>
-          </div>
+    <div class="primary-highlight" data-controller="why-highlight">
+      <div class="row mx-0">
+        <div class="col-12 py-4 mx-0">
+          <h2 class="text-center">Why choose QuickReach?</h2>
         </div>
       </div>
-      <div class="col-5">
-        <div class="description">
-          <p>Quickly reach out to relevant accounts and contacts throough your CRM as source-of-truth.</p>
-          <p>As the data is synced with your CRM, any updates within CRM will be reflected on QuickReach.</p>
+      <div class="row d-flex justify-content-center pb-4 mx-0">
+        <div class="col-5">
+          <div class="row mb-2">
+            <div class="col border border-2 me-2 qr-why active" data-action="click->why-highlight#update">
+              <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-gear fs-1"></i></p>
+              <p class="text-center">Accurate data through CRM Integration</p>
+            </div>
+            <div class="col border border-2 qr-why" data-action="click->why-highlight#update">
+              <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-clock fs-1"></i></p>
+              <p class="text-center">Automate your workflow</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col border border-2 me-2 qr-why" data-action="click->why-highlight#update">
+              <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-magnifying-glass fs-1"></i></p>
+              <p class="text-center">Automated news query</p>
+            </div>
+            <div class="col border border-2 qr-why" data-action="click->why-highlight#update">
+              <p class="d-flex justify-content-center mt-4"><i class="fa-solid fa-paper-plane fs-1"></i></p>
+              <p class="text-center">Pre-created drafts ready for you to send</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="description" data-why-highlight-target="description">
+            <p>Quickly reach out to relevant accounts and contacts throough your CRM as source-of-truth.</p>
+            <p>As the data is synced with your CRM, any updates within CRM will be reflected on QuickReach.</p>
+          </div>
         </div>
       </div>
     </div>

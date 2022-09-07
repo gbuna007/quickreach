@@ -18,3 +18,6 @@ application.register("new-template", NewTemplateController)
 
 import NewTriggerController from "./new_trigger_controller"
 application.register("new-trigger", NewTriggerController)
+
+import WhyHighlightController from "./why_highlight_controller"
+application.register("why-highlight", WhyHighlightController)
