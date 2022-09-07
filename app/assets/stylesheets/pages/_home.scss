@@ -35,38 +35,53 @@ body{
   position: relative;
 }
 
-@keyframes fadeInWhy {
+@keyframes fadeInWhyImg {
   0% { opacity: 0; right: 250px }
-  100% { opacity: 0.6; right: 50px }
+  100% { opacity: 0.8; right: 75px }
 }
 
-@keyframes fadeInHow {
+@keyframes fadeInHowImg {
   0% { opacity: 0; left: 250px }
-  100% { opacity: 0.6; left: 70px }
+  100% { opacity: 0.8; left: 100px }
+}
+
+@keyframes fadeInTxt {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .highlight-image-why {
   opacity: 0;
   position: absolute;
   overflow: hidden;
-  right: 250px;
-  top: 180px;
-  animation: 500ms fadeInWhy 300ms forwards;
+  right: 75px;
+  top: 215px;
+  animation: 500ms fadeInWhyImg 300ms forwards;
 }
 
 .highlight-image-how {
   opacity: 0;
   position: absolute;
   overflow: hidden;
-  left: 70px;
-  top: 685px;
-  animation: 500ms fadeInHow 300ms forwards;
+  left: 100px;
+  top: 815px;
+  animation: 500ms fadeInHowImg 300ms forwards;
 }
 
 .description.why {
+  opacity: 1;
   z-index: 1;
+
+  p {
+    animation: fadeInTxt 300ms forwards;
+  }
 }
 
 .description.how {
+  opacity: 1;
   z-index: 1;
+
+  p {
+    animation: fadeInTxt 300ms forwards;
+  }
 }
