@@ -1,0 +1,14 @@
+<div class="search-form-control form-group">
+  <%= form_with url: triggers_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control bar-mid-width",
+      id: "search_query",
+      placeholder: "Search for triggers"
+    %>
+
+    <%= button_tag type:'submit', class:"btn bg-transparent" do %>
+      Search <i class="fa-solid fa-magnifying-glass"></i>
+    <% end %>
+  <% end %>
+</div>

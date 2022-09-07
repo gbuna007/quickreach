@@ -7,6 +7,27 @@ class TriggersController < ApplicationController
       end
     end
 
+    # filter
+    if params[:query].present?
+      # raise
+      @triggers = Trigger.for_account(params[:query])
+      # Trigger.where("name ILIKE ?", "%#{params[:query]}%")
+
+    else
+      @triggers
+    end
+
+    # if params[:query].present?
+    #   sql_query = <<~SQL
+    #     trigger.name ILIKE :query
+    #     OR account.name ILIKE :query
+    #     OR template.name ILIKE :query
+    #   SQL
+    #   @triggers = Trigger.joins(:director).where(sql_query, query: "%#{params[:query]}%")
+    # else
+    #   @triggers
+    # end
+
     # new trigger for trigger form
     @trigger = Trigger.new
     @trigger.keywords.build

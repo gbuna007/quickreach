@@ -1,12 +1,12 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #1F4690;
+  background: $qr-blue;
   color: #FFE5B4;
   a{
     color:#FFE5B4;
     &:hover{
-      background-color: white;
-      color: black;
+      background-color: $qr-blue;
+      color: $qr-dy;
     }
   }
 }
@@ -17,8 +17,4 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
-}
-
-.dropdown-menu{
-  background: #231955;
 }
