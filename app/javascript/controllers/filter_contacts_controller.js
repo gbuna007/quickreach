@@ -6,14 +6,10 @@ export default class extends Controller {
 
   connect() {
     console.log("filter contacts connected");
-    console.log(this.selectionTarget);
-    console.log(this.contactTarget);
-    console.log(this.contactformTarget);
   }
 
   select(e) {
-    console.log(e.target.options[e.target.selectedIndex].text) // grab / gojek
-    const account = e.target.options[e.target.selectedIndex].text
+    const account = e.target.options[e.target.selectedIndex].text;
     this.contactTarget.innerHTML = ""
 
     fetch(`/filter_contacts_by_accounts?account=${account}`, {

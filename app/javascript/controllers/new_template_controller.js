@@ -5,7 +5,6 @@ export default class extends Controller {
   static targets = ["rows", "form", "submit"]
 
   connect() {
-    console.log("new_template controller connected");
   }
 
   // user click new template to show the form
