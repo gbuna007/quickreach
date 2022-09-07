@@ -2,8 +2,8 @@
   <%= render "shared/sidebar" %>
   <div class="col-10 flex-grow-1 main-content" data-controller="new-trigger">
     <div class ="navbar mb-3">
-      <div><h1>Triggers</h1></div>
-      <button class="qt-btn w-25 fw-bold" data-action="click->new-trigger#revealForm">New Trigger</button>
+      <div><h1 class="responsive-font-lg">Triggers</h1></div>
+      <button class="qt-btn w-25 fw-bold responsive-font-reg" data-action="click->new-trigger#revealForm">New Trigger</button>
     </div>
 
     <!-- new form item -->
@@ -12,28 +12,35 @@
     </div>
 
     <!-- details -->
-    <div class="headers fw-bold">
-      <p class="ps-4">Date</p>
-      <p class="col-3">Trigger Name</p>
-      <p class="col-3">Account</p>
-      <p class="col-3">Keywords</p>
-      <p class ="me-5">Actions</p>
+    <div id="header" class="responsive-font-reg">
+      <p class="col-1">Date</p>
+      <div class="info-content col-3">
+        <p>Name</p>
+      </div>
+      <div class="info-content col-3">
+        <p>Account</p>
+      </div>
+
+      <div class="info-content col-3">
+        <p>Template</p>
+      </div>
+      <div class="info-action px-3">
+        <p class="px-5">Actions</p>
+      </div>
     </div>
     <!-- display for each item-->
     <% @triggers.each do |trigger| %>
-      <div class="info">
-        <%= trigger.updated_at.strftime("%D") %>
+      <div class="info responsive-font-reg">
+          <p class="col-1"> <%= trigger.updated_at.strftime("%D") %> </p>
         <div class="info-content col-3">
-          <%= trigger.name %>
+          <p><%= trigger.name %></p>
         </div>
         <div class="info-content col-3">
-          <%= trigger.account.name %>
+          <p><%= trigger.account.name %></p>
         </div>
 
         <div class="info-content col-3">
-          <% trigger.keywords.each do |keyword| %>
-            <%= keyword.name %>,
-          <% end %>
+          <p><%= trigger.template.name %></p>
         </div>
 
 
@@ -62,7 +69,7 @@
           <%= link_to trigger_path(trigger),
             data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do
           %>
-          <p>Delete <i class="far fa-trash-alt"></i></p>
+          <p class="responsive-font-reg">Delete <i class="far fa-trash-alt"></i></p>
           <% end %>
         </div>
       </div>
