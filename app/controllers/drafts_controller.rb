@@ -34,6 +34,7 @@ class DraftsController < ApplicationController
     TriggerMailer.send_draft(@draft).deliver_later
     @draft.update(sent: true)
     flash[:notice] = "Draft has been sent."
+    redirect_to drafts_path
   end
 
   private
