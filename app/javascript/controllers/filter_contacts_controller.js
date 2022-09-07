@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="filter-contacts"
 export default class extends Controller {
-  static targets = ["selection", "contact"]
+  static targets = ["selection", "contact", "contactform"]
 
   connect() {
     console.log("filter contacts connected");
@@ -27,7 +27,7 @@ export default class extends Controller {
           this.contactTarget.insertAdjacentHTML("beforeend", `<option value="${contact.id}">${contact.first_name} ${contact.last_name} - ${contact.title}</option>`)
         })
         // show the input
-        this.contactTarget.classList.remove('d-none')
+        this.contactformTarget.classList.remove('d-none')
       })
   }
 }
