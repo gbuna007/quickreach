@@ -17,32 +17,18 @@
     <div id="header" class="responsive-font-reg">
       <p class="col-1">Date</p>
       <div class="info-content col-3"><p>Name</p></div>
-      <div class="info-content col-3"><p>Account</p>
-      </div>
-
-      <div class="info-content col-3">
-        <p>Template</p>
-      </div>
-      <div class="info-action px-3">
-        <p class="px-5">Actions</p>
-      </div>
+      <div class="info-content col-3"><p>Account</p></div>
+      <div class="info-content col-3"><p>Template</p></div>
+      <div class="info-action px-3"><p class="px-5">Actions</p></div>
     </div>
 
     <!-- each trigger row -->
     <% @triggers.each do |trigger| %>
       <div class="info responsive-font-reg">
-          <p class="col-1"> <%= trigger.updated_at.strftime("%D") %> </p>
-        <div class="info-content col-3">
-          <p><%= trigger.name %></p>
-        </div>
-        <div class="info-content col-3">
-          <p><%= trigger.account.name %></p>
-        </div>
-
-        <div class="info-content col-3">
-          <p><%= trigger.template.name %></p>
-        </div>
-
+        <p class="col-1"> <%= trigger.updated_at.strftime("%D") %> </p>
+        <p class="info-content col-3"><%= trigger.name %></p>
+        <p class="info-content col-3"><%= trigger.account.name %></p>
+        <p class="info-content col-3"><%= trigger.template.name %></p>
 
         <!-- edit/delete buttons -->
         <div class="info-actions">
@@ -50,7 +36,7 @@
           <button class="edit-form-btn" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasRight<%= "canvas-#{trigger.id}" %>"
             aria-controls="offcanvasRight<%= "canvas-#{trigger.id}" %>">
-              Edit Trigger <i class="fas fa-pencil-alt"></i>
+              Edit Trigger <i class="fas fa-pencil-alt "></i>
           </button>
 
           <!-- off-canvas edit form -->
