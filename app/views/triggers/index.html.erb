@@ -19,6 +19,16 @@
       </div>
       <div class="info-content col-3">
         <p>Account</p>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-filter"></i>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <%= @triggers.each do |trigger| %>
+            <li><%= link_to triggers_path trigger.account.name, class:"dropdown-item" %></li>
+          <% end %>
+          </ul>
+        </div>
       </div>
 
       <div class="info-content col-3">
