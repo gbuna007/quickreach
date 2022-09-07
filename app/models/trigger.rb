@@ -13,4 +13,7 @@ class Trigger < ApplicationRecord
   accepts_nested_attributes_for :keywords, reject_if: :all_blank, allow_destroy: true
 
   validates :name, presence: true
+
+  scope :for_account, ->(account) { joins(:account).where("accounts.name ILIKE ? OR triggers.name ILIKE ?", "%#{account}%","%#{account}%") }
+
 end

@@ -16,27 +16,27 @@ export default class extends Controller {
         const desc1 = "<p>We have existing integration available with world's major CRMs: Salesforce, Hubspot, Zoho, and Sugar CRM.</p><p>As the data is synced with your CRM, any updates within CRM will be reflected on QuickReach.</p>"
         this.descriptionTarget.innerHTML = desc1;
         e.currentTarget.classList.add("active")
-        this.imageTarget.innerHTML = "<img width='300' height='250' class='highlight-image-how' src='http://res.cloudinary.com/twx-a/image/upload/c_fill,h_225,w_275/development/int_how.png'>"
+        this.imageTarget.innerHTML = "<img width='275' height='225' class='highlight-image-how' src='https://res.cloudinary.com/twx-a/image/upload/c_fill,w_275/v1662528650/production/int_how.png'>"
         break;
       case "2":
         const desc2 = "<p>You understand how to communicate with your clients best.</p>\
         <p>QuickReach allows you to import your sales email templates into the system.</p>"
         this.descriptionTarget.innerHTML = desc2;
         e.currentTarget.classList.add("active")
-        this.imageTarget.innerHTML = "<img width='300' height='250' class='highlight-image-how' src='http://res.cloudinary.com/twx-a/image/upload/c_fill,h_225,w_275/development/template_how.png'>"
+        this.imageTarget.innerHTML = "<img width='275' height='225' class='highlight-image-how' src='https://res.cloudinary.com/twx-a/image/upload/c_fill,w_275/v1662528746/production/template_how.png'>"
         break;
       case "3":
         const desc3 = "<p>Triggers will automate the news matching and targeting.</p>\
         <p>You will be able to create triggers to fit specific outreach needs including specifiying keywords what are relevant to the outreach strategy.</p>"
         this.descriptionTarget.innerHTML = desc3;
         e.currentTarget.classList.add("active")
-        this.imageTarget.innerHTML = "<img width='300' height='250' class='highlight-image-how' src='http://res.cloudinary.com/twx-a/image/upload/c_fill,h_225,w_275/development/trigger.png'>"
+        this.imageTarget.innerHTML = "<img width='275' height='225' class='highlight-image-how' src='https://res.cloudinary.com/twx-a/image/upload/c_fill,w_275/v1662528832/production/trigger.png'>"
         break;
       case "4":
         const desc4 = "<p>Once a draft has been created, you will be able to review the draft before sending incase there are any adjustments needed.</p>"
         this.descriptionTarget.innerHTML = desc4;
         e.currentTarget.classList.add("active");
-        this.imageTarget.innerHTML = "<img width='300' height='250' class='highlight-image-how' src='http://res.cloudinary.com/twx-a/image/upload/c_fill,h_225,w_275/development/read_how.png'>";
+        this.imageTarget.innerHTML = "<img width='275' height='225' class='highlight-image-how' src='https://res.cloudinary.com/twx-a/image/upload/c_fill,h_225,w_275/v1662528301/production/read_how.png'>";
         break;
     }
   }
