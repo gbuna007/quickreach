@@ -9,18 +9,15 @@
     </div>
 
     <!-- new trigger form -->
-    <div class="trigger-form d-none mb-5 bg-light" data-new-trigger-target="form">
-      <%= render "form2", trigger: @trigger %>
+    <div class="trigger-form d-none mb-5 border rounded-3 p-3 bg-light" data-new-trigger-target="form">
+      <%= render "form", trigger: @trigger %>
     </div>
 
     <!-- details -->
     <div id="header" class="responsive-font-reg">
       <p class="col-1">Date</p>
-      <div class="info-content col-3">
-        <p>Name</p>
-      </div>
-      <div class="info-content col-3">
-        <p>Account</p>
+      <div class="info-content col-3"><p>Name</p></div>
+      <div class="info-content col-3"><p>Account</p>
       </div>
 
       <div class="info-content col-3">
@@ -65,7 +62,7 @@
 
             <!-- body -->
             <div class="offcanvas-body">
-              <%= render "form2", trigger: trigger %>
+              <%= render "form", trigger: trigger %>
             </div>
           </div>
 
