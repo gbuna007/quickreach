@@ -2,7 +2,7 @@
   <%= render "shared/sidebar" %>
   <div class="col-10 flex-grow-1 main-content">
 
-    <div class ="navbar mx-5 my-1">
+    <div class ="navbar my-1">
       <div><h1>Drafts</h1></div>
     </div>
     <!-- details -->
@@ -33,9 +33,9 @@
         <div class="info-actions d-flex">
           <!-- off canvas for email editing -->
           <!-- btn -->
-            <button class="edit-form-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Edit<i class="fas fa-pencil-alt"></i></button>
+            <button class="edit-form-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight<%= "canvas-#{draft.id}" %>" aria-controls="offcanvasRight<%= "canvas-#{draft.id}" %>">Edit<i class="fas fa-pencil-alt"></i></button>
           <!-- content-->
-            <div class="offcanvas offcanvas-end bg-dark-blu text-dy" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas offcanvas-end bg-dark-blu text-dy" tabindex="-1" id="offcanvasRight<%= "canvas-#{draft.id}" %>" aria-labelledby="offcanvasRightLabel">
               <div class="offcanvas-header">
                 <div id="offcanvasRightLabel">
                   <h2><strong><%= draft.trigger.name %></strong></h2>
