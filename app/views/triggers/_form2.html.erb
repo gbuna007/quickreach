@@ -5,12 +5,11 @@
       <%= form.input :name, label: "Trigger Name" %>
     </div>
     <div>
-      <%= form.association :account, collection: policy_scope(Account), prompt:"Choose a company", input_html: {data: {action: "change->filter-contacts#select"}} %>
-
-
-      <% label_method = proc { |p| "#{p.first_name} #{p.last_name} - #{p.title}" } %>
-      <%= form.association :contact, input_html: {data: {filter_contacts_target: "selection"}}, label_method: label_method, prompt:"Choose the email recipient" %>
-
+      <%= form.association :account, collection: policy_scope(Account), prompt:"Choose account", input_html: {data: {action: "change->filter-contacts#select", filter_contacts_target: "selection"}}, hint: 'You can select email recipient contact after account selection.' %>
+    </div>
+    <div class="contact-section">
+     <% label_method = proc { |p| "#{p.first_name} #{p.last_name} - #{p.title}" } %>
+      <%= form.association :contact, input_html: {data: {filter_contacts_target: "contact"} }, wrapper_html: {data: {filter_contacts_target: "contactform"}, class: 'd-none'}, label_method: label_method, prompt:"Choose the email recipient" %>
 
       <%= form.association :template, prompt:"Choose the email template" %>
     </div>
