@@ -5,7 +5,7 @@ class AccountsController < ApplicationController
     # searchbar
     if params[:query].present?
       sql_query = "name ILIKE :query OR category ILIKE :query"
-      @accounts = Account.where(sql_query, query: "%#{params[:query]}%")
+      @accounts = @accounts.where(sql_query, query: "%#{params[:query]}%")
     else
       @accounts = policy_scope(Account)
     end
