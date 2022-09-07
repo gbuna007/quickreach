@@ -10,6 +10,7 @@ class TriggersController < ApplicationController
     # new trigger for trigger form
     @trigger = Trigger.new
     @trigger.keywords.build
+    @keyword = Keyword.new
     # raise
   end
 

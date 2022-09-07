@@ -23,9 +23,9 @@ Rails.application.routes.draw do
 
   resources :templates, only: %i[index create show]
 
-  resources :triggers, only: %i[index create update destroy]
-
-  resources :keywords, only: :create
+  resources :triggers, only: %i[index create update destroy] do
+    resources :keywords, only: :create
+  end
 
   resources :drafts, only: %i[index update destroy]
   get "send_draft/:id", to: 'drafts#send_draft', as: :send_draft
