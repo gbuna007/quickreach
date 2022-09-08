@@ -1,11 +1,12 @@
 class TriggersController < ApplicationController
   def index
-    @triggers = []
-    policy_scope(Trigger).each do |trigger|
-      if trigger.account.user == current_user
-        @triggers << trigger
-      end
-    end
+    @triggers = current_user.triggers
+    # @triggers = []
+    # policy_scope(Trigger).each do |trigger|
+    #   if trigger.account.user == current_user
+    #     @triggers << trigger
+    #   end
+    # end
 
     # filter
     if params[:query].present?
@@ -30,8 +31,8 @@ class TriggersController < ApplicationController
 
     # new trigger for trigger form
     @trigger = Trigger.new
-    @trigger.keywords.build
-    # raise
+    #@trigger.keywords.build
+    @keyword = Keyword.new
   end
 
   def create

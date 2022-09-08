@@ -23,11 +23,10 @@ Rails.application.routes.draw do
 
   resources :templates, only: %i[index create show]
 
-  resources :triggers, only: %i[index create update destroy]
+  resources :triggers, only: %i[index create update destroy] do
+    resources :keywords, only: :create
+  end
   get 'filter_contacts_by_accounts', to: 'accounts#filter_contacts_by_accounts'
-
-
-  resources :keywords, only: :create
 
   resources :drafts, only: %i[index update destroy]
   get "send_draft/:id", to: 'drafts#send_draft', as: :send_draft

@@ -37,9 +37,29 @@ class TemplatesController < ApplicationController
     redirect_to templates_path
   end
 
+  def update
+    @template = Template.find(params[:id])
+    @template.update(template_params)
+    authorize @template
+
+    index
+    if @template.save
+      redirect_to templates_path
+    else
+      render 'index', status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @template = Template.find(params[:id])
+    authorize @template
+    @template.destroy
+    redirect_to templates_path, status: :see_other
+  end
+
   private
 
   def template_params
-    params.require(:template).permit(:name, :subject, :body)
+    params.require(:template).permit(:name, :subject, :body, :user_id)
   end
 end

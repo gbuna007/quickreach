@@ -1,87 +1,45 @@
 <div class="row m-0 p-0">
   <%= render "shared/sidebar" %>
+<<<<<<< HEAD
   <div class="col-10 flex-grow-1 main-content" data-controller="new-trigger">
     <div class ="navbar mb-3">
       <div>
         <h1 class="responsive-font-lg">Triggers</h1>
+=======
+
+  <div class="col-10 flex-grow-1 main-content align-self-center min-vh-100" data-controller="new-trigger">
+    <div class="navbar mb-3">
+      <!-- main header -->
+      <div class="d-flex">
+        <h1 class="m-0 responsive-font-lg">Triggers</h1>
+>>>>>>> main
       </div>
+
       <div class="d-flex">
         <!-- filter bar -->
         <div class="px-2">
           <%= render 'search' %>
         </div>
-        <button class="qt-btn fw-bold responsive-font-reg" data-action="click->new-trigger#revealForm">New Trigger</button>
+        <!-- new trigger btn -->
+        <button class="qt-btn w-25 fw-bold responsive-font-reg" data-action="click->new-trigger#revealForm">New Trigger</button>
       </div>
     </div>
 
-
-    <!-- new form item -->
-    <div class="trigger-form d-none mb-5 bg-light" data-new-trigger-target="form">
-      <%= render "form2", trigger: @trigger %>
+    <!-- new trigger form -->
+    <div class="trigger-form d-none mb-5 border rounded-3 p-3 bg-light" data-new-trigger-target="form">
+      <%= render "form", trigger: @trigger %>
     </div>
 
-    <!-- details -->
+    <!-- table headers -->
     <div id="header">
       <p class="col-1">Date</p>
-      <div class="info-content col-3">
-        <p>Name</p>
-      </div>
-      <div class="info-content col-3">
-        <p>Account</p>
-      </div>
-
-      <div class="info-content col-3">
-        <p>Template</p>
-      </div>
-      <div class="info-action p-1">
-        <p class="px-4">Actions</p>
-      </div>
+      <div class="info-content col-3"><p>Name</p></div>
+      <div class="info-content col-3 d-flex"><p>Account</p></div>
+      <div class="info-content col-3"><p>Template</p></div>
+      <div class="info-action px-3"><p class="px-5">Actions</p></div>
     </div>
-    <!-- display for each item-->
-    <% @triggers.each do |trigger| %>
-      <div class="info responsive-font-reg">
-          <p class="col-1"> <%= trigger.updated_at.strftime("%D") %> </p>
-        <div class="info-content col-3">
-          <p><%= trigger.name %></p>
-        </div>
-        <div class="info-content col-3">
-          <p><%= trigger.account.name %></p>
-        </div>
 
-        <div class="info-content col-3">
-          <p><%= trigger.template.name %></p>
-        </div>
-
-
-        <div class="info-actions">
-          <!-- off canvas for trigger editing -->
-          <!-- btn -->
-          <button class="edit-form-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight<%= "canvas-#{trigger.id}" %>" aria-controls="offcanvasRight<%= "canvas-#{trigger.id}" %>">Edit <i class="fas fa-pencil-alt"></i></button>
-          <!-- content-->
-          <div class="offcanvas offcanvas-end bg-canvas text-canvas" tabindex="-1" id="offcanvasRight<%= "canvas-#{trigger.id}" %>" aria-labelledby="offcanvasRightLabel">
-            <!--header-->
-            <div class="offcanvas-header">
-              <div id="offcanvasRightLabel">
-                <h2><strong><%= trigger.name %></strong></h2>
-              </div>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <!-- body -->
-            <div class="offcanvas-body">
-              <div class="d-flex align-items-center justify-content-center">
-                <div class="w-100 text-canvas">
-                  <%= render "form2", trigger: trigger %>
-                </div>
-              </div>
-            </div>
-          </div>
-          <%= link_to trigger_path(trigger),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do
-          %>
-          <p class="responsive-font-reg">Delete <i class="far fa-trash-alt"></i></p>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
+    <!-- table of triggers -->
+    <%= render 'triggers_table', triggers: @triggers %>
   </div>
 </div>

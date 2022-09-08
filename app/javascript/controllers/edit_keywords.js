@@ -1,14 +1,16 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="keywords-for-trigger"
+// Connects to data-controller="keywords"
 export default class extends Controller {
   static targets = ["formkey", "keydisplay"]
+
   connect() {
+    console.log("edit keywords controller connected");
   }
 
-  createKey(event){
+  createKeyword(event){
     event.preventDefault();
-
+    console.log("keyword created")
     // console.log("creating data..")
     // fetch(this.formkeyTarget.action, {
     //   method: "POST",
