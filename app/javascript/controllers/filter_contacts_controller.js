@@ -9,6 +9,7 @@ export default class extends Controller {
   }
 
   select(e) {
+    console.log(e.target.options[e.target.value].text) // grab / gojek
     const account = e.target.options[e.target.selectedIndex].text;
     this.contactTarget.innerHTML = ""
 
