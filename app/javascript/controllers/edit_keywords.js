@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ["formkey", "keydisplay"]
 
   connect() {
-    console.log("keywords controller connected");
+    console.log("edit keywords controller connected");
   }
 
   createKeyword(event){
