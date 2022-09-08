@@ -14,7 +14,6 @@ class TriggerMatcherJob < ApplicationJob
           result = trigger.keywords.all? do |tkw|
             bn.attributes.values.join(" ").include?(tkw["name"])
           end
-          Thread.pass
           # if true, create draft
           if result
             matched_true(trigger, bn)
