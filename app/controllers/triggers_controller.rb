@@ -1,4 +1,6 @@
 class TriggersController < ApplicationController
+  before_action :set_trigger, only: %i[update destroy]
+
   def index
     @triggers = current_user.triggers
     # @triggers = []
@@ -13,7 +15,6 @@ class TriggersController < ApplicationController
       # raise
       @triggers = Trigger.for_account(params[:query])
       # Trigger.where("name ILIKE ?", "%#{params[:query]}%")
-
     else
       @triggers
     end
@@ -48,11 +49,9 @@ class TriggersController < ApplicationController
   end
 
   def update
-    @trigger = Trigger.find(params[:id])
     @trigger.update(trigger_params)
     authorize @trigger
 
-    index
     if @trigger.save
       redirect_to triggers_path
     else
@@ -61,7 +60,6 @@ class TriggersController < ApplicationController
   end
 
   def destroy
-    @trigger = Trigger.find(params[:id])
     authorize @trigger
     @trigger.destroy
     redirect_to triggers_path, status: :see_other
@@ -71,5 +69,9 @@ class TriggersController < ApplicationController
 
   def trigger_params
     params.require(:trigger).permit(:name, :account_id, :contact_id, :template_id, keywords_attributes: %i[id name _destroy])
+  end
+
+  def set_trigger
+    @trigger = Trigger.find(params[:id])
   end
 end

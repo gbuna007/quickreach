@@ -1,13 +1,13 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="new-template"
 export default class extends Controller {
   static targets = ["rows", "form", "submit"]
 
   connect() {
+    console.log("new template controller connected")
   }
 
-  // user click new template to show the form
+  // show form when user clicks new template
   revealForm() {
     this.formTarget.classList.toggle("d-none")
   }

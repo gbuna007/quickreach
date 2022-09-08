@@ -1,4 +1,6 @@
 class TemplatesController < ApplicationController
+  before_action :set_template, only: %i[update destroy]
+
   def index
     @templates = policy_scope(Template)
     @template = Template.new
@@ -26,15 +28,14 @@ class TemplatesController < ApplicationController
   end
 
   def show
+    authorise @template
     redirect_to templates_path
   end
 
   def update
-    @template = Template.find(params[:id])
-    @template.update(template_params)
     authorize @template
+    @template.update(template_params)
 
-    index
     if @template.save
       redirect_to templates_path
     else
@@ -43,7 +44,6 @@ class TemplatesController < ApplicationController
   end
 
   def destroy
-    @template = Template.find(params[:id])
     authorize @template
     @template.destroy
     redirect_to templates_path, status: :see_other
@@ -53,5 +53,9 @@ class TemplatesController < ApplicationController
 
   def template_params
     params.require(:template).permit(:name, :subject, :body, :user_id)
+  end
+
+  def set_template
+    @template = Template.find(params[:id])
   end
 end
