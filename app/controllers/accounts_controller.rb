@@ -1,5 +1,6 @@
 class AccountsController < ApplicationController
   skip_after_action :verify_authorized, only: [:filter_contacts_by_accounts]
+
   def index
     @accounts = policy_scope(Account)
 
@@ -10,7 +11,6 @@ class AccountsController < ApplicationController
     else
       @accounts = policy_scope(Account)
     end
-
   end
 
   def filter_contacts_by_accounts

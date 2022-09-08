@@ -2,15 +2,17 @@
   <%= render "shared/sidebar" %>
 
   <div class="col-10 flex-grow-1 main-content align-self-center min-vh-100" data-controller="new-template">
-    <!-- main header -->
     <div class="navbar mb-3">
-      <h1 class="responsive-font-lg">Templates</h1>
+      <!-- main header -->
+      <h1 class="responsive-font-lg m-0">Email Templates</h1>
+
       <div class="d-flex">
         <!-- filter bar -->
         <div class="px-2">
           <%= render 'search' %>
         </div>
-        <button class="qt-btn fw-bold responsive-font-reg" data-action="click->new-template#revealForm">New Email Template</button>
+        <!-- new template btn -->
+        <button class="qt-btn w-25 fw-bold responsive-font-reg" data-action="click->new-template#revealForm">New Email Template</button>
       </div>
     </div>
 

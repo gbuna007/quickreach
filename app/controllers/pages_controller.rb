@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
 
   # new or reintegrate CRM page
-  def index
+  def crm
     @user = current_user
   end
 

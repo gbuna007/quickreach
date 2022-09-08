@@ -16,17 +16,17 @@ Rails.application.routes.draw do
   end
 
   root to: "pages#home" # landing page
-  resources :pages, only: %i[index] # CRM page
+  get "crm", to: "pages#crm" # CRM page
   get "salesforce", to: "pages#salesforce" # salesforce page
 
   resources :accounts, only: %i[index show]
+  get 'filter_contacts_by_accounts', to: 'accounts#filter_contacts_by_accounts'
 
-  resources :templates, only: %i[index create show]
+  resources :templates, only: %i[index create show update destroy]
 
   resources :triggers, only: %i[index create update destroy] do
     resources :keywords, only: :create
   end
-  get 'filter_contacts_by_accounts', to: 'accounts#filter_contacts_by_accounts'
 
   resources :drafts, only: %i[index update destroy]
   get "send_draft/:id", to: 'drafts#send_draft', as: :send_draft

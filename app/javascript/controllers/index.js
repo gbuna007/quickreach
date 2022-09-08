@@ -4,6 +4,12 @@
 
 import { application } from "./application"
 
+import EditKeywordsController from "./edit_keywords_controller"
+application.register("edit-keywords", EditKeywordsController)
+
+import EditTemplateController from "./edit_template_controller"
+application.register("edit-template", EditTemplateController)
+
 import FilterContactsController from "./filter_contacts_controller"
 application.register("filter-contacts", FilterContactsController)
 
@@ -12,9 +18,6 @@ application.register("hello", HelloController)
 
 import HowHighlightController from "./how_highlight_controller"
 application.register("how-highlight", HowHighlightController)
-
-import EditKeywordsController from "./edit_keywords_controller"
-application.register("edit-keywords", EditKeywordsController)
 
 import NewTemplateController from "./new_template_controller"
 application.register("new-template", NewTemplateController)
