@@ -12,28 +12,28 @@
         <p>Account</p>
       </div>
       <div class="info-content col-3">
-        <p>Trigger Name</p>
+        <p>Subject</p>
       </div>
 
       <div class="info-content col-3">
         <p>News Link</p>
       </div>
-      <div class="info-action p-1">
+      <div class="info-action col-3">
         <p class="px-4">Actions</p>
       </div>
     </div>
 
     <!-- display for each item-->
     <% @drafts.each do |draft| %>
-      <div class="info">
-        <%= draft.updated_at.strftime("%D") %>
-        <div class="info-content col-2 px-5">
+      <div class="info responsive-font-reg">
+        <p class="col-1"> <%= draft.updated_at.strftime("%D") %> hello world</p>
+        <div class="info-content col-3">
           <%= draft.trigger.account.name %>
         </div>
         <div class="info-content col-3">
-          <%= draft.trigger.name %>
+          <%= draft.edited_subject %>
         </div>
-        <div class="info-content col-5">
+        <div class="info-content col-3">
           <%= link_to draft.news.link,
           draft.news.link,
            target: '_blank', class: "news_url" %>
