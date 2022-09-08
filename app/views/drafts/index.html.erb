@@ -26,7 +26,7 @@
     <!-- display for each item-->
     <% @drafts.each do |draft| %>
       <div class="info responsive-font-reg">
-        <p class="col-1"> <%= draft.updated_at.strftime("%D") %> hello world</p>
+        <p class="col-1"> <%= draft.updated_at.strftime("%D") %></p>
         <div class="info-content col-3">
           <%= draft.trigger.account.name %>
         </div>
