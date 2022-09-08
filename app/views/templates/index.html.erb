@@ -4,9 +4,16 @@
   <div class="col-10 flex-grow-1 main-content align-self-center min-vh-100" data-controller="new-template">
     <div class="navbar mb-3">
       <!-- main header -->
-      <h1 class="m-0">Email Templates</h1>
-      <!-- new template btn -->
-      <button class="qt-btn w-25 fw-bold" data-action="click->new-template#revealForm">New Email Template</button>
+      <h1 class="responsive-font-lg m-0">Email Templates</h1>
+
+      <div class="d-flex">
+        <!-- filter bar -->
+        <div class="px-2">
+          <%= render 'search' %>
+        </div>
+        <!-- new template btn -->
+        <button class="qt-btn w-25 fw-bold responsive-font-reg" data-action="click->new-template#revealForm">New Email Template</button>
+      </div>
     </div>
 
     <!-- new template -->
@@ -39,7 +46,8 @@
     <div class="headers fw-bold">
       <p class="ps-4 col-1">Date</p>
       <p class="col-2 flex-grow-1 ms-2">Template Name</p>
-      <p class="col-6">Subject</p>
+      <p class="col-4 mx-3">Subject</p>
+      <p class="col-2 px-5">Actions</p>
     </div>
 
     <!-- table of templates -->
