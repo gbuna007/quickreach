@@ -4,9 +4,7 @@ class DraftsController < ApplicationController
   def index
     @drafts = []
     policy_scope(Draft).each do |draft|
-      if draft.trigger.account.user == current_user
-        @drafts << draft
-      end
+      @drafts << draft if draft.trigger.account.user == current_user
     end
   end
 

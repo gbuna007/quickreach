@@ -10,8 +10,8 @@
 user1 = User.create(first_name: "Ann", last_name: "Lim", email: "ann@gmail.com", password: "ann123") # have accounts, contacts, templates, HAVE triggers
 user2 = User.create(first_name: "Bob", last_name: "Lee", email: "bob@gmail.com", password: "bob123") # have accounts, contacts, NO triggers
 user3 = User.create(first_name: "Chan", last_name: "Chan", email: "chan@gmail.com", password: "chan123") # no accounts
-admin = User.create(email: "seb@lewagon.org", password: "password", admin: true)
 user4 = User.create(first_name: "Grace", last_name: "Bunardi", email: "grace@random-forest.io", password: "grace123")
+admin = User.create(email: "seb@lewagon.org", password: "password", admin: true)
 
 # Ann's accounts
 grab = Account.new(name: "Grab", category: "transportation", status: "Lead", potential_rev: 1000000, amount_spent: 1000)

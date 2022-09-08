@@ -2,13 +2,6 @@
   justify-content: space-between;
   background: $qr-blue;
   color: #FFE5B4;
-  a{
-    color:#FFE5B4;
-    &:hover{
-      background-color: $qr-blue;
-      color: $qr-dy;
-    }
-  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -17,4 +10,24 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-brand{
+  transition: 300ms;
+  color: white;
+  font-weight: bold;
+  &:hover{
+    color: $qr-dy;
+  }
+}
+.navbar-nav{
+  a{
+    transition: 300ms;
+  color: white;
+  font-weight: bold;
+    &:hover{
+      background-color: $qr-blue;
+      color: $qr-dy;
+    }
+  }
 }

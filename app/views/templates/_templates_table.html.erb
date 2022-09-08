@@ -1,5 +1,5 @@
 <!-- table of templates -->
-<div class="existing-templates" data-new-template-target="rows"></div>
+<div class="existing-templates" data-new-template-target="rows" ></div>
   <% @templates.each do |template| %>
     <!-- each template's info -->
     <div class="info shadow-sm">
@@ -23,12 +23,12 @@
         <div class="offcanvas offcanvas-end bg-canvas text-canvas" tabindex="-1" id="offcanvasRight<%= "canvas-#{template.id}" %>" aria-labelledby="offcanvasRightLabel">
           <!-- header -->
           <div class="offcanvas-header">
-            <h2><%= template.name %> Template</h2>
+            <h2>Edit Template</h2>
           </div>
 
           <!-- body -->
           <div class="offcanvas-body">
-            <%= render "form", template: template %>
+            <%= render "form2", template: template %>
           </div>
         </div>
 
