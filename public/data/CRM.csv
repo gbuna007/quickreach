@@ -1,7 +1,9 @@
 name,category,status,potential_rev,amount_spent,email,title,first_name,last_name
-Grab,transportation,lead,1000000,1000,bteo@grab.com,Digital Manager,Bryan,Teo
-Grab,transportation,lead,1000000,1000,gfriedman@grab.com,Digital Director,Greg,Friedman
+Grab,transportation,Lead,1000000,,bteo@grab.com,Digital Manager,Bryan,Teo
+Grab,transportation,Lead,1000000,,gfriedman@grab.com,Digital Director,Greg,Friedman
 Apple,consumer electronics,Live,1500000,15000,jgeorge@apple.com,Engineering Manager,Jansen,George
 Apple,consumer electronics,Live,1500000,15000,achan@apple.com,Marketing Manager,Apple,Chan
-Gojek,transportation,Prospect,500000,5000,,,,
+Gojek,transportation,Prospect,500000,,,,,
 Samsung,consumer electronics,Churned,1250000,1250,,,,
+Le Wagon,education,Prospect,500000,,ashley.yeo@lewagon.org,Operations Manager,Ashley,Yeo
+Bunardi Corp,technology,Prospect,100000,,gbunardi@hotmail.com,Lead,Grace,Bunardi

@@ -5,7 +5,6 @@ export default class extends Controller {
   static targets = ["description", "card", "image"]
 
   connect() {
-    console.log("how highlight connected");
   }
 
   update(e) {
