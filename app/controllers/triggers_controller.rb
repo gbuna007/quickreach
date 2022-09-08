@@ -3,6 +3,7 @@ class TriggersController < ApplicationController
 
   def index
     @triggers = current_user.triggers
+    @triggers = @triggers.order('created_at DESC')
     # @triggers = []
     # policy_scope(Trigger).each do |trigger|
     #   if trigger.account.user == current_user
