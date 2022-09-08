@@ -2,7 +2,7 @@
 <div class="existing-templates" data-new-template-target="rows" ></div>
   <% @templates.each do |template| %>
     <!-- each template's info -->
-    <div class="info shadow-sm">
+    <div class="info">
       <p><%= template.updated_at.strftime("%D") %></p>
       <div class="info-content col-3"><%= template.name %></div>
       <div class="info-content col-3">
