@@ -2,17 +2,20 @@
   <%= render "shared/sidebar" %>
 
   <div class="col-10 flex-grow-1 main-content align-self-center min-vh-100" data-controller="new-template">
+    <!-- main header -->
     <div class="navbar mb-3">
-      <h1 class="m-0">Templates</h1>
+      <h1 class="m-0">Email Templates</h1>
       <button class="qt-btn w-25 fw-bold" data-action="click->new-template#revealForm">New Email Template</button>
     </div>
 
-    <!-- form -->
+    <!-- new template -->
     <div class="d-none d-flex justify-content-between mb-5" data-new-template-target="form">
-        <div class="col-6 flex-shrink-1 me-5 border rounded-3 p-3 bg-light">
+        <!-- new form -->
+        <div class="col-6 flex-shrink-1 me-5 border rounded-3 p-3 bg-light" data-new-trigger-target="form">
           <%= render 'form', template: @template %>
         </div>
 
+        <!-- notes section -->
         <div class="col-6 flex-shrink-1 bg-dark-blu text-dy rounded-3 p-3">
           <h3>Note</h3>
           <p>In order for QuickReach to accurately use your template, please use the following components in your body wrapped in <%= "<< >>" %>:</p>
@@ -31,13 +34,14 @@
         </div>
     </div>
 
-    <!-- table of templates -->
-    <div class="headers fw-bold border">
+    <!-- table headers -->
+    <div class="headers fw-bold">
       <p class="ps-4 col-1">Date</p>
       <p class="col-2 flex-grow-1 ms-2">Template Name</p>
       <p class="col-6">Subject</p>
     </div>
 
-    <%= render 'template_rows', templates: @templates %>
+    <!-- table of templates -->
+    <%= render 'templates_table', templates: @templates %>
   </div>
 </div>
