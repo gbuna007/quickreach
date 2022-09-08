@@ -3,6 +3,7 @@ class TemplatesController < ApplicationController
 
   def index
     @templates = policy_scope(Template)
+    # @templates = current_user.templates
     @template = Template.new
 
   # searchbar
@@ -17,14 +18,15 @@ class TemplatesController < ApplicationController
   def create
     @template = Template.new(template_params)
     @template.user = current_user
+    @template.save
     authorize @template
 
     respond_to do |format|
       if @template.save
+        format.html { redirect_to templates_path }
         # create new template to override in create.json.jbuilder => not sure why we have to do this..
         @new_template = Template.new
         # if the format is html, do this
-        format.html { redirect_to templates_path }
       else
         format.html { render "templates/index", status: :unprocessable_entity }
       end

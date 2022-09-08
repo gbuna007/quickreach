@@ -7,8 +7,8 @@ import { application } from "./application"
 import EditKeywordsController from "./edit_keywords_controller"
 application.register("edit-keywords", EditKeywordsController)
 
-import EditTemplateController from "./edit_template_controller"
-application.register("edit-template", EditTemplateController)
+// import EditTemplateController from "./edit_template_controller"
+// application.register("edit-template", EditTemplateController)
 
 import FilterContactsController from "./filter_contacts_controller"
 application.register("filter-contacts", FilterContactsController)
