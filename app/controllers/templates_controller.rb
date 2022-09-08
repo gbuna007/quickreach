@@ -2,6 +2,14 @@ class TemplatesController < ApplicationController
   def index
     @templates = policy_scope(Template)
     @template = Template.new
+
+  # searchbar
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR subject ILIKE :query"
+      @templates = @templates.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @templates
+    end
   end
 
   def create

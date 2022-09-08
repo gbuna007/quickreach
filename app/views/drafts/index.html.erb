@@ -18,7 +18,7 @@
       <div class="info-content col-3">
         <p>News Link</p>
       </div>
-      <div class="info-action p-1">
+      <div class="info-action col-3">
         <p class="px-4">Actions</p>
       </div>
     </div>
@@ -26,7 +26,7 @@
     <!-- display for each item-->
     <% @drafts.each do |draft| %>
       <div class="info responsive-font-reg">
-        <p class="col-1"> <%= draft.updated_at.strftime("%D") %></p>
+        <p class="col-1"> <%= draft.updated_at.strftime("%D") %> hello world</p>
         <div class="info-content col-3">
           <%= draft.trigger.account.name %>
         </div>
