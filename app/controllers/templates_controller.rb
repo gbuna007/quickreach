@@ -3,6 +3,7 @@ class TemplatesController < ApplicationController
 
   def index
     @templates = policy_scope(Template)
+    @templates = @templates.order('created_at DESC')
     # @templates = current_user.templates
     @template = Template.new
 
