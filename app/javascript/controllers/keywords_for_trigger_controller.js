@@ -4,15 +4,11 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["formkey", "keydisplay"]
   connect() {
-    console.log(this.element)
-    console.log(this.formkeyTarget)
-    console.log(this.keydisplayTarget)
   }
 
   createKey(event){
     event.preventDefault();
 
-    console.log(this.formkey.action)
     // console.log("creating data..")
     // fetch(this.formkeyTarget.action, {
     //   method: "POST",
