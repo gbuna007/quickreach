@@ -34,7 +34,7 @@
           <%= draft.edited_subject %>
         </div>
         <div class="info-content col-3">
-          <%= link_to draft.news.link,
+          <%= link_to "#{draft.news.source_id}",
           draft.news.link,
            target: '_blank', class: "news_url" %>
         </div>
