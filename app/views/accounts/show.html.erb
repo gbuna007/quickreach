@@ -26,7 +26,9 @@
                 <p>Active Templates</p>
               </div>
               <div class="d-flex align-items-center">
-                <p class="num-icon me-2"><%= @account.drafts.count %></p>
+                <p class="num-icon me-2">
+                  <%=@account.drafts.where(sent: true).count %>
+                </p>
                 <p>QuickReaches</p>
               </div>
             </div>
